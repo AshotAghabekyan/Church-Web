@@ -395,7 +395,7 @@ footer {
     }
 
     main #welcome {
-        height: 30vh;
+        height: 60vh;
     }
 
     main #churchInfo .textPoint {
@@ -449,7 +449,7 @@ footer {
     }
 
     main #welcome {
-        height: 40vh;
+        min-height: 30vh;
     }
 
     main #welcome #welcomeText {
