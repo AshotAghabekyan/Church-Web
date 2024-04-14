@@ -1,0 +1,518 @@
+
+
+body, html {
+    margin:0%;
+    width: 100%;
+    height: 100%;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+
+header {
+    min-height: 20vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background-color:  #66697a;
+}
+
+header .navBar {
+    color: white;
+    width: 17%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+header a:hover {
+    opacity: 0.7;
+}
+
+
+#mobileNavToggle {
+    display: none;
+    background: url("../images/burgerIcon.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+
+
+#logo {
+    background: url("/public/images/logo.gif");
+    background-repeat: no-repeat;
+    width: 50px;
+    max-height: 50px;
+    background-size: contain;
+    display: block;
+    transition: 0.4s;
+}
+
+
+#logo:hover {
+    opacity: 0.6;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.5s ease-in-out; 
+    transition: 0.5s;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #EAEAEA;
+    border: none;
+    border-radius: 20px;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    animation: slideIn 0.5s ease-in-out; 
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+.modal-content a {
+    color: #66697a;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.close {
+    color: #66697a;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+
+main {
+    max-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #eaeaea;
+}
+
+
+#welcome {
+    width: 100%;
+    height: 60vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/public/images/servicesBackground.webp");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main #welcome h1 {
+    font-size: 40px;
+}
+
+main #aboutServices {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align:left;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 20%;
+    color:#3f4359
+}
+
+main #aboutServices p {
+    font-size: 14px;
+}
+
+
+main #allServices {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+
+main #allServices #childrenService {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 90%;
+    min-height: 60vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+main #allServices .serviceInfo{
+    text-align: left;
+    width: 50%;
+    line-height: 1.5;
+    padding: 50px;
+    box-sizing: border-box;
+    color: #3f4359;
+}
+
+
+
+main #allServices .serviceInfo button {
+    width: 40%;
+    height: 50px;
+    color:#3f4359;
+    border: 2px solid #3f4359;
+    box-shadow: 0 0 10px #3f4359; 
+    transition: 0.4s;
+}
+
+main #allServices .serviceInfo button:hover {
+    background-color: #3f4359;
+    color: white;
+}
+
+
+main #allServices #childrenService .serviceBackground {
+    width: 50%;
+    height: 70vh;
+    background: url("/public/images/childServiceBackground.webp");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+main #allServices #preparingForMarriage {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    width: 90%;
+    min-height: 60vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+main #allServices #preparingForMarriage .serviceBackground {
+    width: 50%;
+    height: 70vh;
+    background: url("/public/images/marrigeServiceBackground.webp");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+main #allServices #preparingForMarriage {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    width: 90%;
+    min-height: 60vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+main #allServices #preparingForMarriage .serviceBackground {
+    width: 50%;
+    height: 70vh;
+    background: url("/public/images/marrigeServiceBackground.webp");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+main #allServices #teenService{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 90%;
+    min-height: 60vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+main #allServices #teenService .serviceBackground {
+    width: 50%;
+    height: 70vh;
+    background: url("/public/images/teenServiceBackground.webp");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: row; 
+    justify-content:space-around;
+    align-items: center;
+    background-color: #3f4359;
+ }
+ 
+ 
+ footer #footerChurchName, #helpInfo, #releaseDate {
+     width: 20%;
+     height: auto;
+     color: white;
+     opacity: 0.7;
+ }
+
+
+ @media screen and (min-width: 601px) and (max-width: 1024px) {
+    header {
+        min-height: 10vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+        font-size: 25px;
+        background-color:  #66697a;
+    }
+
+    header .navBar {
+        display: none;
+    }
+
+    #logo {
+        position: absolute;
+        top: 1%;
+        left: 4%;
+        width: 80px;
+        min-height: 60px;
+    }
+
+    header #mobileNavToggle {
+        display: block;
+        color: white;
+        justify-content: center;
+        padding: 2%;
+        margin-right: 5%;
+        color:white
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.7);
+        animation: fadeIn 0.5s ease-in-out; 
+        transition: 0.5s;
+    }
+    
+    .modal-content {
+        background-color: #EAEAEA;
+        border: none;
+        border-radius: 20px;
+        margin: 15% auto;
+        padding: 20px;
+        width: 80%;
+        min-height: 20vh;
+        animation: slideIn 0.5s ease-in-out;
+        text-align: center;
+        font-size: 30px; 
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    main #aboutServices p{
+        font-size: 25px;
+    }
+
+    main #allServices #childrenService,
+    main #allServices #preparingForMarriage,
+    main #allServices #teenService {
+        margin-top: 10%;
+        flex-direction: column;
+    }
+
+
+    main #allServices #childrenService .serviceBackground,
+    main #allServices #preparingForMarriage .serviceBackground,
+    main #allServices #teenService .serviceBackground {
+        width: 100%;
+        height: 40vh; 
+    }
+
+    main #allServices #childrenService .serviceInfo,
+    main #allServices #preparingForMarriage .serviceInfo,
+    main #allServices #teenService .serviceInfo {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 25px;
+    }
+
+    main #allServices .serviceInfo {
+        padding: 0%;
+        box-sizing: border-box;
+    }
+    
+
+    main #allServices .serviceInfo button {
+        width: 100%;
+        height: 70px;
+        font-size: 18px;
+    }
+
+    footer {
+        font-size: 18px;
+    }
+ }
+
+
+
+
+@media screen and (max-width: 600px) {
+    header {
+        min-height: 10vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+        font-size: 16px;
+        background-color:  #66697a;
+    }
+
+    header .navBar {
+        display: none;
+    }
+
+    header #mobileNavToggle {
+        display: block;
+        color: white;
+        justify-content: center;
+        margin-right: 5%;
+        color:white
+    }
+
+    #logo {
+        position: absolute;
+        top: 1%;
+        left: 4%;
+        min-height: 40px;
+    }
+
+
+    main #welcome {
+        height: 30vh;
+    }
+
+    main #welcome h1 {
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 25px;
+    }
+    
+    main #allServices #childrenService,
+    main #allServices #preparingForMarriage,
+    main #allServices #teenService {
+        margin-top: 10%;
+        flex-direction: column;
+    }
+
+
+    main #allServices #childrenService .serviceBackground,
+    main #allServices #preparingForMarriage .serviceBackground,
+    main #allServices #teenService .serviceBackground {
+        width: 100%;
+        height: 40vh; 
+    }
+
+    main #allServices #childrenService .serviceInfo,
+    main #allServices #preparingForMarriage .serviceInfo,
+    main #allServices #teenService .serviceInfo {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    main #allServices .serviceInfo {
+        padding: 0%;
+        box-sizing: border-box;
+    }
+    
+
+    main #allServices .serviceInfo button {
+        width: 100%;
+    }
+
+
+    footer {
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+        min-height: 20vh;
+    }
+
+    footer #footerChurchName, #helpInfo, #releaseDate {
+        width: 80%;
+    }
+}

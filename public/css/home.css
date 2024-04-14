@@ -1,0 +1,536 @@
+
+
+body, html {
+    margin:0%;
+    width: 100%;
+    height: 100%;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+
+
+header {
+    min-height: 20vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background-color:  #66697a;
+}
+
+header .navBar {
+    color: white;
+    width: 17%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+header a:hover {
+    opacity: 0.7;
+}
+
+
+#mobileNavToggle {
+    display: none;
+    background: url("../images/burgerIcon.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+
+
+#logo {
+    background: url("/public/images/logo.gif");
+    background-repeat: no-repeat;
+    width: 50px;
+    min-height: 50px;
+    height: auto;
+    background-size: contain;
+    display: block;
+    transition: 0.4s;
+}
+
+
+#logo:hover {
+    opacity: 0.6;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.5s ease-in-out; 
+    transition: 0.5s;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #EAEAEA;
+    border: none;
+    border-radius: 20px;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    animation: slideIn 0.5s ease-in-out; 
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+.modal-content a {
+    color: #66697a;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.close {
+    color: #66697a;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+
+
+main {
+    max-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main #welcome {
+    background: url("/public/images/worshipBackground.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%, 50%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+main #welcome #welcomeText {
+    width: 58%;
+    height: 100%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start; 
+}
+
+main #welcome h3 {
+    font-size: 30px;
+}
+
+main #welcome h1 {
+    font-size: 100px;
+    margin-top: 10px;
+}
+
+main #bigFamily {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 60vh;
+    background-color: #eaeaea;
+    color: #3f4359;
+}
+
+main #bigFamily #blockTitle {
+    width: 20%;
+    height: 100%;
+    font-size: 30px;
+}
+
+main #bigFamily #blockDescription {
+    width: 45%;
+    height: 100%;
+}
+
+main #bigFamily #blockDescription #toChurchPage {
+    color: rgb(212, 103, 40);
+    text-decoration: none;
+}
+
+
+main #ourVideos {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("/public/images/backgroundForVideos.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+main #ourVideos #controlWrapper {
+    width: 80%;
+    min-height: 70vh;
+    background-color:#FF6A48;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+main #ourVideos #controlWrapper #wrapperInfo h1{
+    font-size: 50px;
+}
+
+main #ourVideos #controlWrapper #wrapperInfo, #videosBtn{
+    margin-left: 10%;
+}
+
+
+main #ourVideos #controlWrapper #toVideosPage {
+    height:80px;
+    width: 100%;
+}
+
+main #ourVideos #controlWrapper #toVideosPage button {
+    width: 40%;
+    height: 100%;
+    color: #3f4359;
+    background-color: #FF6A48;
+    border: 7px solid #3f4359;
+    box-shadow: 0 0 10px #3f4359; 
+    transition: 0.4s;
+    font-size: 18px;
+}
+
+main #ourVideos #controlWrapper #toVideosPage button:hover {
+    background-color: #3f4359;
+    color: white;
+    font-size: "18px";
+}
+
+
+main #donation {
+    width: 100%;
+    min-height: 0vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 2;
+    background-color: #eaeaea;
+    color: #66697a;
+}
+
+main #donation #gifDiv {
+    width: 100%;
+    height: 10vh; 
+    margin-top: 3%;
+    background: url("/public/images/handWithHearth.gif") center/contain; 
+    background-repeat: no-repeat;
+}
+
+main #donation #bibleTextForDonation {
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+main #toDontationPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:80px;
+    width: 60%;
+    margin-bottom: 5%;
+}
+
+main #toDontationPage button {
+    width: 60%;
+    height: 100%;
+    color: #3f4359;
+    font-size: 18px;
+    background-color: #eaeaea;
+    margin-bottom: 5%;
+    border: 7px solid #3f4359;
+    box-shadow: 0 0 10px #3f4359; 
+    transition: 0.4s;
+}
+
+main #donation #toDontationPage button:hover {
+    background-color: #3f4359;
+    color: white;
+}
+
+footer {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: row; 
+    justify-content:space-around;
+    align-items: center;
+    background-color: #3f4359;
+ }
+ 
+ 
+ footer #footerChurchName, #helpInfo, #releaseDate {
+     width: 20%;
+     height: auto;
+     color: white;
+     opacity: 0.7;
+ }
+ 
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    header {
+        min-height: 10vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+        font-size: 25px;
+        background-color:  #66697a;
+    }
+
+    header .navBar {
+        display: none;
+    }
+
+    #logo {
+        position: absolute;
+        top: 1%;
+        left: 4%;
+        width: 80px;
+        min-height: 100px;
+    }
+
+    header #mobileNavToggle {
+        display: block;
+        color: white;
+        justify-content: center;
+        padding: 2%;
+        margin-right: 5%;
+        color:white
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.7);
+        animation: fadeIn 0.5s ease-in-out; 
+        transition: 0.5s;
+    }
+    
+    .modal-content {
+        background-color: #EAEAEA;
+        border: none;
+        border-radius: 20px;
+        margin: 15% auto;
+        padding: 20px;
+        width: 80%;
+        min-height: 20vh;
+        animation: slideIn 0.5s ease-in-out;
+        text-align: center;
+        font-size: 30px; 
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    main #welcome {
+        height: 30vh;
+    }
+
+    main #churchInfo .textPoint {
+        font-size: 25px;
+    }
+
+    main #bigFamily #blockDescription {
+        font-size: 20px;
+    }
+
+    main button {
+        font-size: 18px;
+    }
+
+    footer {
+        font-size: 18px;
+    }
+ }
+
+
+
+ @media screen and (max-width: 600px){
+    header {
+        min-height: 10vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+        font-size: 16px;
+        background-color:  #66697a;
+    }
+
+    header .navBar {
+        display: none;
+    }
+
+    #logo {
+        position: absolute;
+        top: 1%;
+        left: 4%;
+        min-height: 40px;
+    }
+
+    header #mobileNavToggle {
+        display: block;
+        color: white;
+        justify-content: center;
+        margin-right: 5%;
+        color:white
+    }
+
+    main #welcome {
+        height: 30vh;
+    }
+
+    main #welcome #welcomeText {
+        width: 80%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    main #welcome h3 {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    main #welcome h1 {
+        font-size: 40px;
+        margin-top: 10px;
+    }
+
+
+    main #bigFamily {
+        flex-direction: column;
+    }
+
+    
+    main #bigFamily #blockTitle {
+        width: 80%;
+        height: 100%;
+    }
+
+    main #bigFamily #blockDescription {
+        margin-top: 0%;
+        width: 80%;
+        margin-bottom: 5%;
+    }
+
+
+    main #ourVideos {
+        min-height: 50vh;
+    }
+
+    main #ourVideos #controlWrapper {
+        min-height: 50vh;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main #ourVideos #controlWrapper #wrapperInfo h1 {
+        font-size: 30px;
+    }
+
+    main #ourVideos #controlWrapper #wrapperInfo h2 {
+        font-size: 20px;
+    }
+
+    main #ourVideos #controlWrapper #toVideosPage {
+        width: 100%;
+    }
+
+    main #donation #bibleTextForDonation h1{
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+        font-size: 16px;
+    }
+
+
+    main #toDontationPage {
+        width: 100%;
+    }
+
+
+    footer {
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+        min-height: 20vh;
+    }
+
+    footer #footerChurchName, #helpInfo, #releaseDate {
+        width: 80%;
+    }
+}
