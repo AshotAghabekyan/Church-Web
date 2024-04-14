@@ -53,15 +53,19 @@ header a:hover {
 }
 
 #logo {
+    position: absolute;
+    top:10px;
+    left: 10px;
     background: url("/public/images/logo.gif");
     background-repeat: no-repeat;
     width: 50px;
-    height: 50px;
+    min-height: 50px;
+    height: auto;
     background-size: contain;
     display: block;
     transition: 0.4s;
-
 }
+
 
 #logo:hover {
     opacity: 0.6;
