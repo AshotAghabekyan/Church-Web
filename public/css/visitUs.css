@@ -8,7 +8,6 @@ body, html {
 }
 
 
-
 header {
     min-height: 20vh;
     width: 100%;
@@ -20,11 +19,12 @@ header {
     background-color:  #66697a;
 }
 
+
 header .navBar {
     color: white;
-    width: 17%;
-    margin: 0;
-    padding: 0;
+    width: 10%;
+    margin: 2%;
+    padding: 0%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,9 +52,14 @@ header a:hover {
 }
 
 #logo {
+    position: absolute;
+    top:10px;
+    left: 10px;
     background: url("/public/images/logo.gif");
+    background-repeat: no-repeat;
     width: 50px;
-    height: 50px;
+    min-height: 50px;
+    height: auto;
     background-size: contain;
     display: block;
     transition: 0.4s;
