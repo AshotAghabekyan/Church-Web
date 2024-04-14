@@ -20,6 +20,7 @@ header {
     background-color:  #66697a;
 }
 
+
 header .navBar {
     color: white;
     width: 17%;
@@ -448,7 +449,7 @@ footer {
     }
 
     main #welcome {
-        height: 30vh;
+        height: 40vh;
     }
 
     main #welcome #welcomeText {
