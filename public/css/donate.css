@@ -569,8 +569,8 @@ footer {
 
 
     main #backgroundBlock {
+        min-height: 20vh;
         background-size: contain;
-        height: 30vh;
     }
 
     main #backgroundBlock {
@@ -591,7 +591,7 @@ footer {
 
     .donationVariant {
         width: 100%;
-        min-height: 80vh;
+        height: 50vh;
         font-size: 30px;
     }
 
@@ -604,6 +604,7 @@ footer {
     .donationVariant button {
         width: 80%;
         height: 80px;
+        font-size: 20px;
     }
 
     #bankTransferModal {
@@ -748,6 +749,7 @@ footer {
     .donationVariant {
         width: 100%;
         min-height: 10vh;
+        max-height: 50vh;
     }
 
     #personallyIcon,

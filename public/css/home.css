@@ -23,9 +23,9 @@ header {
 
 header .navBar {
     color: white;
-    width: 17%;
-    margin: 0;
-    padding: 0;
+    width: 10%;
+    margin: 2%;
+    padding: 0%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,6 +54,9 @@ header a:hover {
 
 
 #logo {
+    position: absolute;
+    top:10px;
+    left: 10px;
     background: url("/public/images/logo.gif");
     background-repeat: no-repeat;
     width: 50px;
@@ -166,6 +169,7 @@ main #welcome #welcomeText {
     display: flex;
     flex-direction: column;
     justify-content: center; 
+    text-align: left;
     align-items: flex-start; 
 }
 
@@ -395,7 +399,12 @@ footer {
     }
 
     main #welcome {
-        height: 60vh;
+        height: 40vh;
+    }
+
+    main #welcome h1 {
+        font-size: 50px;
+        margin-top: 10px;
     }
 
     main #churchInfo .textPoint {
@@ -449,7 +458,7 @@ footer {
     }
 
     main #welcome {
-        min-height: 30vh;
+        height: 40vh;
     }
 
     main #welcome #welcomeText {
@@ -461,12 +470,12 @@ footer {
     }
 
     main #welcome h3 {
-        font-size: 20px;
+        font-size: 18px;
         width: 100%;
     }
 
     main #welcome h1 {
-        font-size: 40px;
+        font-size: 25px;
         margin-top: 10px;
     }
 

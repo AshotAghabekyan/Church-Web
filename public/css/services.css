@@ -381,6 +381,10 @@ footer {
         border-radius: 10px;
     }
 
+    main #welcome {
+        height: 40vh;
+    }
+
     main #aboutServices p{
         font-size: 25px;
     }
