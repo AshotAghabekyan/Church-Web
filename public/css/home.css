@@ -72,20 +72,6 @@ header a:hover {
     opacity: 0.6;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    animation: fadeIn 0.5s ease-in-out; 
-    transition: 0.5s;
-}
-
 
 @keyframes fadeIn {
     from {
@@ -97,13 +83,19 @@ header a:hover {
 }
 
 .modal-content {
-    background-color: #EAEAEA;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: none;
     border: none;
-    border-radius: 20px;
-    margin: 15% auto;
-    padding: 20px;
-    width: 80%;
+    background-color: #66697a;
     animation: slideIn 0.5s ease-in-out; 
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 @keyframes slideIn {
@@ -118,16 +110,21 @@ header a:hover {
 }
 
 
+.modal-content div {
+    margin-top: 5%
+}
 
-
-.modal-content a {
-    color: #66697a;
+.modal-content div a {
+    color: white;
     font-size: 20px;
     text-decoration: none;
 }
 
 .close {
-    color: #66697a;
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -186,33 +183,51 @@ main #bigFamily {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
     min-height: 60vh;
+    height: 60vh;
+    line-height: 1.5;
     background-color: #eaeaea;
     color: #3f4359;
 }
+
 
 main #bigFamily #blockTitle {
     width: 20%;
     height: 100%;
     font-size: 30px;
+    display: flex;
+    align-items: center;
 }
 
 main #bigFamily #blockDescription {
     width: 45%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
 }
 
+
+
 main #bigFamily #blockDescription #toChurchPage {
+    text-align: left;
+    width: 100%;
+}
+
+main #bigFamily #blockDescription #toChurchPage a {
     color: rgb(212, 103, 40);
     text-decoration: none;
+    text-align: left;
 }
 
 
 main #ourVideos {
     width: 100%;
-    min-height: 70vh;
+    min-height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -221,6 +236,7 @@ main #ourVideos {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    line-height: 1.5;
 }
 
 main #ourVideos #controlWrapper {
@@ -252,7 +268,6 @@ main #ourVideos #controlWrapper #toVideosPage button {
     color: #3f4359;
     background-color: #FF6A48;
     border: 7px solid #3f4359;
-    box-shadow: 0 0 10px #3f4359; 
     transition: 0.4s;
     font-size: 18px;
 }
@@ -308,7 +323,6 @@ main #toDontationPage button {
     background-color: #eaeaea;
     margin-bottom: 5%;
     border: 7px solid #3f4359;
-    box-shadow: 0 0 10px #3f4359; 
     transition: 0.4s;
 }
 
@@ -325,6 +339,7 @@ footer {
     justify-content:space-around;
     align-items: center;
     background-color: #3f4359;
+    line-height: 1.5;
  }
  
  
@@ -458,7 +473,7 @@ footer {
     }
 
     main #welcome {
-        height: 40vh;
+        height: 30vh;
     }
 
     main #welcome #welcomeText {
@@ -481,19 +496,31 @@ footer {
 
 
     main #bigFamily {
+        display: flex;
         flex-direction: column;
+        min-height:50vh;
+        height: 100%;
+        justify-content: center;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        box-sizing: border-box;
     }
 
     
-    main #bigFamily #blockTitle {
+    main #bigFamily #blockTitle  {
         width: 80%;
-        height: 100%;
+        height: 25%;
+    }
+
+    main #bigFamily #blockTitle h2 {
+        margin: 0;
     }
 
     main #bigFamily #blockDescription {
         margin-top: 0%;
         width: 80%;
-        margin-bottom: 5%;
+        height: 20%;
+        justify-content: normal;
     }
 
 
@@ -505,7 +532,12 @@ footer {
         min-height: 50vh;
         width: 100%;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
+    }
+
+    #wrapperInfo {
+        margin-left: 10%;
+        margin-right: 10%;
     }
 
     main #ourVideos #controlWrapper #wrapperInfo h1 {
@@ -518,15 +550,48 @@ footer {
 
     main #ourVideos #controlWrapper #toVideosPage {
         width: 100%;
+    }   
+
+    main #ourVideos #controlWrapper #toVideosPage button {
+        width: 60%;
+        padding: 0
+    }
+
+
+    main #donation {
+        width: 100%;
+        flex-direction: column; 
+        align-items: flex-start; 
+        text-align: left; 
+    }
+
+    main #donation #toDontationPage {
+        width: 90%; 
+        margin-left: 10%; 
+    }
+    
+
+    main #donation #toDontationPage,
+    main #donation #bibleTextForDonation {
+        margin-left: 10%;
+        display: inline-block; 
+        vertical-align: middle; 
+    }
+
+    main #donation #gifDiv {
+        width: 20%;
+        margin-left: 11%;
+        margin-bottom: 2%;
     }
 
     main #donation #bibleTextForDonation h1{
-        margin-left: 5%;
-        margin-right: 5%;
-        width: 90%;
+        width: 100%;
         font-size: 16px;
     }
 
+    #bibleTextForDonation > p {
+        width: 100%;
+    }
 
     main #toDontationPage {
         width: 100%;

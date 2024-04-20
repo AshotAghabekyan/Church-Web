@@ -70,19 +70,6 @@ header a:hover {
     opacity: 0.6;
 }
 
-#myModal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    animation: fadeIn 0.5s ease-in-out; 
-    transition: 0.5s;
-}
 
 
 @keyframes fadeIn {
@@ -94,14 +81,20 @@ header a:hover {
     }
 }
 
-#myModal #header-modal-content {
-    background-color: #EAEAEA;
+.modal-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: none;
     border: none;
-    border-radius: 20px;
-    margin: 15% auto;
-    padding: 20px;
-    width: 80%;
+    background-color: #66697a;
     animation: slideIn 0.5s ease-in-out; 
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 @keyframes slideIn {
@@ -116,13 +109,22 @@ header a:hover {
 }
 
 
-#myModal #header-modal-content a {
-    color: #66697a;
+.modal-content div {
+    margin-top: 5%
+}
+
+.modal-content div a {
+    color: white;
+    font-size: 20px;
     text-decoration: none;
 }
 
-#closeMobileNavBar {
-    color: #66697a;
+
+.close {
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -140,13 +142,14 @@ main {
     display: flex;
     flex-direction: column;
     background-color: #eaeaea;
+    line-height: 1.5;
 }
 
 
 main #backgroundBlock {
     display: flex;
     width: 100%;
-    min-height: 60vh;
+    height: 60vh;
     background: url("/public/images/donationBackground.webp");
     background-size: 100%;
     background-attachment:scroll;
@@ -724,7 +727,7 @@ footer {
 
 
     main #backgroundBlock {
-        min-height: 20vh;
+        height: 20vh;
         background-size: contain;
     }
 

@@ -1,11 +1,15 @@
 
 
 document.getElementById("mobileNavToggle").onclick = function() {
-    document.getElementById("myModal").style.display = "block";
+    document.getElementById("myModal").style.display = "flex";
+    const body = document.querySelector("body");
+    body.style.overflow = "hidden";
 };
 
 document.getElementById("closeMobileNavBar").addEventListener("click", function() {
     document.getElementById("myModal").style.display = "none";
+    const body = document.querySelector("body");
+    body.style.overflow = "auto";
 }) 
 
 window.onclick = function(event) {

@@ -70,20 +70,6 @@ header a:hover {
     opacity: 0.6;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    animation: fadeIn 0.5s ease-in-out; 
-    transition: 0.5s;
-}
-
 
 @keyframes fadeIn {
     from {
@@ -95,13 +81,20 @@ header a:hover {
 }
 
 .modal-content {
-    background-color: #EAEAEA;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 5;
+    width: 100%;
+    height: 100vh;
+    display: none;
     border: none;
-    border-radius: 20px;
-    margin: 15% auto;
-    padding: 20px;
-    width: 80%;
+    background-color: #66697a;
     animation: slideIn 0.5s ease-in-out; 
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 @keyframes slideIn {
@@ -116,16 +109,22 @@ header a:hover {
 }
 
 
+.modal-content div {
+    margin-top: 5%
+}
 
-
-.modal-content a {
-    color: #66697a;
+.modal-content div a {
+    color: white;
     font-size: 20px;
     text-decoration: none;
 }
 
+
 .close {
-    color: #66697a;
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -142,11 +141,12 @@ main {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    line-height: 1.5;
 }
 
 main #backgroundBlock {
     width: 100%;
-    height: 65vh;
+    height: 60vh;
     background: url("/public/images/videoBackground2.webp");
     background-size: cover;
     background-position: 50% 50%;
