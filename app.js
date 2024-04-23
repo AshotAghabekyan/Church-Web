@@ -23,7 +23,6 @@ app.use('/videos', videoRouter)
 
 
 app.get("/", function(request, response) {
-    console.log(request.headers["access-control-allow-origin"]);
     response.sendFile(path.resolve("views/home.html"));
 })
 
