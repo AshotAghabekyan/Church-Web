@@ -4,7 +4,7 @@
 
 async function getAllVideos() {
     try {
-        let response = await fetch("/videos/allVideos");
+        let response = await fetch("/videos/allVideos", {"mode": "no-cors"});
         return response.json();
     }
     catch(error) {
