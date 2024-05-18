@@ -18,15 +18,17 @@
         
     </header>
     
-    <div class="modal-content" id="myModal">
-        <div><span class="close" id="closeMobileNavBar">&times;</span></div>
-        <div><p><a href="/">Սկիզբ</a></p></div>
-        <div><p><a href="/church">Եկեղեցի</a></p></div>
-        <div><p><a href="/our_services">Մեր ծառայությունները</a></p></div>
-        <div><p><a href="/videos">Վիդեոներ</a></p></div>
-        <div><p><a href="/donation">Նվիրաբերել</a></p></div>
-        <div><p><a href="/visitUs">Այցելեք մեզ</a></p></div>
-    </div>
+    <div id="modalWrapper">
+        <div class="modal-content" id="myModal">
+            <div><span class="close" id="closeMobileNavBar">&times;</span></div>
+            <div><p><a href="/">Սկիզբ</a></p></div>
+            <div><p><a href="/church">Եկեղեցի</a></p></div>
+            <div><p><a href="/our_services">Մեր ծառայությունները</a></p></div>
+            <div><p><a href="/videos">Վիդեոներ</a></p></div>
+            <div><p><a href="/donation">Նվիրաբերել</a></p></div>
+            <div><p><a href="/visitUs">Այցելեք մեզ</a></p></div>
+        </div>
+    </div>    
     <main>
 
         <div id="backgroundBlock"></div>
@@ -85,7 +87,7 @@
 
 
             <div id="bankTransferModal">
-                <div class="modal-content">
+                <div class="donation-modal-content">
                     <span id="closeBankModal" class="closeModal">&times;</span>
                     <div class="modal-buttons">
                         <button id="dollarDonateButton">ԱՄՆ Դոլարով</button>
@@ -99,7 +101,7 @@
 
 
             <div id="usdBankTransferModal">
-                <div class="modal-content">
+                <div class="donation-modal-content">
                     <span id="closeUSDBankModal" class="closeModal">&times;</span>
                     <h2>ԱՄՆ Դոլարով</h2>
                     <p><strong>NAME:</strong> RAIFFEISEN BANK INTERNATIONAL AG</p>
@@ -118,7 +120,7 @@
 
             
             <div id="euroBankTransferModal">
-                <div class="modal-content">
+                <div class="donation-modal-content">
                     <span id="closeEUROBankModal" class="closeModal">&times;</span>
                     <h2>EURO-ով</h2>
                     <p><strong>NAME:</strong> RAIFFEISEN BANK INTERNATIONAL AG</p>
@@ -137,7 +139,7 @@
 
             
             <div id="rubleBankTransferModal">
-                <div class="modal-content">
+                <div class="donation-modal-content">
                     <span id="closeRUBLEBankModal" class="closeModal">&times;</span>
                     <h2>Ռուբլիով</h2>
                     <p><strong>NAME:</strong> Межгосударственный банк</p>
@@ -190,7 +192,7 @@
 
 
             <div class="qrModal" id="easyWalletModal">
-                <div class="modal-content">
+                <div class="donation-modal-content">
                     <div class="modal-header">
                         <h2>Easy Wallet ID: 12345678</h2>
                         <button id="closeEasyWalletModalBtn">&times;</button>
@@ -200,7 +202,7 @@
             </div>
 
             <div class="qrModal" id="idramModal">
-                <div class="modal-content">
+                <div class="donation-modal-content">
                     <div class="modal-header">
                         <h2>Idram ID: 12345678</h2>
                         <button id="closeIdramModalBtn">&times;</button>
@@ -210,7 +212,7 @@
             </div>
 
             <div class="qrModal" id="telcellWalletModal">
-                <div class="modal-content">
+                <div class="donation-modal-content">
                     <div class="modal-header">
                         <h2>Wallet ID: 12345678</h2>
                         <button id="closeTellCellWalletModal">&times;</button>

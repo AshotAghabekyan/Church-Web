@@ -80,6 +80,17 @@ header a:hover {
     }
 }
 
+#modalWrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    display: none;
+    background-color:none;
+}
+
 .modal-content {
     position: fixed;
     top: 0;
@@ -87,7 +98,7 @@ header a:hover {
     overflow: hidden;
     z-index: 5;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     display: none;
     border: none;
     background-color: #66697a;
@@ -258,33 +269,12 @@ footer {
         color:white
     }
 
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.7);
-        animation: fadeIn 0.5s ease-in-out; 
-        transition: 0.5s;
+    .modal-content div a {
+        font-size: 35px;
     }
-    
-    .modal-content {
-        background-color: #EAEAEA;
-        border: none;
-        border-radius: 20px;
-        margin: 15% auto;
-        padding: 20px;
-        width: 80%;
-        min-height: 20vh;
-        animation: slideIn 0.5s ease-in-out;
-        text-align: center;
-        font-size: 30px; 
-        align-items: center;
-        border-radius: 10px;
+
+    .modal-content #closeMobileNavBar {
+        font-size: 80px;
     }
 
     main #backgroundBlock {

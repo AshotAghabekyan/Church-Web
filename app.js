@@ -9,14 +9,14 @@ app.use(express.json());
 app.use(cors({
     "maxAge": 86400,
     "methods": "GET",
-    "origin": "https://church-web.onrender.com"
+    "origin": "http://localhost:3000"
 }));
 
-app.use((req, res, next) => {
-    res.setHeader("Content-Security-Policy", "default-src 'self'; frame-src https://www.youtube.com/");
-    res.setHeader("Access-Control-Allow-Origin", 'https://church-web.onrender.com, http//:localhost:3000');
-    next();
-});
+// app.use((req, res, next) => {
+//     res.setHeader("Content-Security-Policy", "default-src *; style-src *; frame-src https://www.youtube.com/");
+//     // res.setHeader("Access-Control-Allow-Origin", 'https://church-web.onrender.com;  http//:localhost:3000');
+//     next();
+// });
 
 app.use("/public", express.static(path.resolve("public")));
 app.use('/videos', videoRouter)

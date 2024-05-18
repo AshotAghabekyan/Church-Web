@@ -1,20 +1,21 @@
 
 
 document.getElementById("mobileNavToggle").onclick = function() {
-    document.getElementById("myModal").style.display = "flex";
-    const body = document.querySelector("body");
-    body.style.overflow = "hidden";
+    const modalMenu = document.getElementById("myModal")
+    const modalWrapper = document.getElementById("modalWrapper");
+    modalMenu.style.display = "flex";
+    modalWrapper.style.display = "flex";
 };
 
 document.getElementById("closeMobileNavBar").addEventListener("click", function() {
     document.getElementById("myModal").style.display = "none";
-    const body = document.querySelector("body");
-    body.style.overflow = "auto";
+    document.getElementById("modalWrapper").style.display = "none";
 }) 
 
 window.onclick = function(event) {
-    if (event.target === document.getElementById("myModal")) {
+    if (event.target === document.getElementById("modalWrapper")) {
         document.getElementById("myModal").style.display = "none";
+        document.getElementById("modalWrapper").style.display = "none";
     }
 };
 
