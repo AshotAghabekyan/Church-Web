@@ -4,16 +4,40 @@
 
 async function getAllVideos() {
     try {
-        let response = await fetch("/videos/allVideos", {"mode": "no-cors"});
-        return response.json();
+        const response = await fetch("/videos/4", {
+            "mode": "no-cors",
+        });
+        const parsedResponse = await response.json();
+        if (response.status != 200) {
+            throw new Error(response);
+        }
+        return parsedResponse;
     }
     catch(error) {
         console.log(error);
+        return null;
     }
 }
 
+function videosNotFoundHandler() {
+    let videosBlock = document.getElementById("videos");
+    videosBlock.style.minHeight = "min-content";
+    videosBlock.style.maxHeight = "min-content";
+    const errorText = `Vidoes not found, try again later`
+    const textContainer = document.createElement("p");
+    textContainer.style.fontSize = "30px";
+    textContainer.style.color = "#3f4359"
+    const errorTextDiv = document.createElement("div");
+    errorTextDiv.style.display = "flex";
+    errorTextDiv.style.justifyContent = "center";
+    errorTextDiv.style.alignItems = "center";
+    textContainer.innerText = errorText;
+    errorTextDiv.appendChild(textContainer);
+    videosBlock.appendChild(errorTextDiv);
+}
+
+
 function loadYouTubeIframe(videoId, container) {
-    console.log(videoId);
     let iframe = document.createElement("iframe");
     iframe.src = `https://www.youtube.com/embed/${videoId}`;
     iframe.allowFullscreen = true;
@@ -22,8 +46,12 @@ function loadYouTubeIframe(videoId, container) {
 
 async function displayVideos() {
     let allVideos = await getAllVideos();
+    if (!allVideos) {
+        return videosNotFoundHandler();
+    }
+
     let videosBlock = document.getElementById("videos");
-  
+
     for (let i = 0; i < allVideos.length; ++i) {
         let videoDiv = document.createElement("div");
         videoDiv.className = "videoDiv";

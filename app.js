@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors"
 import path from "path";
-import videoRouter from "./videoApiRoute.js"
+import videoRouter from "./src/routes/videoApiRoute.js"
 
 
 const app = express();

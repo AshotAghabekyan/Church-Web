@@ -1,21 +1,27 @@
 
 
-document.getElementById("mobileNavToggle").onclick = function() {
-    const modalMenu = document.getElementById("myModal")
-    const modalWrapper = document.getElementById("modalWrapper");
-    modalMenu.style.display = "flex";
-    modalWrapper.style.display = "flex";
-};
+const toggleCheckbox = document.getElementById("toggle");
 
-document.getElementById("closeMobileNavBar").addEventListener("click", function() {
-    document.getElementById("myModal").style.display = "none";
-    document.getElementById("modalWrapper").style.display = "none";
-}) 
+toggleCheckbox.onchange = function(event) {
+    if (toggleCheckbox.checked) {
+        const modalMenu = document.getElementById("myModal")
+        const modalWrapper = document.getElementById("modalWrapper");
+        modalMenu.style.display = "flex";
+        modalWrapper.style.display = "flex";
+    } 
+    else {
+        document.getElementById("myModal").style.display = "none";
+        document.getElementById("modalWrapper").style.display = "none";
+    }
+}
+
+document.getElementById("mobileNavToggle").addEventListener("click", function(event) {
+    toggleCheckbox.onchange(event)
+})
 
 window.onclick = function(event) {
     if (event.target === document.getElementById("modalWrapper")) {
-        document.getElementById("myModal").style.display = "none";
-        document.getElementById("modalWrapper").style.display = "none";
+        toggleCheckbox.checked = false;
     }
 };
 
