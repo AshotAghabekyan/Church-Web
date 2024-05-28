@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon -r dotenv/config app.js"
+    "start": "nodemon -r dotenv/config app.js",
+    "redis-cli": "REDISCLI_AUTH=teswyjouTi4ss90aTJFECCF5LyrC42yo redis-cli --user red-cpaufpen7f5s73btioq0 -h frankfurt-redis.render.com -p 6379 --tls"
   },
   "keywords": [],
   "author": "",

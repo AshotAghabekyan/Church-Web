@@ -1,29 +1,30 @@
 
-
 const toggleCheckbox = document.getElementById("toggle");
+const toggleLabel = document.getElementById("toggleLabel");
+const modalWrapper = document.getElementById("modalWrapper");
+
 
 toggleCheckbox.onchange = function(event) {
     if (toggleCheckbox.checked) {
         const modalMenu = document.getElementById("myModal")
-        const modalWrapper = document.getElementById("modalWrapper");
+        toggleLabel.style.position = "fixed";
         modalMenu.style.display = "flex";
         modalWrapper.style.display = "flex";
     } 
     else {
+        toggleLabel.style.position = "absolute";
         document.getElementById("myModal").style.display = "none";
         document.getElementById("modalWrapper").style.display = "none";
     }
 }
 
-document.getElementById("mobileNavToggle").addEventListener("click", function(event) {
-    toggleCheckbox.onchange(event)
+
+modalWrapper.addEventListener("click", (event) => {
+    toggleCheckbox.checked = false;
+    toggleCheckbox.onchange(event);
 })
 
-window.onclick = function(event) {
-    if (event.target === document.getElementById("modalWrapper")) {
-        toggleCheckbox.checked = false;
-    }
-};
+
 
 let logo = document.getElementById("logo");
 logo.addEventListener("click", function() {
