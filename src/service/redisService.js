@@ -11,7 +11,6 @@ class RedisService {
         }).connect()
             .then((redisClient) => this.#redisClient = redisClient)
             .catch((error) => console.log("redis connection error -->", error))
-            .then((redisClient) => redisClient.select(process.env.redisDbIndex || 0))
     }
 
 
