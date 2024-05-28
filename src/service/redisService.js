@@ -6,9 +6,12 @@ class RedisService {
     #redisClient
 
     constructor() {
-        createClient().connect()
+        createClient({
+            "url": `${process.env.internalRedisUrl}`,
+        }).connect()
             .then((redisClient) => this.#redisClient = redisClient)
-            .then((redisClient) => redisClient.select(process.env.redisDbIndex))
+            .catch((error) => console.log("redis connection error -->", error))
+            // .then((redisClient) => redisClient.select(process.env.redisDbIndex))
     }
 
 
