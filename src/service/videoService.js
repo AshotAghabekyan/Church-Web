@@ -1,4 +1,4 @@
-import { google } from "googleapis"
+import youtubeApi from "googleapis/build/src/apis/youtube/v3.js";
 import redisService from "./redisService.js";
 
 class VideoApiService {
@@ -7,10 +7,7 @@ class VideoApiService {
     #youtubeApi;
 
     constructor() {
-        this.#youtubeApi =  google.youtube({
-            version: 'v3',
-            auth: this.#apiKey,
-        });
+        this.#youtubeApi =  new youtubeApi.youtube_v3.Youtube({"auth": this.#apiKey})
     }
 
 

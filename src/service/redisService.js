@@ -7,7 +7,7 @@ class RedisService {
 
     constructor() {
         createClient({
-            "url": `${process.env.internalRedisUrl}`,
+            "url": `${process.env.externalRedisUrl}`,
         }).connect()
             .then((redisClient) => this.#redisClient = redisClient)
             .catch((error) => console.log("redis connection error -->", error))
