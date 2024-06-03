@@ -389,24 +389,28 @@ footer {
     height:max-content;
     display: flex;
     flex-direction: row; 
-    justify-content:space-around;
+    justify-content: center;
     align-items: center;
     background-color: #3f4359;
     line-height: 1.5;
+ }
+
+ footer p, a {
+    margin: 2%
  }
  
  footer #footerChurchName, #helpInfo {
     width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     color: white;
  }
 
  footer #footerChurchName, #helpInfo div {
     display: flex;
     flex-direction: row;
-    justify-content: center
+    justify-content: center;;
  }
 
  footer #footerChurchName, #helpInfo #networkLinks {
@@ -416,6 +420,12 @@ footer {
     align-items: center;
     flex-direction: row;
     font-size: 14px;
+}
+
+footer #footerChurchName, #helpInfo #aditionalInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 footer #footerChurchName, #helpInfo #networkLinks a {
@@ -538,21 +548,7 @@ footer #footerChurchName, #helpInfo #networkLinks a:hover {
         display: none;
     }
 
-    #logo {
-        position: absolute;
-        left: 20px;
-        background: url("/public/images/logo.gif");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 50px;
-        height: 50px;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.4s;
-    }
+
 
     header #mobileNavToggle {
         display: flex;

@@ -348,6 +348,10 @@ footer {
     background-color: #3f4359;
     line-height: 1.5;
  }
+
+ footer p, a {
+    margin: 2%
+ }
  
  footer #footerChurchName, #helpInfo {
     width: 40%;
@@ -381,6 +385,11 @@ footer #footerChurchName, #helpInfo #networkLinks a:hover {
     opacity: 0.7;
 }
 
+footer #footerChurchName, #helpInfo #aditionalInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
  
  footer #footerChurchName, #releaseDate {
     display: flex;
@@ -410,19 +419,8 @@ footer #footerChurchName, #helpInfo #networkLinks a:hover {
     }
 
     #logo {
-        position: absolute;
-        left: 20px;
-        background: url("/public/images/logo.gif");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 50px;
-        height: 50px;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.4s;
+        width: 60px;
+        height: 60px;
     }
 
     header #mobileNavToggle {
@@ -518,19 +516,8 @@ footer #footerChurchName, #helpInfo #networkLinks a:hover {
     }
 
     #logo {
-        position: absolute;
-        left: 20px;
-        background: url("/public/images/logo.gif");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 50px;
-        height: 50px;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.4s;
+        width: 60px;
+        height: 60px;
     }
 
 
