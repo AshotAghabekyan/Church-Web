@@ -1,33 +1,58 @@
-import { createClient } from "redis";
-
+import { createClient } from '@redis/client';
 
 
 class RedisService {
-    #redisClient
+    #redisClient;
 
     constructor() {
-        createClient({
-            "url": `${process.env.internalRedisUrl}`,
-        }).connect()
-            .then((redisClient) => this.#redisClient = redisClient)
-            .catch((error) => console.log("redis connection error -->", error))
+        this.init()
+            .then(() => console.log("success connect to redis"))
+            .catch((error) => console.log("redis connection error", error));
     }
 
+    async init() {
+        try {
+            this.#redisClient = createClient({
+                url: process.env.externalRedisUrl
+            })
+            await this.#redisClient.connect();
+            this.#redisClient.on('error', (err) => {
+                console.error('Redis client error:', err);
+            });
+        } 
+        catch(error) {
+            console.log("redis error -_>", error);
+        }
+    }
 
     async setValue(key, value) {
-        const result = await this.#redisClient.set(String(key), JSON.stringify(value));
-        await this.#redisClient.sendCommand(["EXPIRE", String(key), "604800"])
-        return result;
+        try {
+            await this.#redisClient.set(String(key), JSON.stringify(value));
+            await this.#redisClient.sendCommand(["EXPIRE", String(key), "604800"]);
+        } catch (error) {
+            console.error('set value error', error);
+            throw error; 
+        }
     }
 
     async getValue(key) {
-        const targetValue = await this.#redisClient.get(key);
-        return JSON.parse(targetValue);
+        try {
+            const targetValue = await this.#redisClient.get(key);
+            return JSON.parse(targetValue);
+        } catch (error) {
+            console.error('get value error', error);
+            throw error;
+        }
     }
 
     async deleteValue(key) {
-        const result = await this.#redisClient.del(key);
-        return result;
+        try {
+            const result = await this.#redisClient.del(key);
+            return result;
+        } catch (error) {
+            console.error('delete value error', error);
+            throw error;
+        }
     }
 }
 
