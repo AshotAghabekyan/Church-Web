@@ -84,12 +84,10 @@ header a:hover {
 }
 
 #mobileNavToggle input:checked ~ label::before{
-    background-color: red;
     transform: rotatez(45deg)
 }
 
 #mobileNavToggle input:checked ~ label::after{
-    background-color: red;
     transform: rotatez(-45deg)
 }
 
@@ -108,12 +106,12 @@ header a:hover {
 #logo {
     position: absolute;
     left: 20px;
-    background: url("/public/images/churchLogo.png");
+    background: url("/public/images/white_NG_logo.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     margin: 0;
     display: flex;
     align-items: center;
@@ -201,6 +199,8 @@ main {
 
 main #backgroundBlock {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     min-height: 25rem;
     max-height: 30rem;
@@ -208,6 +208,13 @@ main #backgroundBlock {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%, 50%;
+    font-size: 22px;
+}
+
+main #backgroundBlock h1 {
+    color:white;
+    text-align: center;
+    font-size: 44px;
 }
 
 main #aboutDontation {
@@ -649,8 +656,8 @@ footer #footerChurchName, #helpInfo #networkLinks a:hover {
     }
 
     #logo {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
     }
 
     header #mobileNavToggle {
@@ -824,15 +831,16 @@ footer #footerChurchName, #helpInfo #networkLinks a:hover {
     }
 
     #logo {
-        width: 60px;
-        height: 60px;
+        width: 90px;
+        height: 90px;
     }
 
 
     main #backgroundBlock {
         min-height: 15rem;
         max-height: 15rem;
-        background-size: cover
+        background-size: cover;
+        font-size: 18px;
     }
 
     main #aboutDontation {

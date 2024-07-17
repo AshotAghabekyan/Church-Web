@@ -13,7 +13,8 @@ class RedisService {
     async init() {
         try {
             this.#redisClient = createClient({
-                url: process.env.externalRedisUrl
+                url: process.env.localRedisUrl,
+                database: process.env.redisDbIndex || 0,
             })
             await this.#redisClient.connect();
             this.#redisClient.on('error', (err) => {
@@ -21,7 +22,7 @@ class RedisService {
             });
         } 
         catch(error) {
-            console.log("redis error -_>", error);
+            console.log("redis error -->", error);
         }
     }
 

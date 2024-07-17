@@ -85,12 +85,10 @@ header a:hover {
 }
 
 #mobileNavToggle input:checked ~ label::before{
-    background-color: red;
     transform: rotatez(45deg)
 }
 
 #mobileNavToggle input:checked ~ label::after{
-    background-color: red;
     transform: rotatez(-45deg)
 }
 
@@ -110,12 +108,12 @@ header a:hover {
 #logo {
     position: absolute;
     left: 20px;
-    background: url("/public/images/churchLogo.png");
+    background: url("/public/images/white_NG_logo.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     margin: 0;
     display: flex;
     align-items: center;
@@ -218,7 +216,7 @@ main {
 }
 
 main #welcome h1 {
-    font-size: 40px;
+    font-size: 44px;
 }
 
 main #aboutServices {
@@ -453,8 +451,8 @@ footer #footerChurchName, #helpInfo #networkLinks a:hover {
     }
 
     #logo {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
     }
 
     header #mobileNavToggle {
@@ -566,8 +564,8 @@ footer #footerChurchName, #helpInfo #networkLinks a:hover {
     }
 
     #logo {
-        width: 60px;
-        height: 60px;
+        width: 90px;
+        height: 90px;
     }
 
     main #welcome {
@@ -578,7 +576,7 @@ footer #footerChurchName, #helpInfo #networkLinks a:hover {
     main #welcome h1 {
         margin-left: 5%;
         margin-right: 5%;
-        font-size: 25px;
+        font-size: 22px;
     }
     
     main #allServices #childrenService,
