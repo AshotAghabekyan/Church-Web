@@ -13,7 +13,7 @@ class RedisService {
     async init() {
         try {
             this.#redisClient = createClient({
-                url: process.env.internalRedisUrl,
+                url: process.env.localRedisUrl,
                 database: process.env.redisDbIndex || 0,
             })
             await this.#redisClient.connect();
