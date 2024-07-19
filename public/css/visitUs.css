@@ -41,10 +41,8 @@ main #mainInfo {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    min-height: 100vh;
+    width: 100%;
+    /* min-height: 100vh; */
 }
 
 main #mainInfo .infoBar {
@@ -66,7 +64,7 @@ main #serviceSchedule #scheduleInfo {
 }
 
 main #serviceSchedule #scheduleInfo h2 {
-    margin-top: 12%;
+    margin-top: 5%;
     margin-bottom: 0%;
 }
 
@@ -89,10 +87,13 @@ main #churchContactInfo a:hover {
 }
 
 main #churchContactInfo #contactUs, #churchAddress {
-    margin: 5%;
+    margin: 2%;
 }
 
-
+main #churchContactInfo #googleMap {
+    width: 100%;
+    height: 100%;
+}
  
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
