@@ -190,11 +190,23 @@ main #allServices #teenService .serviceBackground {
     background-size: cover;
 }
 
-main #allServices #childrenService, #homeGroups, #teenService h3 {
-    font-size: x-large;
+main #allServices #childrenService h3 {
+    font-size: xx-large;
+}
+main #allServices #homeGroups h3 {
+    font-size: xx-large;
+}
+main #allServices #teenService h3 {
+    font-size: xx-large;
 }
 
-main #allServices #childrenService, #homeGroups, #teenService p {
+main #allServices #childrenService p {
+    font-size: large;
+}
+main #allServices #homeGroups p {
+    font-size: large;
+}
+main #allServices #teenService p {
     font-size: large;
 }
 
