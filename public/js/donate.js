@@ -1,8 +1,6 @@
 "use strict"
 
-let bankTransferButton = document.getElementById("bankTransferButton");
 let bankTransferModal = document.getElementById("bankTransferModal");
-let closeBankModalBtn = document.getElementById("closeBankModal");
 
 
 function closeModal(modalId) {
@@ -17,10 +15,12 @@ function openModal(modalId) {
 
 }
 
+let bankTransferButton = document.getElementById("bankTransferButton");
 bankTransferButton.onclick = function() {
     openModal("bankTransferModal")
 }
 
+let closeBankModalBtn = document.getElementById("closeBankModal");
 closeBankModalBtn.addEventListener("click", function(event) {
     closeModal("bankTransferModal");
 })
@@ -80,7 +80,7 @@ window.onclick = function(event) {
 
 
 
-let electronicWalletButton = document.getElementById("electrnicWalletDonate");
+let electronicWalletButton = document.getElementById("electronicWalletButton");
 let closeElectronicWalletButton = document.getElementById("closeQRCodeModal");
 
 electronicWalletButton.onclick = function() {

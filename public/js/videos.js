@@ -44,6 +44,8 @@ function loadYouTubeIframe(videoId, container) {
     container.appendChild(iframe);
 }
 
+
+
 async function displayVideos() {
     let allVideos = await getAllVideos();
     if (!allVideos) {
