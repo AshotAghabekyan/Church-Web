@@ -67,27 +67,22 @@ main #aboutDontation h1 {
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    min-height: 100vh;
-}
-
-.donationVariant {
-    /* width: calc(100%/3); */
     height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    color:white;
 }
 
-#personally {
-    width: 33%;
-    background-color: #3f4359;
-    color: white;
-    padding-top:2%;
-    padding-bottom: 2%;
+
+#donationVariants button {
+    width: 45%;
+    height: 20%;
+    border-radius: 15px;
+    transition: 0.4s;
+    font-size: 25px;
+    font-family: 'bainsley';
+    color: #3f4359;
+    background-color: #FFFFFF;
+    border: 0px solid #FFFFFF;
 }
+
 
 #donationVariants h2 {
     font-size: 24px;
@@ -96,15 +91,44 @@ main #aboutDontation h1 {
     font-size: 18px;
 }
 
-#personallyIcon {
-    width: 34%;
-    background-color: #66697a;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+
+#donationVariants button:hover {
+    color: #FFFFFF;
+    background-color: #3f4359;
 }
 
+
+.donationVariant {
+    width: calc(100%/3);
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color:white;
+}
+
+
+.donationVariant p, h2 {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+
+#personally {
+    background-color: #3f4359;
+    color: white;
+    padding-top:2%;
+    padding-bottom: 2%;
+}
+
+
+
 #bankTransfer {
-    width: 33%;
+    /* width: 33%; */
     background-color: #ff6a48;
     color: white;
     padding-top: 2%;
@@ -221,51 +245,8 @@ main #aboutDontation h1 {
 
 
 
-#cashDonateIcon {
-    width: 33%;
-    background-color: #846d8d;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-#bankTransferIcon {
-    width: 33%;
-    background-color: #ff6a48d9;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.donationVariant p, h2 {
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.donationVariant button {
-    width: 40%;
-    height: 35px;
-    transition: 0.4s;
-}
-
-#donationVariants button {
-    width: 45%;
-    height: 20%;
-    border-radius: 15px;
-    transition: 0.4s;
-    font-size: 25px;
-    font-family: 'bainsley';
-    color: #3f4359;
-    background-color: #FFFFFF;
-    border: 0px solid #FFFFFF;
-}
-
-#donationVariants button:hover {
-    color: #FFFFFF;
-    background-color: #3f4359;
-}
-
 #electronicWallet {
-    width: 34%;
+    /* width: 30%; */
     background-color: #6a4e77;
     background-repeat: no-repeat;
     background-size: cover;
@@ -423,16 +404,17 @@ main #aboutDontation h1 {
         flex-grow: 1;
     }
 
-    #personallyIcon,
-    #cashDonateIcon,
-    #bankTransferIcon{
-        display: none;
-    }
 
-    .donationVariant button {
+    #donationVariants button {
         width: 30%;
-        height: 60px;
-        font-size: 20px;
+        height: 50px;
+        border-radius: 15px;
+        transition: 0.4s;
+        font-size: 25px;
+        font-family: 'bainsley';
+        color: #3f4359;
+        background-color: #FFFFFF;
+        border: 0px solid #FFFFFF;
     }
 
     #bankTransferModal {
@@ -525,6 +507,10 @@ main #aboutDontation h1 {
         font-size: 18px;
     }
 
+    main #backgroundBlock h1 {
+        font-size: 32px;
+    }
+
     main #aboutDontation {
         width: 90%;
         margin-left: 5%;
@@ -543,9 +529,21 @@ main #aboutDontation h1 {
 
     
     #donationVariants {
+        width: 100%;
         flex-direction: column;
-        margin-bottom: 0%;
+        margin-top: 5%;
+    }
 
+    #donationVariants button {
+        width: 45%;
+        height: 40px;
+        border-radius: 15px;
+        transition: 0.4s;
+        font-size: 25px;
+        font-family: 'bainsley';
+        color: #3f4359;
+        background-color: #FFFFFF;
+        border: 0px solid #FFFFFF;
     }
 
     .donationVariant {
@@ -555,16 +553,7 @@ main #aboutDontation h1 {
         flex-grow: 1;
     }
 
-    #personallyIcon,
-    #cashDonateIcon,
-    #bankTransferIcon{
-        display: none;
-    }
 
-    .donationVariant button {
-        width: 60%;
-        height: 50px;
-    }
 
     #bankTransferModal {
         height: auto;

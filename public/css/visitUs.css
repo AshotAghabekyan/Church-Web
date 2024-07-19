@@ -116,8 +116,11 @@ main #churchContactInfo #googleMap {
         height: min-content;
     }
 
-    main #churchContactInfo  {
-        display: none;
+
+    main #churchContactInfo #googleMap {
+        width: 100%;
+        height: max-content;
+        flex-grow: 1;
     }
  }
 
@@ -143,8 +146,13 @@ main #churchContactInfo #googleMap {
         width: 100%;
     }
 
-    main #churchContactInfo {
+    main #churchContactInfo #contactUs, #churchAddress {
         display: none;
+    }
+
+    main #churchContactInfo #googleMap {
+        width: 100%;
+        height: 300px;
     }
 
 }
