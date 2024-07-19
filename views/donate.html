@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>նվիրաբերել</title>
     <link rel="stylesheet" href="/public/css/donate.css" type="text/css">
 </head>
+
 <body>
     <header>
         <div class="navBar" id="logo"></div>
         <div class="navBar"><b><a href="/church">Եկեղեցի</a></b></div>
         <div class="navBar"><b><a href="/our_services">Ծառայություններ</a></b></div>
-        <div class="navBar"><b><a href="/videos">Վիդեոներ</a></b></div>
+        <div class="navBar"><b><a href="/videos">Տեսանյութեր</a></b></div>
         <div class="navBar"><b><a href="/donation">Նվիրաբերել</a></b></div>
         <div class="navBar"><b><a href="/visitUs">Այցելեք մեզ</a></b></div>
         <div id="mobileNavToggle">
             <input id="toggle" type="checkbox">
             <label id="toggleLabel" for="toggle"></label>
-        </div>  
-        
+        </div>
+
     </header>
-    
+
     <div id="modalWrapper">
         <div class="modal-content" id="myModal">
-            <div><p><a href="/"><b>Սկիզբ</b></a></p></div>
-            <div><p><a href="/church"><b>Եկեղեցի</b></a></p></div>
-            <div><p><a href="/our_services"><b>Ծառայություններ</b></a></p></div>
-            <div><p><a href="/videos"><b>Վիդեոներ</b></a></p></div>
-            <div><p><a href="/donation"><b>Նվիրաբերել</b></a></p></div>
-            <div><p><a href="/visitUs"><b>Այցելեք մեզ</b></a></p></div>
+            <div>
+                <p><a href="/"><b>Սկիզբ</b></a></p>
+            </div>
+            <div>
+                <p><a href="/church"><b>Եկեղեցի</b></a></p>
+            </div>
+            <div>
+                <p><a href="/our_services"><b>Ծառայություններ</b></a></p>
+            </div>
+            <div>
+                <p><a href="/videos"><b>Տեսանյութեր</b></a></p>
+            </div>
+            <div>
+                <p><a href="/donation"><b>Նվիրաբերել</b></a></p>
+            </div>
+            <div>
+                <p><a href="/visitUs"><b>Այցելեք մեզ</b></a></p>
+            </div>
         </div>
-    </div>    
+    </div>
     <main>
 
         <div id="backgroundBlock">
@@ -46,217 +60,232 @@
             <h2>
                 Եվ թագավորը կպատասխանի ու նրանց կասի. «Ճշմարիտ եմ ասում ձեզ.
                 քանի որ իմ այս փոքր եղբայրներից մեկին արեցիք, ի՛նձ արեցիք»։
-
+                <br>
                 Մաթևոս 25:40
             </h2>
         </div>
 
 
-            <div id="donationVariants">
-
-                <div id="personally" class="donationVariant">
-                    <h2>ԱՆՁԱՄԲ</h2>
-                    <p>
-                        Դուք կարող եք այցելել եկեղեցի կիրակնօրյա ծառայություններին
-                        և անձամբ կատարել նվիրատվություն 
-                    </p>
-                </div>
-
-                <div id="personallyIcon" class="donationVariant"></div>
-
-                <div id="bankTransfer" class="donationVariant">
-                    <h2>ԲԱՆԿԱՅԻՆ ՓՈԽԱՆՑՈՒՄՈՎ</h2>
-                    <p>
-                        Կարող եք կատարել բանկային փոխանցում
-                        մեր հաշվեհամարներից որևէ մեկին
-                    </p>
-                    <button id="bankTransferButton">ՆՎԻՐԱԲԵՐԵԼ</button>
-                </div>
-
-                <div id="cashDonateIcon" class="donationVariant"></div>
-
-                <div id="electronicWallet" class="donationVariant">
-                    <h2>Էլեկտրոնային Դրամապանակով</h2>
-                    <p>
-                        Կարող եք փոխանցում անել Idram, EasyWallet կամ
-                        Telcell Wallet էլեկտրոնային դրամապանակներին
-                    </p>
-
-                    <button id="electrnicWalletDonate">ՆՎԻՐԱԲԵՐԵԼ</button>
-                </div>
-
-                <div id="bankTransferIcon" class="donationVariant"></div>
+        <div id="donationVariants">
+            <div id="personally" class="donationVariant">
+                <h2>ԱՌՁԵՌՆ</h2>
+                <p>
+                    Դուք կարող եք այցելել եկեղեցի կիրակնօրյա ծառայություններին
+                    և անձամբ կատարել նվիրատվություն
+                </p>
             </div>
-            
+
+            <div id="personallyIcon" class="donationVariant"></div>
+
+            <div id="bankTransfer" class="donationVariant">
+                <h2>ԲԱՆԿԱՅԻՆ ՓՈԽԱՆՑՈՒՄՈՎ</h2>
+                <p>
+                    Կարող եք կատարել բանկային փոխանցում
+                    մեր հաշվեհամարներից որևէ մեկին
+                </p>
+                <button id="donateButtonDark">Նվիրաբերել</button>
+            </div>
+
+            <div id="cashDonateIcon" class="donationVariant"></div>
+
+            <div id="electronicWallet" class="donationVariant">
+                <h2>Էլեկտրոնային Դրամապանակով</h2>
+                <p>
+                    Կարող եք փոխանցում անել Idram, EasyWallet կամ
+                    Telcell Wallet էլեկտրոնային դրամապանակներին
+                </p>
+
+                <button id="donateButtonLight">Նվիրաբերել</button>
+            </div>
+
+            <div id="bankTransferIcon" class="donationVariant"></div>
+        </div>
 
 
 
 
-            <div id="bankTransferModal">
-                <div class="donation-modal-content">
-                    <span id="closeBankModal" class="closeModal">&times;</span>
-                    <div class="modal-buttons">
-                        <button id="dollarDonateButton">ԱՄՆ Դոլարով</button>
-                        <button id="euroDonateButton">EURO-ով</button>
-                        <button id="rubleDonateButton">Ռուբլիով</button>
+
+        <div id="bankTransferModal">
+            <div class="donation-modal-content">
+                <span id="closeBankModal" class="closeModal">&times;</span>
+                <div class="modal-buttons">
+                    <button id="dollarDonateButton">ԱՄՆ Դոլարով</button>
+                    <button id="euroDonateButton">EURO-ով</button>
+                    <button id="rubleDonateButton">Ռուբլիով</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="usdBankTransferModal">
+            <div class="donation-modal-content">
+                <span id="closeUSDBankModal" class="closeModal">&times;</span>
+                <h2>ԱՄՆ Դոլարով</h2>
+                <p><strong>NAME:</strong> RAIFFEISEN BANK INTERNATIONAL AG</p>
+                <p><strong>ADDRESS:</strong> Am Stadtpark 9 A -1030, Vienna Austria</p>
+                <p><strong>SWIFT:</strong> RZBAATWW</p>
+                <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
+
+                <h3>Beneficiary's Bank</h3>
+                <p><strong>NAME:</strong> "TIGRAN METS" BRANCH of "ARMECONOMBANK" OJSC</p>
+                <p><strong>ADDRESS:</strong> Republic of Armenia, 49 and 49 Bld.1, Tigran Mets Str, Yerevan, 0018, RA
+                </p>
+                <p><strong>SWIFT:</strong> ARECAM 22</p>
+                <p><strong>NAME:</strong> New generation church</p>
+                <p><strong>BENEFICIARY’S ACCOUNT N:</strong> 163288293216 (USD)</p>
+            </div>
+        </div>
+
+
+        <div id="euroBankTransferModal">
+            <div class="donation-modal-content">
+                <span id="closeEUROBankModal" class="closeModal">&times;</span>
+                <h2>EURO-ով</h2>
+                <p><strong>NAME:</strong> RAIFFEISEN BANK INTERNATIONAL AG</p>
+                <p><strong>ADDRESS:</strong> Am Stadtpark 9 A -1030, Vienna Austria</p>
+                <p><strong>SWIFT:</strong> RZBAATWW</p>
+                <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
+
+                <h3>Beneficiary's Bank</h3>
+                <p><strong>NAME:</strong> "TIGRAN METS" BRANCH of "ARMECONOMBANK" OJSC</p>
+                <p><strong>ADDRESS:</strong> Republic of Armenia, 49 and 49 Bld.1, Tigran Mets Str, Yerevan, 0018, RA
+                </p>
+                <p><strong>SWIFT:</strong> ARECAM 22</p>
+                <p><strong>NAME:</strong> New generation church</p>
+                <p><strong>BENEFICIARY’S ACCOUNT N:</strong> 163288293216 (EURO)</p>
+            </div>
+        </div>
+
+
+        <div id="rubleBankTransferModal">
+            <div class="donation-modal-content">
+                <span id="closeRUBLEBankModal" class="closeModal">&times;</span>
+                <h2>Ռուբլիով</h2>
+                <p><strong>NAME:</strong> Межгосударственный банк</p>
+                <p><strong>ADDRESS:</strong> 115162, г. Москва, ул. Шухова, 15</p>
+                <p><strong>SWIFT:</strong> INEARUMM</p>
+                <p>К/С 30101810800000000362, БИК 044525362</p>
+                <p>ИНН 7700076777</p>
+                <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
+
+                <h3>БАНК ПОЛУЧАТЕЛЯ</h3>
+                <p><strong>NAME:</strong> "АРМЭКОНОМБАНК (ОАО), ФИЛИАЛ "ТИГРАН МЕЦ"</p>
+                <p><strong>ADDRESS:</strong>Армения, 0018, г Ереван, пр. Тигран Мецца, дом 49, строения 1</p>
+                <p><strong>SWIFT:</strong> ARECAM 22</p>
+                <strong>ПОЛУЧАТЕЛ</strong>
+                <p><strong>NAME:</strong> New generation church</p>
+                <p><strong>BENEFICIARY’S ACCOUNT N:</strong>BENEFICIARY’S ACCOUNT N: 163288293232 (RUR)</p>
+            </div>
+        </div>
+
+
+
+
+
+        <div id="qrCodeModal">
+            <div id="modalHeader">
+                <span id="closeQRCodeModal">&times;</span>
+                <h2>ՆՎԻՐԱՏՎՈՒԹՅՈՒՆ ԷԼԵԿՏՐՈՆԱՅԻՆ ԴՐԱՄԱՊԱՆԱԿՈՎ</h2>
+            </div>
+
+            <div id="qr-codes">
+                <div class="qr-code">
+                    <div id="idramQr">
+                        <button>Idram</button>
+                    </div>
+                </div>
+                <div class="qr-code">
+                    <div id="easyWalletQr">
+                        <button>EasyWallet</button>
+                    </div>
+                </div>
+                <div class="qr-code">
+                    <div id="telcellWalletQr">
+                        <button>TelcellWallet</button>
                     </div>
                 </div>
             </div>
+        </div>
 
 
 
 
-            <div id="usdBankTransferModal">
-                <div class="donation-modal-content">
-                    <span id="closeUSDBankModal" class="closeModal">&times;</span>
-                    <h2>ԱՄՆ Դոլարով</h2>
-                    <p><strong>NAME:</strong> RAIFFEISEN BANK INTERNATIONAL AG</p>
-                    <p><strong>ADDRESS:</strong> Am Stadtpark 9 A -1030, Vienna Austria</p>
-                    <p><strong>SWIFT:</strong> RZBAATWW</p>
-                    <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
-            
-                    <h3>Beneficiary's Bank</h3>
-                    <p><strong>NAME:</strong> "TIGRAN METS" BRANCH of "ARMECONOMBANK" OJSC</p>
-                    <p><strong>ADDRESS:</strong> Republic of Armenia, 49 and 49 Bld.1, Tigran Mets Str, Yerevan, 0018, RA</p>
-                    <p><strong>SWIFT:</strong> ARECAM 22</p>
-                    <p><strong>NAME:</strong> New generation church</p>
-                    <p><strong>BENEFICIARY’S ACCOUNT N:</strong> 163288293216 (USD)</p>
+        <div class="qrModal" id="easyWalletModal">
+            <div class="donation-modal-content">
+                <div class="modal-header">
+                    <h2>Easy Wallet ID: 12345678</h2>
+                    <button id="closeEasyWalletModalBtn">&times;</button>
                 </div>
+                <div class="qrCodeBackground"></div>
             </div>
+        </div>
 
-            
-            <div id="euroBankTransferModal">
-                <div class="donation-modal-content">
-                    <span id="closeEUROBankModal" class="closeModal">&times;</span>
-                    <h2>EURO-ով</h2>
-                    <p><strong>NAME:</strong> RAIFFEISEN BANK INTERNATIONAL AG</p>
-                    <p><strong>ADDRESS:</strong> Am Stadtpark 9 A -1030, Vienna Austria</p>
-                    <p><strong>SWIFT:</strong> RZBAATWW</p>
-                    <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
-            
-                    <h3>Beneficiary's Bank</h3>
-                    <p><strong>NAME:</strong> "TIGRAN METS" BRANCH of "ARMECONOMBANK" OJSC</p>
-                    <p><strong>ADDRESS:</strong> Republic of Armenia, 49 and 49 Bld.1, Tigran Mets Str, Yerevan, 0018, RA</p>
-                    <p><strong>SWIFT:</strong> ARECAM 22</p>
-                    <p><strong>NAME:</strong> New generation church</p>
-                    <p><strong>BENEFICIARY’S ACCOUNT N:</strong> 163288293216 (EURO)</p>
+        <div class="qrModal" id="idramModal">
+            <div class="donation-modal-content">
+                <div class="modal-header">
+                    <h2>Idram ID: 12345678</h2>
+                    <button id="closeIdramModalBtn">&times;</button>
                 </div>
+                <div class="qrCodeBackground"></div>
             </div>
+        </div>
 
-            
-            <div id="rubleBankTransferModal">
-                <div class="donation-modal-content">
-                    <span id="closeRUBLEBankModal" class="closeModal">&times;</span>
-                    <h2>Ռուբլիով</h2>
-                    <p><strong>NAME:</strong> Межгосударственный банк</p>
-                    <p><strong>ADDRESS:</strong> 115162, г. Москва, ул. Шухова, 15</p>
-                    <p><strong>SWIFT:</strong> INEARUMM</p>
-                    <p>К/С 30101810800000000362, БИК 044525362</p>
-                    <p>ИНН 7700076777</p>
-                    <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
-            
-                    <h3>БАНК ПОЛУЧАТЕЛЯ</h3>
-                    <p><strong>NAME:</strong> "АРМЭКОНОМБАНК (ОАО), ФИЛИАЛ "ТИГРАН МЕЦ"</p>
-                    <p><strong>ADDRESS:</strong>Армения, 0018, г Ереван, пр. Тигран Мецца, дом 49, строения 1</p>
-                    <p><strong>SWIFT:</strong> ARECAM 22</p>
-                    <strong>ПОЛУЧАТЕЛ</strong>
-                    <p><strong>NAME:</strong> New generation church</p>
-                    <p><strong>BENEFICIARY’S ACCOUNT N:</strong>BENEFICIARY’S ACCOUNT N: 163288293232 (RUR)</p>
+        <div class="qrModal" id="telcellWalletModal">
+            <div class="donation-modal-content">
+                <div class="modal-header">
+                    <h2>Wallet ID: 12345678</h2>
+                    <button id="closeTellCellWalletModal">&times;</button>
                 </div>
+                <div class="qrCodeBackground"></div>
             </div>
-
-
-
-
-
-            <div id="qrCodeModal">
-                <div id="modalHeader">
-                    <span id="closeQRCodeModal">&times;</span>
-                    <h2>ՆՎԻՐԱՏՎՈՒԹՅՈՒՆ ԷԼԵԿՏՐՈՆԱՅԻՆ ԴՐԱՄԱՊԱՆԱԿՈՎ</h2>
-                </div>    
-
-                <div id="qr-codes">
-                    <div class="qr-code">
-                        <div id="idramQr">
-                            <button>Idram</button>
-                        </div>
-                    </div>
-                    <div class="qr-code">
-                        <div id="easyWalletQr">
-                            <button>EasyWallet</button>
-                        </div>
-                    </div>
-                    <div class="qr-code">
-                        <div id="telcellWalletQr">
-                            <button>TelcellWallet</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-            <div class="qrModal" id="easyWalletModal">
-                <div class="donation-modal-content">
-                    <div class="modal-header">
-                        <h2>Easy Wallet ID: 12345678</h2>
-                        <button id="closeEasyWalletModalBtn">&times;</button>
-                    </div>
-                    <div class="qrCodeBackground"></div>
-                </div>
-            </div>
-
-            <div class="qrModal" id="idramModal">
-                <div class="donation-modal-content">
-                    <div class="modal-header">
-                        <h2>Idram ID: 12345678</h2>
-                        <button id="closeIdramModalBtn">&times;</button>
-                    </div>
-                    <div class="qrCodeBackground"></div>
-                </div>
-            </div>
-
-            <div class="qrModal" id="telcellWalletModal">
-                <div class="donation-modal-content">
-                    <div class="modal-header">
-                        <h2>Wallet ID: 12345678</h2>
-                        <button id="closeTellCellWalletModal">&times;</button>
-                    </div>
-                    <div class="qrCodeBackground"></div>
-                </div>
-            </div>
+        </div>
     </main>
 
     <footer>
         <div id="footerChurchName">
             <p>
-            ԵՐԵՎԱՆԻ
-            ՆՈՐ ՍԵՐՈՒՆԴ
-            ԵԿԵՂԵՑԻ
+                ԵՐԵՎԱՆԻ
+                ՆՈՐ ՍԵՐՈՒՆԴ
+                ԵԿԵՂԵՑԻ
             </p>
         </div>
-        
+
         <div id="helpInfo">
             <div id="networkLinks">
-                <a href="https://www.facebook.com/newgenerationchurch.am" target="_blank"><div><img src="/public/images/facebook.png"><p>Facebook</p></div></a>
-                <a href="https://www.instagram.com/newgeneration_arm/" target="_blank"><div><img src="/public/images/instagram.png"><p>Instagram</p></div></a>
-                <a href="https://t.me/newgenerationarmenia" target="_blank"><div><img src="/public/images/telegram.png"><p>Telegram</p></div></a>
+                <a href="https://www.facebook.com/newgenerationchurch.am" target="_blank">
+                    <div><img src="/public/images/facebook.png">
+                        <p>Facebook</p>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/newgeneration_arm/" target="_blank">
+                    <div><img src="/public/images/instagram.png">
+                        <p>Instagram</p>
+                    </div>
+                </a>
+                <a href="https://t.me/newgenerationarmenia" target="_blank">
+                    <div><img src="/public/images/telegram.png">
+                        <p>Telegram</p>
+                    </div>
+                </a>
             </div>
             <div id="aditionalInfo">
-                <div><p>Ք. Երևան, Տիգրան Մեծի պողոտա 80/1</p></div>
-                <div><p>+374 10 571 633</p></div>
+                <div>
+                    <p>Ք. Երևան, Տիգրան Մեծի պողոտա 80/1</p>
+                </div>
+                <div>
+                    <p>+374 10 571 633</p>
+                </div>
             </div>
         </div>
-        
+
         <div id="releaseDate">
             <p>©2023 Երևանի Նոր Սերունդ եկեղեցի.</p>
         </div>
     </footer>
     <script src="/public/js/header.js"></script>
-    <script src="/public/js/donate.js"></script>    
+    <script src="/public/js/donate.js"></script>
 </body>
+
 </html>
-
-
-
