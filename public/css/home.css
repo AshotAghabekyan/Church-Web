@@ -308,12 +308,12 @@ main #donation #toDontationPage button:hover {
 
 
     main #ourVideos {
-        min-height: 25rem;
+        min-height: 20rem;
     }
 
     main #ourVideos #controlWrapper {
-        min-height: 30rem;
-        max-height: 30rem;
+        min-height: 20rem;
+        max-height: 20rem;
         width: 100%;
         align-items: center;
         justify-content: space-evenly;
