@@ -119,7 +119,7 @@ main #aboutDontation h1 {
 
 
 #personally {
-    background-color: #3f4359;
+    background-color:  #66697a;
     color: white;
     padding-top:2%;
     padding-bottom: 2%;
@@ -535,20 +535,21 @@ main #aboutDontation h1 {
     }
 
     #donationVariants button {
-        width: 45%;
-        height: 40px;
-        border-radius: 15px;
-        transition: 0.4s;
-        font-size: 25px;
-        font-family: 'bainsley';
+        width: 60%;
+        height: 80px;
         color: #3f4359;
         background-color: #FFFFFF;
         border: 0px solid #FFFFFF;
+        border-radius: 15px;
+        transition: 0.4s;
+        font-size: 30px;
+        font-family: 'bainsley';
+        margin-bottom: 10%;
     }
 
     .donationVariant {
         width: 100%;
-        min-height: 15rem;
+        min-height: 20rem;
         height: max-content;
         flex-grow: 1;
     }
