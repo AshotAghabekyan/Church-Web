@@ -1,11 +1,5 @@
 "use strict"
 
-let manualDonateButton = document.getElementById("manualDonate");
-manualDonateButton.addEventListener("click", () => {
-    window.location.href = "/visitUs";
-})
-
-
 let bankTransferModal = document.getElementById("bankTransferModal");
 
 

@@ -4,21 +4,20 @@
 
 async function getAllVideos() {
     try {
-        return new Promise((resolve, reject) => {
-            fetch("/videos/4", {
-                "mode": "no-cors",
-            })
-            .then((response) => response.json())
-            .then(parsedResponse => resolve(parsedResponse))
-            .catch((error) => reject())
-        })
+        const response = await fetch("/videos/4", {
+            "mode": "no-cors",
+        });
+        const parsedResponse = await response.json();
+        if (response.status != 200) {
+            throw new Error(response);
+        }
+        return parsedResponse;
     }
     catch(error) {
         console.log(error);
         return null;
     }
 }
-
 
 function videosNotFoundHandler() {
     let videosBlock = document.getElementById("videos");
@@ -27,7 +26,7 @@ function videosNotFoundHandler() {
     const errorText = `Vidoes not found, try again later`
     const textContainer = document.createElement("p");
     textContainer.style.fontSize = "30px";
-    textContainer.style.color = "#3f4359";
+    textContainer.style.color = "#3f4359"
     const errorTextDiv = document.createElement("div");
     errorTextDiv.style.display = "flex";
     errorTextDiv.style.justifyContent = "center";

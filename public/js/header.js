@@ -6,22 +6,17 @@ const modalWrapper = document.getElementById("modalWrapper");
 
 toggleCheckbox.onchange = function(event) {
     if (toggleCheckbox.checked) {
-        const modalMenu = document.getElementById("myModal");
+        const modalMenu = document.getElementById("myModal")
         toggleLabel.style.position = "fixed";
         modalMenu.style.display = "flex";
         modalWrapper.style.display = "flex";
-    } else {
+    } 
+    else {
         toggleLabel.style.position = "absolute";
-        const modalMenu = document.getElementById("myModal");
-        modalMenu.classList.add("slideOut"); 
-        setTimeout(() => {
-            modalMenu.classList.remove("slideOut"); 
-            modalMenu.style.display = "none";
-            modalWrapper.style.display = "none";
-        }, 500); 
+        document.getElementById("myModal").style.display = "none";
+        document.getElementById("modalWrapper").style.display = "none";
     }
-};
-
+}
 
 
 modalWrapper.addEventListener("click", (event) => {
