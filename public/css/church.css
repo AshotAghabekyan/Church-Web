@@ -17,6 +17,7 @@ body, html {
 
 main {
     line-height: 1.5;
+    min-height: 100vh;
 }
 
 #welcome {
@@ -51,7 +52,6 @@ main {
     z-index: -1;
     overflow: hidden;
 }
-
 
 
 #churchInfo {
@@ -93,6 +93,8 @@ main {
     justify-content: center;
 }
 
+
+
 #basicFaith .bibleTextSection {
     margin-top: 2%;
     text-align: left;
@@ -101,8 +103,15 @@ main {
 }
 
 
-#ourTeam {
-    width: 80%;
+#more-less-btn {
+    display: none;
+}
+
+
+
+#Pastor{
+    width: 90%;
+    height: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,27 +120,18 @@ main {
     margin-right: 5%;
 }
 
-#ourTeam > h2 {
-    margin-left: 5%;
-}
-
-#Pastor {
-    width: auto;
-    margin-left: 5%;
-    justify-content: left;
-}
 
 #Pastor .personImage {
     background-image: url('/public/images/pastor.webp');
+    background-size: contain;
     background-position-x: left;
     background-position-y: center;
     height: 20rem;
     background-repeat: no-repeat;
-    background-size: contain;
 }
 
 
-#ourTeam .info {
+#Pastor .info {
     line-height: 0.5; 
 }
 
@@ -175,12 +175,14 @@ main {
         font-size: 18px;
     }
 
-    #ourTeam .info {
-        font-size: 20px;
+    .bibleTextWrapper {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.5;
     }
 
-    #ourTeam .personImage {
-        height: 20vh;
+    #Pastor .personImage {
+        height: 40rem;
     }
 
 }
@@ -219,9 +221,24 @@ main {
     .bibleTextWrapper {
         display: flex;
         flex-direction: column;
-        width: 100%;
         line-height: 1.5;
     }
+
+    .hiddenText {
+        display: none;
+    }
+
+    .visible {
+        display: block; 
+    }
+
+     #more-less-btn {
+        display: flex;
+        height: 30px;
+        width: 70px;
+        margin-left: 15%;
+    } 
+
     
     #basicFaith .bibleTextSection {
         margin-top: 2%;
@@ -233,32 +250,22 @@ main {
         box-sizing: border-box;
     }
 
-    #ourTeam {
-        width: 100%;
-        margin: 0;
+    #Pastor{
+        width: 90%;
+        height: 20rem;
     }
-
-    #ourTeam > h2 {
-        margin-left: 10%;
-    }
-
-    #Pastor {
-        margin-left: 0%;
-    }
-
+    
+    
     #Pastor .personImage {
-        height: 30rem;
-        width: 100%;
+        background-image: url('/public/images/pastor.webp');
+        background-size: contain;
+        background-position-x: left;
+        background-position-y: center;
+        height: 20rem;
         background-repeat: no-repeat;
-        background-position: 50%, 50%;
-        background-size: cover;
     }
 
-    #ourTeam .info {
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
+
 
 
     #churchInfo .textPoint {
