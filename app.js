@@ -12,34 +12,29 @@ app.use(cors({
     "origin": "http://localhost:3000"
 }));
 
-// app.use((req, res, next) => {
-//     res.setHeader("Content-Security-Policy", "default-src *; style-src *; frame-src https://www.youtube.com/");
-//     // res.setHeader("Access-Control-Allow-Origin", 'https://church-web.onrender.com;  http//:localhost:3000');
-//     next();
-// });
 
 app.use("/public", express.static(path.resolve("public")));
 app.use('/videos', videoRouter)
 
 
 app.get("/", function(request, response) {
-    response.sendFile(path.resolve("views/home.html"));
+    response.sendFile(path.resolve("public/views/home.html"));
 })
 
 app.get("/church", function(request, response) {
-    response.sendFile(path.resolve("views/church.html"));
+    response.sendFile(path.resolve("public/views/church.html"));
 })
 
 app.get("/our_services", function(request, response) {
-    response.sendFile(path.resolve("views/services.html"));
+    response.sendFile(path.resolve("public/views/services.html"));
 })
 
 app.get("/donation", function(request, response) {
-    response.sendFile(path.resolve('views/donate.html'));
+    response.sendFile(path.resolve('public/views/donate.html'));
 })
 
 app.get("/visitUs", function(request, response) {
-    response.sendFile(path.resolve('views/visitUs.html'));
+    response.sendFile(path.resolve('public/views/visitUs.html'));
 })
 
 app.listen(process.env.PORT, function() {
