@@ -24,7 +24,7 @@ class VideoApiController {
 
     getVideosPageHTML(req, res) {
         try {
-            return res.sendFile(path.resolve("views/videos.html"));
+            return res.sendFile(path.resolve("public/views/videos.html"));
         } catch(error) {
             console.log("cannot send html file -->", error);
             return res.status(500).json({message: "server internal error"});
