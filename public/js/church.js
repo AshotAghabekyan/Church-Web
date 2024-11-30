@@ -12,7 +12,7 @@ toggleBtn.addEventListener("click", function() {
             elem.classList.toggle('visible');
             elem.classList.remove("hiddenText");
         });
-        toggleBtn.innerText = "Less";
+        toggleBtn.innerText = "Փակել";
     }
     else {
         textWrapper.classList.add("collapsed");
@@ -20,7 +20,7 @@ toggleBtn.addEventListener("click", function() {
             elem.classList.toggle('visible');
             elem.classList.add("hiddenText");
         });
-        window.scroll({"top": 0, "behavior": "smooth"});
-        toggleBtn.innerText = "More";
+        window.scroll({"top": "500", "behavior": "smooth"});
+        toggleBtn.innerText = "Ավելին";
     }
 });
