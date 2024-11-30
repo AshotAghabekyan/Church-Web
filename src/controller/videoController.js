@@ -1,6 +1,7 @@
 import videoService from "../service/videoService.js";
 import path from "path";
 
+
 class VideoApiController {
     #videoService;
 
@@ -22,10 +23,36 @@ class VideoApiController {
         }
     }
 
-    getVideosPageHTML(req, res) {
+
+    async getVideoById(req, res) {
+        try {
+            const id = req.params.id;
+            const videos = await this.#videoService.getVideos(4);
+            const targetVideo = videos.find((video) => video.snippet.resourceId.videoId == id);
+            res.status(200).json({video: targetVideo});
+        }
+        catch(error) {
+            console.error(error);
+            res.status(500).json({message: 'server internal error'})
+        }
+    }
+
+
+    mainPage(req, res) {
         try {
             return res.sendFile(path.resolve("public/views/videos.html"));
         } catch(error) {
+            console.log("cannot send html file -->", error);
+            return res.status(500).json({message: "server internal error"});
+        }
+    }
+
+
+    pageById(req, res) {
+        try {
+            return res.sendFile(path.resolve("public/views/video.html"));
+        }
+        catch(error) {
             console.log("cannot send html file -->", error);
             return res.status(500).json({message: "server internal error"});
         }

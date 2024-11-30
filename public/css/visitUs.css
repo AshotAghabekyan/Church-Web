@@ -9,6 +9,10 @@ body, html {
     font-family: 'bainsley';
 }
 
+body {
+    display: none;
+}
+
 :root {
     --animation-curve: cubic-bezier(1,0,0,1)
 }
@@ -42,8 +46,9 @@ main #mainInfo {
     justify-content: center;
     flex-direction: row;
     width: 100%;
-    /* min-height: 100vh; */
 }
+
+
 
 main #mainInfo .infoBar {
     flex-direction: column;
@@ -82,9 +87,19 @@ main #churchContactInfo a {
     color: #6a4e77
 }
 
-main #churchContactInfo a:hover {
-    opacity: 0.7;
+@media (hover:hover) {
+    main #churchContactInfo a:hover {
+        opacity: 0.7;
+    }
 }
+
+
+@media(hover:none) {
+    main #churchContactInfo a:active {
+        opacity: 0.7;
+    }
+}
+
 
 main #churchContactInfo #contactUs, #churchAddress {
     margin: 2%;
@@ -158,3 +173,7 @@ main #churchContactInfo #googleMap {
     }
 
 }
+
+
+
+
