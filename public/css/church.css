@@ -83,6 +83,7 @@ main {
     background-color: #5B4565;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 #basicFaith h3 {
@@ -96,17 +97,26 @@ main {
     flex-direction: row;
     width: 100%;
     justify-content: center;
+    overflow: hidden;
 }
 
 
-
-#basicFaith .bibleTextSection {
-    margin-top: 2%;
+#basicFaith .bibleTextWrapper .bibleTextSection {
     text-align: left;
     width: 45%; 
     box-sizing: border-box;
 }
 
+
+#basicFaith .bibleTextWrapper .bibleTextSection ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+#basicFaith .bibleTextWrapper .bibleTextSection ul li {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
 
 #more-less-btn {
     display: none;
@@ -214,6 +224,8 @@ main {
         justify-content: center;
         align-self: center;
         flex-direction: column;
+        padding-bottom: 5%;
+
     }
     
     #basicFaith h3 {
@@ -239,13 +251,21 @@ main {
 
      #more-less-btn {
         display: flex;
+        justify-content: center;
+        align-items: center;
         height: 30px;
-        width: 70px;
-        margin-left: 15%;
+        width: max-content;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: center;
+        border-style: dotted;
+        border-width: 2px;
     } 
 
     
-    #basicFaith .bibleTextSection {
+    #basicFaith .bibleTextWrapper .bibleTextSection {
         margin-top: 2%;
         text-align: center;
         width: 90%;
