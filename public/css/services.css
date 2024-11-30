@@ -9,6 +9,10 @@ body, html {
     font-family: 'bainsley';
 }
 
+body {
+    display: none;
+}
+
 :root {
     --animation-curve: cubic-bezier(1,0,0,1)
 }
@@ -107,9 +111,21 @@ main #allServices .serviceInfo button {
     font-family: 'bainsley';
 }
 
-main #allServices .serviceInfo button:hover {
-    background-color: #FFFFFF;
-    color: #3f4359;
+
+@media (hover:hover) {
+    main #allServices .serviceInfo button:hover {
+        background-color: #FFFFFF;
+        color: #3f4359;
+    }
+    
+}
+
+
+@media(hover:none) {
+    main #allServices .serviceInfo button:active {
+        background-color: #FFFFFF;
+        color: #3f4359;
+    }
 }
 
 
@@ -308,3 +324,5 @@ main #allServices #teenService p {
         width: 100%;
     }
 }
+
+

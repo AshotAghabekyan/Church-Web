@@ -9,6 +9,10 @@ body, html {
     font-family: 'bainsley';
 }
 
+body {
+    display: none;
+}
+
 :root {
     --animation-curve: cubic-bezier(1,0,0,1)
 }
@@ -157,10 +161,23 @@ main #ourVideos #controlWrapper #toVideosPage button {
     font-family: 'bainsley';
 }
 
-main #ourVideos #controlWrapper #toVideosPage button:hover {
-    background-color: #3f4359;
-    color: white;
+
+
+@media (hover:hover) {
+    main #ourVideos #controlWrapper #toVideosPage button:hover{
+        background-color: #3f4359;
+        color: white;
+    }
 }
+
+
+@media(hover:none) {
+    main #ourVideos #controlWrapper #toVideosPage button:active {
+        background-color: #3f4359;
+        color: white;
+    }
+}
+
 
 
 main #donation {
@@ -213,9 +230,26 @@ main #toDontationPage button {
     font-family: 'bainsley';
 }
 
-main #donation #toDontationPage button:hover {
+main #donation #toDontationPage button:hover:active {
     background-color: #FF6A48;
 }
+
+
+@media (hover:hover) {
+    main #donation #toDontationPage button:hover {
+        background-color: #FF6A48;
+    }
+    
+}
+
+
+@media(hover:none) {
+    main #donation #toDontationPage button:active {
+        background-color: #FF6A48;
+    }
+}
+
+
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
     main #welcome {

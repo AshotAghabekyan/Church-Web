@@ -1,0 +1,272 @@
+@import url("/public/css/fonts.css");
+@import url("./components/header.css");
+@import url("./components/footer.css");
+
+
+
+body, html {
+    margin:0%;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'bainsley';
+}
+
+body {
+    display: none;
+}
+
+:root {
+    --animation-curve: cubic-bezier(1,0,0,1)
+}
+
+
+
+main {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+    background-color: #000000;
+}
+
+
+#videoContainer {
+    max-width: 80%;
+    width: 80%;
+    flex-grow: 1;
+    background-color: #000000;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 5%;
+    border-style:none;
+
+}
+
+
+#video {
+    margin-top: 5%; 
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#video > #videoPlayIcon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background: url('/public/images/play-button.png') no-repeat center;
+    background-blend-mode: color;
+    background-size: 15%;
+    transition: 0.4s;
+}
+
+
+@media (hover:hover) {
+    #video > #videoPlayIcon:hover {
+        background-size: 20%;
+        opacity: 0.8;
+    }
+}
+
+
+@media(hover:none) {
+    #video > #videoPlayIcon:active {
+        background-size: 20%;
+        opacity: 0.8;
+    }
+}
+
+
+
+#title {
+    color:white
+}
+
+.videoLoaded {
+    background: none;
+}
+
+.videoLoaded > #videoPlayIcon {
+    display: none;
+}
+
+
+#video > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.recomendation {
+    background-color: #1C1C1E;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    padding-bottom: 5%;
+    height: max-content;
+}
+
+
+.recomendation #otherVideos {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+main .recomendation #otherVideos .videoItem {
+    width: 30%;
+    margin: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+@media (hover:hover) {
+    .videoItem:hover {
+        transform: translateY(-10px); 
+    }
+}
+
+
+@media(hover:none) {
+    .videoItem:active {
+        transform: translateY(-10px); 
+    }
+}
+
+
+main .recomendation #otherVideos .videoItem .videoWrapper {
+    padding-bottom: 56%;
+    width: 100%;
+    transition: 0.4s;
+  }
+  
+
+
+
+
+/* 
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    main #backgroundBlock {
+        min-height: 20rem;
+        max-height: 25rem;
+    }
+
+    main #backgroundBlock > h1 {
+        margin: 10%;
+    }
+
+    main #video {
+        flex-direction: column;
+    }
+
+
+}
+
+*/
+
+
+@media screen and (max-width: 600px) {
+
+    main {
+        flex-direction: column;
+    }
+
+    #videoContainer {
+        max-width: 100%;
+        width: 100%;
+        height: max-content;
+        min-height: auto;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
+    main #video {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    main #videoContainer #description #title {
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 20px;
+        text-align: center;
+    }
+
+
+    main .recomendation {
+        flex-direction: column;
+        width: 100%;
+        height: max-content;
+        min-height: max-content;
+    }
+
+    main .recomendation #recomendationHeader {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
+    }
+
+    main .recomendation #otherVideos {
+        width: 100%;
+        min-height: 30vh;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+
+    main .recomendation #otherVideos .videoItem {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        min-width: 80%;  
+    }
+} 
+
+
+

@@ -6,11 +6,29 @@
     <title>login</title>
 </head>
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <link rel="stylesheet" href="/public/css/admin-auth.css" type="text/css">
 
-    <script src="/public/js/components/header.js"></script>
-    <script src="/public/js/components/footer.js"></script>
+    <main>
+        <div class="authorization">
+            <h1>Admin Login</h1>
+            <form id="loginForm">
+                <div class="inputField">
+                    <label for="username"><h4>Username</h4> </label>
+                    <input id="username" name="username" type="text">
+                </div>
+                <div class="inputField">
+                    <label for="password"><h4>Password</h4> </label>
+                    <input id="password" name="password" type="password">
+                </div>
+
+                <button id="submit">Login</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="/public/js/admin-auth.js" defer></script>
+    <script src="/public/js/components/header.js" ></script>
+    <script src="/public/js/components/footer.js" ></script>
+
 </body>
 </html>

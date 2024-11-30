@@ -9,6 +9,10 @@ body, html {
     font-family: 'bainsley';
 }
 
+body {
+    display: none;
+}
+
 :root {
     --animation-curve: cubic-bezier(1,0,0,1)
 }
@@ -93,9 +97,24 @@ main #aboutDontation h1 {
 
 
 
-#donationVariants button:hover {
+#donationVariants button:hover:active {
     color: #FFFFFF;
     background-color: #3f4359;
+}
+
+@media (hover:hover) {
+    #donationVariants button:hover {
+        color: #FFFFFF;
+        background-color: #3f4359;
+    }
+}
+
+
+@media(hover:none) {
+    #donationVariants button:active {
+        color: #FFFFFF;
+        background-color: #3f4359;
+    }
 }
 
 
@@ -178,10 +197,22 @@ main #aboutDontation h1 {
     transition: 0.4s;
 }
 
-#bankTransferModal .modal-buttons button:hover {
-    color:white;
-    background-color: #3f4359;
+
+@media (hover:hover) {
+    #bankTransferModal .modal-buttons button:hover {
+        color:white;
+        background-color: #3f4359;
+    }
 }
+
+@media(hover:none) {
+    #bankTransferModal .modal-buttons button:active {
+        color:white;
+        background-color: #3f4359;
+    }
+}
+
+
 
 #bankTransferModal #closeBankModal {
     position: relative;
@@ -191,9 +222,23 @@ main #aboutDontation h1 {
     font-weight: bold;
 }
 
-#bankTransferModal #closeBankModal:hover {
+#bankTransferModal #closeBankModal:hover:active {
     cursor: pointer;
 }
+
+
+@media (hover:hover) {
+    #bankTransferModal #closeBankModal:hover {
+        cursor: pointer;
+    }
+}
+
+@media(hover:none) {
+    #bankTransferModal #closeBankModal:active {
+        cursor: pointer;
+    }
+}
+
 
 #usdBankTransferModal, #euroBankTransferModal, #rubleBankTransferModal {
     display: none;
@@ -242,6 +287,7 @@ main #aboutDontation h1 {
 #rubleBankTransferModal #closeRUBLEBankModal:hover {
     cursor: pointer;
 }
+
 
 
 
@@ -308,10 +354,26 @@ main #aboutDontation h1 {
     border: 3px solid #3f4359;
 }
 
-#qrCodeModal #qr-codes .qr-code button:hover {
+#qrCodeModal #qr-codes .qr-code button:hover:active {
     background-color: #3f4359;
     color:white;
 }
+
+@media (hover:hover) {
+    #qrCodeModal #qr-codes .qr-code button:hover {
+        background-color: #3f4359;
+        color:white;
+    }
+}
+
+@media(hover:none) {
+    #qrCodeModal #qr-codes .qr-code button:active {
+        background-color: #3f4359;
+        color:white;
+    }
+}
+
+
 
 #qrCodeModal #closeQRCodeModal {
     position: relative;

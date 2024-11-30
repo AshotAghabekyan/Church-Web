@@ -1,75 +1,98 @@
-"use strict"
+"use strict";
 
-
-
-async function getAllVideos() {
+// Fetch videos from the backend
+async function fetchVideos(videoCount) {
     try {
-        return new Promise((resolve, reject) => {
-            fetch("/videos/4", {
-                "mode": "no-cors",
-            })
-            .then((response) => response.json())
-            .then(parsedResponse => resolve(parsedResponse))
-            .catch((error) => reject())
-        })
-    }
-    catch(error) {
-        console.log(error);
+        const response = await fetch(`/videos/${videoCount}`, {
+            mode: "no-cors",
+        });
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch videos");
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error("Error fetching videos:", error.message);
         return null;
     }
 }
 
 
-function videosNotFoundHandler() {
-    let videosBlock = document.getElementById("videos");
+
+// Handle case where no videos are found
+function notFoundHandler(videosBlock) {
+    videosBlock.innerHTML = ""; // Clear existing content
     videosBlock.style.minHeight = "min-content";
     videosBlock.style.maxHeight = "min-content";
-    const errorText = `Vidoes not found, try again later`
-    const textContainer = document.createElement("p");
-    textContainer.style.fontSize = "30px";
-    textContainer.style.color = "#3f4359";
+
     const errorTextDiv = document.createElement("div");
     errorTextDiv.style.display = "flex";
     errorTextDiv.style.justifyContent = "center";
     errorTextDiv.style.alignItems = "center";
-    textContainer.innerText = errorText;
+
+    const textContainer = document.createElement("p");
+    textContainer.style.fontSize = "30px";
+    textContainer.style.color = "#3f4359";
+    textContainer.innerText = "Videos not found, try again later";
+
     errorTextDiv.appendChild(textContainer);
     videosBlock.appendChild(errorTextDiv);
 }
 
 
-function loadYouTubeIframe(videoId, container) {
-    let iframe = document.createElement("iframe");
-    iframe.src = `https://www.youtube.com/embed/${videoId}`;
-    iframe.allowFullscreen = true;
-    container.appendChild(iframe);
+
+// Create a single video item
+function createVideoItem(youtubeVideoData) {
+    const videoId = youtubeVideoData.snippet.resourceId.videoId;
+    const thumbnailUrl = youtubeVideoData.snippet.thumbnails.maxres.url;
+
+    const videoDiv = document.createElement("div");
+    videoDiv.className = "videoDiv";
+    videoDiv.dataset.videoId = videoId;
+
+    const videoWrapper = document.createElement("div");
+    videoWrapper.className = "videoWrapper";
+    videoWrapper.style.background = `url(${thumbnailUrl}) no-repeat`;
+    videoWrapper.style.backgroundSize = "cover";
+
+    videoWrapper.addEventListener("click", () => {
+        window.location.href = `/videos/id/${videoId}`;
+    });
+
+    videoDiv.append(videoWrapper);
+    return videoDiv;
 }
 
 
 
-async function displayVideos() {
-    let allVideos = await getAllVideos();
-    if (!allVideos) {
-        return videosNotFoundHandler();
+
+// Display videos on the page
+async function displayVideos(videos, container) {
+    container.innerHTML = ""; // Clear any previous content
+
+    if (!videos || videos.length === 0) {
+        return notFoundHandler(container);
     }
 
-    let videosBlock = document.getElementById("videos");
-
-    for (let i = 0; i < allVideos.length; ++i) {
-        let videoDiv = document.createElement("div");
-        videoDiv.className = "videoDiv";
-        videoDiv.dataset.videoId = allVideos[i].snippet.resourceId.videoId;
-        let videoWrapper = document.createElement("div");
-        videoWrapper.className = "videoWrapper";
-        
-        videoDiv.append(videoWrapper);
-        videosBlock.append(videoDiv);
-    
-        loadYouTubeIframe(allVideos[i].snippet.resourceId.videoId, videoWrapper);
-    }
+    videos.forEach(video => {
+        const videoItem = createVideoItem(video);
+        container.appendChild(videoItem);
+    });
 }
-  
 
-  
 
-displayVideos();
+
+
+
+
+
+// Initialize and display videos
+document.addEventListener("DOMContentLoaded", async () => {
+    const videoCount = 4;
+    const allVideos = await fetchVideos(videoCount);
+    const videoContainer = document.getElementById('videos');
+    displayVideos(allVideos, videoContainer);
+});
+
+

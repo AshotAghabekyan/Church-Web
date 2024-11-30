@@ -1,11 +1,8 @@
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    fetch("/public/views/components/footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector("footer").innerHTML = data;
-        })
-        .catch(error => console.error("footer load error:", error));
+document.addEventListener("DOMContentLoaded", async () => {
+    const response = await fetch("/public/views/components/footer.html")
+    const htmlFooter = await response.text();
+    document.body.insertAdjacentHTML('beforeend', htmlFooter);
 });
