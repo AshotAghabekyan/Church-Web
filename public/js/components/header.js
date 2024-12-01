@@ -1,5 +1,6 @@
 
 
+
 document.addEventListener("DOMContentLoaded", async () => {
     const body = document.querySelector('body');
     const response = await fetch("/public/views/components/header.html")

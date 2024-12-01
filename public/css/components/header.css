@@ -4,14 +4,25 @@ header {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     font-size: 17px;
     background-color:  #66697a;
 }
 
 
-header .navBar {
+header #navOptions {
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-grow: 1;
+}
+
+
+#navOptions .navBar {
+    box-sizing: border-box;
     color: white;
     width: 10%;
     margin: 2%;
@@ -22,7 +33,8 @@ header .navBar {
     align-items: center;
 }
 
-header a {
+#navOptions .navBar a {
+    box-sizing: border-box;
     color: white;
     text-decoration: none;
     transition: 0.2s;
@@ -31,7 +43,7 @@ header a {
     width: 100%;
 }
 
-header a:hover {
+#navOptions .navBar a:hover {
     opacity: 0.7;
 }
 
@@ -211,9 +223,10 @@ header a:hover {
         font-family: 'kotayk';
     }
 
-    header .navBar {
+    header #navOptions {
         display: none;
     }
+
 
     #logo {
         width: 100px;
@@ -256,10 +269,9 @@ header a:hover {
         font-family: 'kotayk';
     }
 
-    header .navBar {
+    header #navOptions {
         display: none;
     }
-
 
 
     header #mobileNavToggle {
