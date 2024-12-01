@@ -1,6 +1,5 @@
 @import url("/public/css/fonts.css");
-@import url("./components/header.css");
-@import url("./components/footer.css");
+
 
 
 body, html {
@@ -59,6 +58,7 @@ form .inputField {
 
 form input {
     width: 60%;
+    padding-right: 5%;
     height: 3rem;
     color: #3f4359;
     background-color: #FFFFFF;
@@ -102,7 +102,7 @@ form input:hover:active {
 
 
 form button {
-    width: 100%;
+    width: 90%;
     height: 100%;
     color: #FFFFFF;
     background-color: #66697a;
@@ -112,6 +112,9 @@ form button {
     font-size: 30px;
     font-family: 'bainsley';
     transition: 0.4s;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+
 }
 
 
@@ -134,4 +137,37 @@ form button {
     
     }
     
+}
+
+
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .authorization {
+        width: 60%;
+        padding-bottom: 5%;
+    }
+
+    form button {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        width: 90%;
+    }
+
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .authorization {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+
+    form button {
+        width: 95%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
 }

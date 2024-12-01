@@ -1,6 +1,5 @@
 @import url("/public/css/fonts.css");
-@import url("./components/header.css");
-@import url("./components/footer.css");
+
 
 body, html {
     margin:0%;
@@ -24,6 +23,7 @@ main {
     line-height: 1.5;
     min-height: 100vh;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     background-color: #eaeaea;
 }
@@ -68,8 +68,8 @@ main #aboutServices div p {
 
 main #allServices {
     width: 100%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 
@@ -112,6 +112,16 @@ main #allServices .serviceInfo button {
 }
 
 
+
+main #allServices #childrenService .serviceBackground {
+    width: 50%;
+    height: 70vh;
+    background: url("/public/images/childServiceBackground.webp");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 @media (hover:hover) {
     main #allServices .serviceInfo button:hover {
         background-color: #FFFFFF;
@@ -127,18 +137,6 @@ main #allServices .serviceInfo button {
         color: #3f4359;
     }
 }
-
-
-main #allServices #childrenService .serviceBackground {
-    width: 50%;
-    height: 70vh;
-    background: url("/public/images/childServiceBackground.webp");
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
 
 
 main #allServices #homeGroups {
@@ -324,5 +322,7 @@ main #allServices #teenService p {
         width: 100%;
     }
 }
+
+
 
 

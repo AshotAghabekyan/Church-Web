@@ -1,6 +1,5 @@
 @import url("/public/css/fonts.css");
-@import url("./components/header.css");
-@import url("./components/footer.css");
+
 
 
 body, html {
@@ -79,6 +78,7 @@ main {
 #basicFaith {
     margin-top: 3%;
     padding: 2%;
+    padding-bottom: 5%;
     color: white;
     background-color: #5B4565;
     display: flex;
@@ -87,40 +87,78 @@ main {
 }
 
 #basicFaith h3 {
-    height: 5%;
-    width: 20%;
-    margin-left: 7%;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .bibleTextWrapper {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    flex-wrap: wrap;
+    gap: 2rem;
     justify-content: center;
-    overflow: hidden;
+    align-items: flex-start;
 }
 
-
-#basicFaith .bibleTextWrapper .bibleTextSection {
+.bibleTextSection {
+    flex: 1 1 45%;
     text-align: left;
-    width: 45%; 
+    padding: 1rem;
     box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
-
-#basicFaith .bibleTextWrapper .bibleTextSection ul {
+.bibleTextSection ul {
     list-style-type: none;
-    padding-left: 0px;
+    padding: 0;
+    margin: 0;
 }
 
-#basicFaith .bibleTextWrapper .bibleTextSection ul li {
-    margin-top: 5%;
-    margin-bottom: 5%;
+.bibleTextSection ul li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.bibleTextSection ul li u {
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.hiddenText {
+    display: block; 
 }
 
 #more-less-btn {
     display: none;
+    margin: 1rem auto 0;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
+
+
+@media (hover:hover) {
+    #more-less-btn:hover {
+        background-color: #83679B;
+    }
+    
+}
+
+
+@media(hover:none) {
+    #more-less-btn:active {
+        background-color: #83679B;
+    }
+}
+
 
 
 
@@ -190,6 +228,28 @@ main {
         font-size: 18px;
     }
 
+    .hiddenText {
+        display: none;
+    }
+
+    .visible {
+        display: block; 
+    }
+
+    #more-less-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: max-content;
+        margin-left: 0%;
+        margin-right: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: center;
+        border-width: 2px;
+    } 
+
     .bibleTextWrapper {
         display: flex;
         flex-direction: column;
@@ -254,13 +314,11 @@ main {
         justify-content: center;
         align-items: center;
         height: 30px;
-        width: max-content;
+        width: 25%;
         margin-left: 5%;
         margin-right: 5%;
-        padding-left: 5%;
-        padding-right: 5%;
+        padding: 5%;
         text-align: center;
-        border-style: dotted;
         border-width: 2px;
     } 
 
