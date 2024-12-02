@@ -24,23 +24,23 @@ app.use("/admin-auth", adminAuthRouter);
 app.use('/auth', authRouter);
 
 app.get("/", function(request, response) {
-    response.sendFile(path.resolve("public/views/home.html"));
+    response.sendFile(path.resolve("public/pages/home/home.html"));
 })
 
 app.get("/church", function(request, response) {
-    response.sendFile(path.resolve("public/views/church.html"));
+    response.sendFile(path.resolve("public/pages/church/church.html"));
 })
 
 app.get("/our_services", function(request, response) {
-    response.sendFile(path.resolve("public/views/services.html"));
+    response.sendFile(path.resolve("public/pages/services/services.html"));
 })
 
 app.get("/donation", function(request, response) {
-    response.sendFile(path.resolve('public/views/donate.html'));
+    response.sendFile(path.resolve('public/pages/donate/donate.html'));
 })
 
 app.get("/visitUs", function(request, response) {
-    response.sendFile(path.resolve('public/views/visitUs.html'));
+    response.sendFile(path.resolve('public/pages/visitUs/visitUs.html'));
 })
 
 
