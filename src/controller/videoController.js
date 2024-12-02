@@ -1,12 +1,12 @@
-import videoService from "../service/videoService.js";
+import {FetchVideoService} from "../service/videoService.js";
 import path from "path";
 
 
 class VideoApiController {
     #videoService;
 
-    constructor(videoService) {
-        this.#videoService = videoService;
+    constructor() {
+        this.#videoService = new FetchVideoService();
     }
 
     async getVideos(req, res) {
@@ -60,4 +60,4 @@ class VideoApiController {
 }
 
 
-export default new VideoApiController(videoService)
+export {VideoApiController} 

@@ -67,7 +67,7 @@ main {
     right: 0;
     bottom: 0;
     cursor: pointer;
-    background: url('/public/images/play-button.png') no-repeat center;
+    background: url('/public/images/playVideo.png') no-repeat center;
     background-blend-mode: color;
     background-size: 15%;
     transition: 0.4s;
@@ -114,6 +114,268 @@ main {
     height: 100%;
 }
 
+
+#videoContainer #actions {
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    background-color: #1C1C1E;
+    border: none;
+    border-radius: 10px;
+    gap: 5%;
+    flex-basis: 10%;
+}
+
+
+#videoContainer #actions .actionPoint {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    flex-basis: 10%;
+    min-height: 60px; 
+    color: white;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+
+#videoContainer .actionPoint:hover {
+    transform: scale(1.1) 
+}
+
+
+#videoContainer #actions .actionPoint p {
+    width: 100%;
+    height: 40%;
+    margin: 0%;
+    text-align: center;
+}
+
+#videoContainer #actions #donate {
+    width: 100%;
+    flex-grow: 1;
+    background: url("/public/images/donation.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#videoContainer #actions #youtube {
+    width: 100%;
+    flex-grow: 1;
+    background: url("/public/images/youtube.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#videoContainer #actions #share {
+    width: 100%;
+    flex-grow: 1;
+    background: url("/public/images/share.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+
+}
+
+
+#videoShareModal {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    gap: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: fixed; 
+    opacity: 0;
+    transform: translate(-50%, -60%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+#videoShareModal.active {
+    opacity: 1;
+    transform: translate(0%, 0%);
+}
+
+
+#videoShareModal #modalHeader {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content:space-between;
+    align-items: center;
+}
+
+
+.voidLine {
+    width: 100%;
+    height: 1px;
+    border: none;
+    border-radius: 5px;
+    background-color: gray;
+}
+
+
+
+#modalHeader #closeShareModal  {
+    position: absolute; 
+    top: 0%; 
+    right: 0%; 
+    background: none;
+    width: 16px;
+    height: 16px;
+    background: url('/public/images/closeModal.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+
+#videoShareModal #socialNetworks {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#socialNetworks h3 {
+    text-align: left;
+}
+
+
+#socialNetworks #socialNetworkList {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    gap: 5%;
+}
+
+#socialNetworkList .socialNetwork {
+    flex-basis: 20%;
+    height: 60px;
+    cursor: pointer;
+    border:none;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+
+
+@media (hover:hover) {
+    #socialNetworkList .socialNetwork:hover {
+        transform: scale(1.1) 
+    }
+}
+
+
+@media(hover:none) {
+    #socialNetworkList .socialNetwork:active {
+        transform: scale(1.1) 
+    }
+}
+
+
+
+
+
+
+#socialNetworkList #facebook {
+    background: url('/public/images/facebookIcon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#socialNetworkList #instagram {
+    background: url("/public/images/instagramIcon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#socialNetworkList #twitter {
+    background: url('/public/images/twitter.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+#videoShareModal #manualShare {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    padding-top: 5%;
+}
+
+
+ #copyLink {
+    width: 100%;
+    height: 50px;
+    padding: 1%;
+    background-color: white;
+    border-color: #1C1C1E;
+    border-width: 1px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+
+
+
+
+
+
+@media (hover:hover) {
+      #copyLink:hover {
+        background-color: #1C1C1E;
+        color:white
+    }   
+}
+
+
+@media(hover:none) {
+     #copyLink:active {
+        background-color: #1C1C1E;
+        color:white
+    }
+}
+
+
+
+#videoContainer #actions #like{
+    width: 100%;
+    flex-grow: 1;
+    background: url('/public/images/likeVideo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+}
 
 
 
@@ -196,6 +458,20 @@ main .recomendation #otherVideos .videoItem .videoWrapper {
     }
 
 
+    #videoShareModal {
+        width: 60%;
+    }
+
+    #socialNetworks #socialNetworkList {
+        gap:0
+    }
+
+
+    #socialNetworkList .socialNetwork {
+        height: 50px;
+    }
+    
+
     main .recomendation #otherVideos {
         width: 100%;
         min-height: 30vh;
@@ -253,6 +529,33 @@ main .recomendation #otherVideos .videoItem .videoWrapper {
     }
 
 
+    #videoContainer #actions {
+        border-radius: 0%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; 
+        gap: 5%;
+    }
+
+    #videoContainer #actions .actionPoint {
+        flex-basis: 20%;
+        min-height: 40px; 
+        font-size: 14px;
+        align-content: center;
+    }
+
+
+
+    #videoShareModal {
+        width: 80%;
+    }
+
+
+    #socialNetworkList .socialNetwork {
+        height: 40px;
+    }
+    
+
     main .recomendation {
         flex-direction: column;
         width: 100%;
@@ -286,6 +589,12 @@ main .recomendation #otherVideos .videoItem .videoWrapper {
         min-width: 80%;  
     }
 } 
+
+
+
+
+
+
 
 
 
