@@ -3,7 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
     const body = document.querySelector('body');
-    const response = await fetch("/public/views/components/header.html")
+    const response = await fetch("/public/common/header/header.html")
     const htmlHeader = await response.text();
     document.body.insertAdjacentHTML('afterbegin', htmlHeader);
     body.style.display = "block"

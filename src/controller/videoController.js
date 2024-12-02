@@ -40,7 +40,7 @@ class VideoApiController {
 
     mainPage(req, res) {
         try {
-            return res.sendFile(path.resolve("public/views/videos.html"));
+            return res.sendFile(path.resolve("public/pages/videos/videos.html"));
         } catch(error) {
             console.log("cannot send html file -->", error);
             return res.status(500).json({message: "server internal error"});
@@ -50,7 +50,7 @@ class VideoApiController {
 
     pageById(req, res) {
         try {
-            return res.sendFile(path.resolve("public/views/video.html"));
+            return res.sendFile(path.resolve("public/pages/video/video.html"));
         }
         catch(error) {
             console.log("cannot send html file -->", error);
