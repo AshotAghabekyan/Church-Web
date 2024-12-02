@@ -1,20 +1,26 @@
-import path from "path";
+import { AuthService } from "../service/authService.js";
 
 
 export class AuthController {
+    #authService = new AuthService();
 
-
-    index(req, res) {
-        try {
-            return res.sendFile(path.resolve("public/views/admin-auth.html"));
-        } catch(error) {
-            console.log("cannot send html file -->", error);
-            return res.status(500).json({message: "server internal error"});
+    async authenticate(req, res) {
+        const authUrl = this.#authService.getAuthUrl();
+        if (!authUrl) {
+            return res.status(500).json({message: 'INTERNAL SERVER ERROR'});
         }
-    }
 
-
-    authorization(req, res) {
-        return res.status(200).json({token: 'ferffwfwfewfew'})
+        return res.status(301).redirect(authUrl);
     } 
+
+
+    async authCallback(req, res) {
+        const authQueryCode = req.query.code;
+        const { tokens: authTokens } = await oauth2Client.getToken(authQueryCode);
+        if (!authTokens) {
+            return res.status(401).json({message: "NOT AUTHORIZED"});
+        }
+        oauth2Client.setCredentials(authTokens);
+        return res.status(200).json(authTokens);
+    }
 }

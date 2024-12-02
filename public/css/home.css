@@ -102,8 +102,23 @@ main #bigFamily #blockDescription #toChurchPage a {
     color: rgb(212, 103, 40);
     text-decoration: none;
     text-align: left;
-
+    transition: color 0.5s;
 }
+
+
+@media (hover:hover) {
+    main #bigFamily #blockDescription #toChurchPage a:hover {
+        color: rgb(253, 96, 5);
+    }  
+}
+
+
+@media(hover:none) {
+    main #bigFamily #blockDescription #toChurchPage a:active {
+        color: rgb(253, 96, 5);
+    }
+}
+
 
 
 main #ourVideos {

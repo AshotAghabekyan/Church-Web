@@ -3,14 +3,15 @@ import redisService from "./redisService.js";
 import path from "path";
 
 
+
 process.loadEnvFile(path.resolve(".env"))
 
 
-class VideoApiService {
+export class FetchVideoService {
     #youtubeApi;
 
     constructor() {
-        const apiKey = process.env.apiKey;
+        const apiKey = process.env.API_KEY;
         this.#youtubeApi = new youtubeApi.youtube_v3.Youtube({ auth: apiKey });
     }
 
@@ -89,9 +90,3 @@ class VideoApiService {
     }
 }
 
-
-
-
-
-
-export default new VideoApiService();
