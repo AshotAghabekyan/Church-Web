@@ -1,4 +1,7 @@
 
+
+
+
 async function fetchVideos(videoCount) {
     try {
         const response = await fetch(`/videos/${videoCount}`, {
@@ -15,6 +18,7 @@ async function fetchVideos(videoCount) {
         return null;
     }
 }
+
 
 
 function createVideoItem(youtubeVideoData) {
@@ -39,6 +43,7 @@ function createVideoItem(youtubeVideoData) {
 }
 
 
+
 function findVideoById(id, vidoes) {
     const targetVideo = vidoes.find((video) => {
         return video.snippet.resourceId.videoId == id;
@@ -58,7 +63,7 @@ function loadYouTubeIframe(videoId, container) {
 function displayRecomendationVideos(videos) {
     const videosContainer = document.getElementById("otherVideos");
 
-    if (!videos) {displayVideos
+    if (!videos) {
         return;
     } 
 
@@ -74,7 +79,6 @@ function displayRecomendationVideos(videos) {
 function displayVideoById(video) {
     const videoWrapper = document.getElementById('video');
     if (!video) {
-        // notFoundHandler(videoWrapper)
         return;
     }
     const thumbnailUrl = video.snippet.thumbnails.maxres.url;

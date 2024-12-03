@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon -r dotenv/config app.js",
-    "redis-cli": "REDISCLI_AUTH=teswyjouTi4ss90aTJFECCF5LyrC42yo redis-cli --user red-cpaufpen7f5s73btioq0 -h frankfurt-redis.render.com -p 6379 --tls"
+    "start:dev": "nodemon -r dotenv/config app.ts",
+    "start": "ts-node",
+    "build": "tsc",
+    "watch": "node esbuild.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/express": "^5.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.1",
     "dotenv-extended": "^2.9.0",
@@ -20,7 +23,12 @@
     "redis": "^4.6.14"
   },
   "devDependencies": {
-    "nodemon": "^3.0.3"
+    "@swc/cli": "^0.5.2",
+    "@swc/core": "^1.9.3",
+    "@types/cors": "^2.8.17",
+    "esbuild": "0.24.0",
+    "nodemon": "^3.1.7",
+    "ts-node-dev": "^2.0.0"
   },
-  "type": "module"
+  "type": "commonjs"
 }
