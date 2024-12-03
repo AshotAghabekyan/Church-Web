@@ -1,8 +1,10 @@
+
 import { createClient } from '@redis/client';
+import { RedisClientType } from 'redis';
 
 
-class RedisService {
-    #redisClient;
+export class RedisService<StoredValueType> {
+    private redisClient: RedisClientType;
 
     constructor() {
         this.init()
@@ -10,14 +12,14 @@ class RedisService {
             .catch((error) => console.log("redis connection error", error));
     }
 
-    async init() {
+    private async init(): Promise<void> {
         try {
-            this.#redisClient = createClient({
+            this.redisClient = createClient({
                 url: process.env.redisUrl,
-                database: process.env.redisDbIndex || 0,
+                database: +process.env.redisDbIndex || 0,
             })
-            await this.#redisClient.connect();
-            this.#redisClient.on('error', (err) => {
+            await this.redisClient.connect();
+            this.redisClient.on('error', (err: any) => {
                 console.error('Redis client error:', err);
             });
         } 
@@ -26,19 +28,19 @@ class RedisService {
         }
     }
 
-    async setValue(key, value) {
+    public async setValue(key: string, value: StoredValueType): Promise<void> {
         try {
-            await this.#redisClient.set(String(key), JSON.stringify(value));
-            await this.#redisClient.sendCommand(["EXPIRE", String(key), "604800"]);
+            await this.redisClient.set(String(key), JSON.stringify(value));
+            await this.redisClient.sendCommand(["EXPIRE", String(key), "604800"]);
         } catch (error) {
             console.error('set value error', error);
             throw error; 
         }
     }
 
-    async getValue(key) {
+    public async getValue(key: string): Promise<StoredValueType> {
         try {
-            const targetValue = await this.#redisClient.get(key);
+            const targetValue = await this.redisClient.get(key);
             return JSON.parse(targetValue);
         } catch (error) {
             console.error('get value error', error);
@@ -46,9 +48,9 @@ class RedisService {
         }
     }
 
-    async deleteValue(key) {
+    public async deleteValue(key: string): Promise<number> {
         try {
-            const result = await this.#redisClient.del(key);
+            const result: number = await this.redisClient.del(key);
             return result;
         } catch (error) {
             console.error('delete value error', error);
@@ -56,6 +58,3 @@ class RedisService {
         }
     }
 }
-
-
-export default new RedisService();

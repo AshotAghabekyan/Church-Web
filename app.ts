@@ -1,45 +1,41 @@
 import express from "express";
 import cors from "cors"
 import path from "path";
-import videoRouter from "./src/routes/videoApiRoute.js"
-import authRouter from "./src/routes/authRoute.js"
-import adminAuthRouter from "./src/routes/adminAuthRoute.js"
-
+import videoApiRouter from "./src/modules/video/videoApiRoutes";
+import adminApiRouter from "./src/modules/admin/adminAuthRoute"
+import authApiRouter from "./src/modules/auth/authRoute"
+import { Request, Response, Express } from "express";
 
 process.loadEnvFile(path.resolve('.env'));
 
 
-const app = express();
+const app: Express = express();
 app.use(express.json());
-app.use(cors({
-    "maxAge": 86400,
-    "methods": "GET",
-    "origin": "http://localhost:3000"
-}));
+app.use(cors());
 
 
 app.use("/public", express.static(path.resolve("public")));
-app.use('/videos', videoRouter)
-app.use("/admin-auth", adminAuthRouter);
-app.use('/auth', authRouter);
+app.use('/videos', videoApiRouter)
+app.use("/admin-auth", adminApiRouter);
+app.use('/auth', authApiRouter);
 
-app.get("/", function(request, response) {
+app.get("/", function(request: Request, response: Response) {
     response.sendFile(path.resolve("public/pages/home/home.html"));
 })
 
-app.get("/church", function(request, response) {
+app.get("/church", function(request: Request, response: Response) {
     response.sendFile(path.resolve("public/pages/church/church.html"));
 })
 
-app.get("/our_services", function(request, response) {
+app.get("/our_services", function(request: Request, response: Response) {
     response.sendFile(path.resolve("public/pages/services/services.html"));
 })
 
-app.get("/donation", function(request, response) {
+app.get("/donation", function(request: Request, response: Response) {
     response.sendFile(path.resolve('public/pages/donate/donate.html'));
 })
 
-app.get("/visitUs", function(request, response) {
+app.get("/visitUs", function(request: Request, response: Response) {
     response.sendFile(path.resolve('public/pages/visitUs/visitUs.html'));
 })
 

@@ -12,29 +12,6 @@ toYoutubeAction.addEventListener("click", () => window.location.href = `https://
 
 
 function shareVideoModal() {
-
-}
-
-
-
-async function likeVideo() {
-    const authTokens = await fetch('/auth', {
-        "method": 'GET',
-        "mode": "no-cors",
-        "redirect": "follow",
-        "credentials": "include",
-    })
-
-    console.log('auth', await authTokens.json());
-}
-
-
-likeAction.addEventListener("click", async () => {
-    await likeVideo();
-})
-
-
-shareAction.addEventListener("click", () => {
     const shareModal = document.getElementById('videoShareModal');
     shareModal.style.display = "flex";
     shareModal.showModal();
@@ -48,4 +25,24 @@ shareAction.addEventListener("click", () => {
         }, 300);
         shareModal.close()
     })
+}
+
+
+
+async function likeVideo() {
+    const response = await fetch('/auth');
+    console.log("res status", response.status);
+    if (!response) {
+        return alert("unauthorized");
+    }
+    
+    console.log('auth', response);
+}
+
+
+likeAction.addEventListener("click", async () => {
+    await likeVideo();
 })
+
+
+shareAction.addEventListener("click", shareVideoModal)

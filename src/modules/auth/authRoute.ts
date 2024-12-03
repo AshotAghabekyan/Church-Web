@@ -1,7 +1,7 @@
 import {Router} from "express";
-import { AuthController } from "../controller/authController.js";
+import { AuthController } from "./authController";
 
-const router = Router();
+const router: Router = Router();
 export default router;
 const authController = new AuthController();
 
