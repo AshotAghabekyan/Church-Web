@@ -208,6 +208,11 @@ main {
 }
 
 
+#videoShareModal::backdrop {
+    backdrop-filter: blur(10px);
+}
+
+
 #videoShareModal.active {
     opacity: 1;
     transform: translate(0%, 0%);
@@ -307,12 +312,6 @@ main {
 }
 
 
-#socialNetworkList #instagram {
-    background: url("/public/images/instagramIcon.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
 
 
 #socialNetworkList #twitter {
@@ -320,8 +319,18 @@ main {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-
 }
+
+#socialNetworkList #threads {
+    background: url("/public/images/threadsIcon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+
 
 #videoShareModal #manualShare {
     width: 100%;
@@ -331,6 +340,7 @@ main {
     align-items:flex-start;
     padding-top: 5%;
 }
+
 
 
  #copyLink {
@@ -459,7 +469,7 @@ main .recomendation #otherVideos .videoItem .videoWrapper {
 
 
     #videoShareModal {
-        width: 60%;
+        width: 100%;
     }
 
     #socialNetworks #socialNetworkList {
@@ -545,11 +555,16 @@ main .recomendation #otherVideos .videoItem .videoWrapper {
     }
 
 
-
     #videoShareModal {
         width: 80%;
+        transform: translate(-50%, -50%);
     }
 
+    #videoShareModal.active {
+        opacity: 1;
+        transform: translate(0%, 30%);
+
+    }
 
     #socialNetworkList .socialNetwork {
         height: 40px;

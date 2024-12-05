@@ -40,14 +40,6 @@ app.get("/visitUs", function(request: Request, response: Response) {
 })
 
 
-// app.post("/testing/video/:id/like", async (req, res) => {
-//     const videoId = req.params.id;
-//     const tokens = req.cookies.tokens;
-//     console.log(tokens);
-// })
-
-
-
 app.listen(process.env.PORT, function() {
     console.log("server running");
 })
