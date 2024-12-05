@@ -92,7 +92,7 @@ main {
     margin-bottom: 1rem;
 }
 
-.bibleTextWrapper {
+#bibleTextContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -103,34 +103,46 @@ main {
 .bibleTextSection {
     flex: 1 1 45%;
     text-align: left;
-    padding: 1rem;
+    padding: 2rem;
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-}
-
-.bibleTextSection ul {
     list-style-type: none;
-    padding: 0;
     margin: 0;
 }
 
-.bibleTextSection ul li {
+
+.bibleTextSection li {
     margin-bottom: 1rem;
     font-size: 1rem;
     line-height: 1.5;
+    
 }
 
-.bibleTextSection ul li u {
+.bibleTextSection li u {
     font-weight: bold;
     color: #FFD700;
 }
 
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .hiddenText {
     display: block; 
+    animation: slideIn 0.4s ease;
 }
 
 #more-less-btn {
+
     display: none;
     margin: 1rem auto 0;
     text-align: center;
@@ -143,6 +155,8 @@ main {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+
 
 
 @media (hover:hover) {
@@ -250,7 +264,7 @@ main {
         border-width: 2px;
     } 
 
-    .bibleTextWrapper {
+    #bibleTextContainer {
         display: flex;
         flex-direction: column;
         line-height: 1.5;
@@ -295,18 +309,23 @@ main {
         margin-left: 5%;
     }
     
-    .bibleTextWrapper {
+    #bibleTextContainer {
         display: flex;
         flex-direction: column;
         line-height: 1.5;
     }
 
-    .hiddenText {
-        display: none;
+    .bibleTextSection {
+        padding: 1rem;
     }
 
-    .visible {
-        display: block; 
+    .hiddenText {
+        display:none;
+    }
+
+    .hiddenText.visible {
+        display: block;
+        opacity: 1;
     }
 
      #more-less-btn {
@@ -323,7 +342,7 @@ main {
     } 
 
     
-    #basicFaith .bibleTextWrapper .bibleTextSection {
+    #basicFaith #bibleTextContainer .bibleTextSection {
         margin-top: 2%;
         text-align: center;
         width: 90%;
