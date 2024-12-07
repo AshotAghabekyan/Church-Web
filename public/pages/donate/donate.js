@@ -1,144 +1,117 @@
 "use strict"
 
-let manualDonateButton = document.getElementById("manualDonate");
-manualDonateButton.addEventListener("click", () => {
-    window.location.href = "/visitUs";
-})
-
-
-let bankTransferModal = document.getElementById("bankTransferModal");
-
-
-function closeModal(modalId) {
-    let modal = document.getElementById(modalId);
-    modal.style.display = "none";
-}
-
-function openModal(modalId) {
-    let modal = document.getElementById(modalId);
-    modal.style.display = "flex";
-
-
-}
-
-let bankTransferButton = document.getElementById("bankTransferButton");
-bankTransferButton.onclick = function() {
-    openModal("bankTransferModal")
-}
-
-let closeBankModalBtn = document.getElementById("closeBankModal");
-closeBankModalBtn.addEventListener("click", function(event) {
-    closeModal("bankTransferModal");
-})
+const manualDonateButton = document.getElementById("manualDonate");
+manualDonateButton.addEventListener("click", () => window.location.href = "/visitUs")
 
 
 
-let usdBankTransferModal = document.getElementById("usdBankTransferModal");
-let closeUSDBankModalBtn = document.getElementById("closeUSDBankModal");
-let dollarDonateButton = document.getElementById("dollarDonateButton");
-
-dollarDonateButton.onclick = function() {
-    closeModal("bankTransferModal");
-    openModal("usdBankTransferModal");
-}
-
-closeUSDBankModalBtn.addEventListener("click", function(event) {
-    closeModal("usdBankTransferModal");
-    openModal("bankTransferModal")
-})
-
-
-let euroBankTransferModal = document.getElementById("euroBankTransferModal");
-let closeEUROBankModalBtn = document.getElementById("closeEUROBankModal");
-let euroDonateButton = document.getElementById("euroDonateButton")
-
-
-euroDonateButton.onclick = function() {
-    closeModal("bankTransferModal");
-    openModal("euroBankTransferModal")
-}
-
-closeEUROBankModalBtn.addEventListener("click", function() {
-    closeModal("euroBankTransferModal");
-    openModal("bankTransferModal")
-})
-
-
-let rubleBankTransferModal = document.getElementById("rubleBankTransferModal");
-let closeRUBLEBankModalBtn = document.getElementById("closeRUBLEBankModal");
-let rubleDonateButton = document.getElementById("rubleDonateButton");
-
-rubleDonateButton.onclick = function() {
-    closeModal("bankTransferModal");
-    openModal("rubleBankTransferModal");
-}
-
-closeRUBLEBankModalBtn.addEventListener("click", function() {
-    closeModal("rubleBankTransferModal");
-    openModal("bankTransferModal")
-})
-
-window.onclick = function(event) {
-    if (event.target == bankTransferModal) {
-        closeModal("bankTransferModal");
-    }
+function modalDisplayHandler(modalElement, closeElement) {
+    modalElement.showModal();
+    modalElement.classList.add("visible");
+    closeElement.addEventListener("click", () => {
+        modalElement.close();
+        modalElement.classList.remove("visible");
+    })
 }
 
 
 
-let electronicWalletButton = document.getElementById("electronicWalletButton");
-let closeElectronicWalletButton = document.getElementById("closeQRCodeModal");
-
-electronicWalletButton.onclick = function() {
-    openModal("qrCodeModal");
+function showBankTransferVariants() {
+    const bankTransferModal = document.getElementById("bankTransferModal");
+    const closeBankModal = document.getElementById('closeBankModal');
+    modalDisplayHandler(bankTransferModal, closeBankModal);
 }
 
-closeElectronicWalletButton.addEventListener("click", function() {
-    closeModal("qrCodeModal");
-})
+const bankTransferVariant = document.getElementById("bankTransferButton");
+bankTransferVariant.addEventListener("click", showBankTransferVariants)
 
 
 
 
-let idramQr = document.getElementById("idramQr");
-let closeIdramQr = document.getElementById("closeIdramModalBtn");
-idramQr.onclick = function() {
-    closeModal("qrCodeModal");
-    openModal("idramModal");
+function showRubleDonateModal() {
+    const rubleDonateModal = document.getElementById("rubleBankTransferModal");
+    const closeModal = document.getElementById("closeRubleBankModal");
+    modalDisplayHandler(rubleDonateModal, closeModal);
 }
 
-
-closeIdramQr.addEventListener("click", function() {
-    closeModal("idramModal");
-    openModal("qrCodeModal")
-})
+const rubleDonateButton = document.getElementById("rubleDonateButton");
+rubleDonateButton.addEventListener("click", showRubleDonateModal);``
 
 
 
-let eastWalletQr = document.getElementById("easyWalletQr");
-let closeEasyWalletQr = document.getElementById("closeEasyWalletModalBtn");
 
-eastWalletQr.onclick = function() {
-    closeModal("qrCodeModal");
-    openModal("easyWalletModal")
+function showDollarDonateModal() {
+    const usdDonateModal = document.getElementById("usdBankTransferModal");
+    const closeModal = document.getElementById("closeUsdBankModal");
+    modalDisplayHandler(usdDonateModal, closeModal); 
 }
 
-closeEasyWalletQr.addEventListener("click", function() {
-    closeModal("easyWalletModal");
-    openModal("qrCodeModal")
-})
+const dollarDonateButton = document.getElementById('dollarDonateButton');
+dollarDonateButton.addEventListener("click", showDollarDonateModal);
 
 
-let tellcellWalletQr = document.getElementById("telcellWalletQr");
-let closeTellCellWalletQr = document.getElementById("closeTellCellWalletModal");
 
-tellcellWalletQr.onclick = function() {
-    closeModal("qrCodeModal");
-    openModal("telcellWalletModal")
+function showEuroDonateModal() {
+    const euroDonateModal = document.getElementById('euroBankTransferModal');
+    const closeModal = document.getElementById("closeEuroBankModal");
+    modalDisplayHandler(euroDonateModal, closeModal);
 }
 
+const euroDonateButton = document.getElementById('euroDonateButton');
+euroDonateButton.addEventListener("click", showEuroDonateModal);
 
-closeTellCellWalletQr.addEventListener("click", function() {
-    closeModal("telcellWalletModal")
-    openModal("qrCodeModal")
-})
+
+
+
+
+
+function showElectronicWalletVariants() {
+    const qrCodeModal = document.getElementById("electronicWalletModal");
+    const closeModal = document.getElementById("closeElectronicWalletModal");
+    modalDisplayHandler(qrCodeModal, closeModal);
+}
+
+const electronicWalletVariant = document.getElementById('electronicWalletButton');
+electronicWalletVariant.addEventListener("click", showElectronicWalletVariants)
+
+
+
+
+function showEasyWalletModal() {
+    const easyWalletModal = document.getElementById("easyWalletModal");
+    const closeModal = document.getElementById("closeEasyWalletModalBtn");
+    modalDisplayHandler(easyWalletModal, closeModal);
+}
+
+const easyWalletModalBtn = document.getElementById("easyWalletQr");
+easyWalletModalBtn.addEventListener("click", showEasyWalletModal)
+
+
+
+
+
+function showIdramModal() {
+    const idramModal = document.getElementById("IdramWalletModal");
+    const closeModal = document.getElementById("closeIdramModalBtn");
+    modalDisplayHandler(idramModal, closeModal);
+}
+
+const idramModalBtn = document.getElementById("idramQr");
+idramModalBtn.addEventListener("click", showIdramModal)
+
+
+
+
+
+function showTelcellWalletModal() {
+    const telcellModal = document.getElementById("telcellWalletModal");
+    const closeModal = document.getElementById("closeTelcellModalBtn");
+    modalDisplayHandler(telcellModal, closeModal);
+}
+
+const telcellWalletModalBtn = document.getElementById("telcellWalletQr");
+telcellWalletModalBtn.addEventListener("click", showTelcellWalletModal)
+
+
+
+
