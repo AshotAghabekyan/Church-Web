@@ -1,11 +1,16 @@
 @import url("/public/pages/fonts.css");
 
 
+* {
+    box-sizing: border-box;
+}
+
 body, html {
     margin:0%;
     width: 100%;
     height: 100%;
     font-family: 'bainsley';
+    box-sizing: border-box;
 }
 
 body {
@@ -28,12 +33,12 @@ main {
 
 
 main #backgroundBlock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     min-height: 25rem;
     max-height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: url("/public/images/worshipBackground.webp");
     background-size: cover;
     background-repeat: no-repeat;
@@ -66,17 +71,34 @@ main #aboutDontation h1 {
 
 #donationVariants {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
     width: 100%;
     height: auto;
 }
 
 
-#donationVariants button {
+.donationVariant {
+    min-height: 20rem;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: calc(100% / 3);
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+
+
+.donationVariant button {
     width: 45%;
-    height: 20%;
+    min-height: 20%;
     border-radius: 15px;
     transition: 0.4s;
     font-size: 25px;
@@ -87,47 +109,13 @@ main #aboutDontation h1 {
 }
 
 
-#donationVariants h2 {
+
+.donationVariant h2 {
     font-size: 24px;
 }
-#donationVariants p {
+.donationVariant p {
     font-size: 18px;
 }
-
-
-
-#donationVariants button:hover:active {
-    color: #FFFFFF;
-    background-color: #3f4359;
-}
-
-@media (hover:hover) {
-    #donationVariants button:hover {
-        color: #FFFFFF;
-        background-color: #3f4359;
-    }
-}
-
-
-@media(hover:none) {
-    #donationVariants button:active {
-        color: #FFFFFF;
-        background-color: #3f4359;
-    }
-}
-
-
-.donationVariant {
-    width: calc(100%/3);
-    height: 20rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    color:white;
-}
-
 
 .donationVariant p, h2 {
     margin-left: 10%;
@@ -136,448 +124,210 @@ main #aboutDontation h1 {
 
 
 
-#personally {
-    background-color:  #66697a;
-    color: white;
-    padding-top:2%;
-    padding-bottom: 2%;
+@media (hover:hover) {
+    .donationVariant button:hover {
+        color: #FFFFFF;
+        background-color: #3f4359;
+    }
 }
 
+
+@media(hover:none) {
+    .donationVariant button:active {
+        color: #FFFFFF;
+        background-color: #3f4359;
+    }
+}
+
+
+
+
+
+#personally {
+    background-color:  #66697a;
+}
 
 
 #bankTransfer {
-    /* width: 33%; */
     background-color: #ff6a48;
-    color: white;
-    padding-top: 2%;
-    padding-bottom: 2%;
 }
-
-
-#bankTransferModal {
-    display: none;
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    transition: 0.5s;
-}
-
-#bankTransferModal .donation-modal-content {
-    background-color: white;
-    border-radius: 10px;
-    margin: 15% auto;
-    padding: 20px;
-    width: 40%;
-    animation: slideIn 0.5s ease-in-out;
-}
-
-#bankTransferModal .modal-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#bankTransferModal .modal-buttons button {
-    width: 60%;
-    height: 50%;
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
-    background-color: white;
-    border-color: #3f4359;
-    color: #3f4359;
-    border-width: 3px;
-    border-style: solid;
-    cursor: pointer;
-    transition: 0.4s;
-}
-
-
-@media (hover:hover) {
-    #bankTransferModal .modal-buttons button:hover {
-        color:white;
-        background-color: #3f4359;
-    }
-}
-
-@media(hover:none) {
-    #bankTransferModal .modal-buttons button:active {
-        color:white;
-        background-color: #3f4359;
-    }
-}
-
-
-
-#bankTransferModal #closeBankModal {
-    position: relative;
-    color: #3f4359;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-#bankTransferModal #closeBankModal:hover:active {
-    cursor: pointer;
-}
-
-
-@media (hover:hover) {
-    #bankTransferModal #closeBankModal:hover {
-        cursor: pointer;
-    }
-}
-
-@media(hover:none) {
-    #bankTransferModal #closeBankModal:active {
-        cursor: pointer;
-    }
-}
-
-
-#usdBankTransferModal, #euroBankTransferModal, #rubleBankTransferModal {
-    display: none;
-    justify-content: center;
-    align-content: center;
-    position: fixed;
-    z-index: 3; 
-    left: 0;
-    top: 5%;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    min-height: 30rem;
-    transition: 0.5s;
-    border-radius: 10px;
-}
-
-#usdBankTransferModal .donation-modal-content, 
-#euroBankTransferModal .donation-modal-content,
-#rubleBankTransferModal .donation-modal-content {
-    background-color: #ffffff;
-    width: 60%;
-    height: 30rem;
-    overflow: auto;
-    margin: 0%;
-    padding: 20px;
-    border-radius: 10px;
-    color: #3f4359;
-    animation: slideIn 0.5s ease-in-out;
-}
-
-#usdBankTransferModal #closeUSDBankModal,
-#euroBankTransferModal #closeEUROBankModal,
-#rubleBankTransferModal #closeRUBLEBankModal {
-    position: relative;
-    color: #3f4359;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    transition: 0.5s;
-    animation: slideIn 0.5s ease-in-out;
-}
-
-#usdBankTransferModal #closeUSDBankModal:hover,
-#euroBankTransferModal #closeEUROBankModal:hover,
-#rubleBankTransferModal #closeRUBLEBankModal:hover {
-    cursor: pointer;
-}
-
-
 
 
 #electronicWallet {
-    /* width: 30%; */
-    background-color: #6a4e77;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    background-color: #66697a;
 }
 
-#qrCodeModal {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
+
+.donation-modal-content {
     position: fixed;
-    z-index: 2; 
-    left: 0;
-    top: 5%;
+    top: -20%;
+    border: none;
+    border-radius: 20px;
+    padding: 2%;
+    background-color: white;
+    opacity: 0;
+    transform: translate(0%, -50%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    height: 20rem;
+}
+
+
+.donation-modal-content.visible {
+    transform: translate(0%, 0%);
+    opacity: 1;
+    z-index: 1;
+}
+
+.donation-modal-content button {
     width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
-    min-height: 10rem;
-    transition: 0.5s;
-    border-radius: 10px;
-}
-
-
-#qrCodeModal #modalHeader {
-   margin: 5%;
-    display: flex;
-    flex-direction: row-reverse;
-    text-align: center;
-    color: #3f4359;
-
-}
-
-#qrCodeModal #qr-codes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-
-#qrCodeModal #qr-codes .qr-code {
-    color:#3f4359;
-    width: 30%;
-    min-height: 5rem;
-    text-align: center;
+    height: 20%;
+    border-color: #66697a;
+    border-width: 1px;
+    border-radius: 15px;
+    transition: 0.4s;
     background-color: white;
-}
-
-#qrCodeModal #qr-codes .qr-code button {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 40px;
-    background-color: white;
-    border: 3px solid #3f4359;
-}
-
-#qrCodeModal #qr-codes .qr-code button:hover:active {
-    background-color: #3f4359;
-    color:white;
-}
-
-@media (hover:hover) {
-    #qrCodeModal #qr-codes .qr-code button:hover {
-        background-color: #3f4359;
-        color:white;
-    }
-}
-
-@media(hover:none) {
-    #qrCodeModal #qr-codes .qr-code button:active {
-        background-color: #3f4359;
-        color:white;
-    }
-}
-
-
-
-#qrCodeModal #closeQRCodeModal {
-    position: relative;
-    color: #3f4359;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    color: #66697a;
     transition: 0.5s;
-    animation: slideIn 0.5s ease-in-out;
     cursor: pointer;
 }
 
-.qrModal {
-    display: none;
+
+
+
+.donation-modal-content .closeModal,  .closeModal {
+    position: absolute;
+    top:5%;
+    right: 5%;  
+    background: url("/public/images/closeModal.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+
+@media (hover:hover) {
+    .donation-modal-content button:hover {
+        background-color: #66697a;
+        color:white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .closeModal:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+@media(hover:none) {
+    .donation-modal-content button:active {
+        background-color: whitesmoke;
+        color:#66697a;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .closeModal:active {
+        transform: scale(1.05);
+    }
+}
+
+
+
+
+.bankTransferVariant {
+    width: 60%;
+    min-height: 20rem;
     position: fixed;
-    top:10%;
-    width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
-    min-height: 20rem;
+    z-index: 0;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2%;
+    border: none;
+    border-radius: 15px;
+    transform: translate(0%, -50%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
 }
 
-.qrModal .donation-modal-content {
-    position: relative;
-    top:10%;
-    margin: 10% auto;
-    padding: 20px;
-    width: 80%;
-    min-height: 20rem;
-    background-color: #fff;
-    border-radius: 8px;
-}
-
-.qrModal .donation-modal-content .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-}
-
-.qrModal .donation-modal-content  .modal-header h2 {
+.bankTransferVariant p {
     margin: 0;
 }
 
-.qrModal .donation-modal-content  .modal-header button {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    font-weight: bold;
+.bankTransferVariant.visible {
+    opacity: 1;
+    z-index: 1;
+    transform: translate(0%, 0%);
 }
 
-.qrModal .donation-modal-content .qrCodeBackground {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 90%;
+
+
+
+.qrModal {
+    position: fixed;
+    z-index: 0;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    width: 40%;
+    height: 20rem;
+    padding-bottom: 5%;
+    border: none;
+    border-radius: 15px;
+    color: #3f4359;
+    transform: translate(0%, -50%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.qrModal.visible {
+    opacity: 1;
+    z-index: 1;
+    transform: translate(0%, 0%);
+}
+
+
+.qrCodeBackground {
+    width: 90%;
+    height: 80%;
     background: url("/public/images/qrCode.webp");
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 
 
 
- @media screen and (min-width: 601px) and (max-width: 1024px) {
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
     main #backgroundBlock {
         min-height: 20rem;
         max-height: 25rem;
     }
 
+    main #backgroundBlock h1 {
+        font-size: 36px;
+    }
 
     main #aboutDontation {
-        width: 90%;
-        margin: 5%;
-        line-height: 1.5;
-    }
-
-    #donationVariants {
-        flex-direction: column;
-        margin-bottom: 0%;
-    }
-
-    .donationVariant {
-        width: 100%;
-        font-size: 20px;
-        height: max-content;
-        flex-grow: 1;
-    }
-
-
-    #donationVariants button {
-        width: 30%;
-        height: 50px;
-        border-radius: 15px;
-        transition: 0.4s;
-        font-size: 25px;
-        font-family: 'bainsley';
-        color: #3f4359;
-        background-color: #FFFFFF;
-        border: 0px solid #FFFFFF;
-    }
-
-    #bankTransferModal {
-        min-height: 20rem;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #bankTransferModal .donation-modal-content {
-        min-height: 10rem;
         width: 80%;
         margin-left: 10%;
         margin-right: 10%;
-    }
-
-    #bankTransferModal .modal-buttons button {
-        width: 40%;
-        min-height: 60px;
-        font-size: 20px;
-    }
-
-    #usdBankTransferModal,
-    #euroBankTransferModal,
-    #rubleBankTransferModal {
-        width: 100%;
-        min-height: 100vh;
-        justify-content: center;
-        align-items: center;
-        margin-left: 0%;
-        margin-right: 0%;
-        top:0%;
-    }
-
-    #usdBankTransferModal .donation-modal-content, 
-    #euroBankTransferModal .donation-modal-content,
-    #rubleBankTransferModal .donation-modal-content {
-        background-color: #ffffff;
-        width: 60%;
-        height: 30rem;
-        overflow: auto;
-        margin: 0%;
-        padding: 20px;
-        border-radius: 10px;
-        color: #3f4359;
-        animation: slideIn 0.5s ease-in-out;
-    }
-
-
-    #qrCodeModal {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    #qrCodeModal #modalHeader {
-        margin-bottom: 2%;
-        margin-top: 5%;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    #qrCodeModal #qr-codes .qr-code button {
-        width: 100%;
-        min-height: 60px;
-        margin-left: 0%;
-        margin-right: 0%;
-        margin-bottom: 10%; 
-        font-size: 20px;
-    }
-
-    .qrModal {
-        width: 60%;
-        margin-left: 20%;
-        margin-right: 20%;
-        min-height: 40vh;
-        font-size: 25px;
-    }
-
- }
-
-
-
-
-@media screen and (max-width:600px) {
-    main #backgroundBlock {
-        min-height: 15rem;
-        max-height: 15rem;
-        background-size: cover;
-        font-size: 18px;
-    }
-
-    main #backgroundBlock h1 {
-        font-size: 32px;
-    }
-
-    main #aboutDontation {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        line-height: 1.5;
-        text-align: left;
+        text-align: center;
     }
 
     main #aboutDontation h1 {
@@ -585,115 +335,122 @@ main #aboutDontation h1 {
     }
 
     main #aboutDontation h2 {
-        margin: 0%;
+        font-size: 20px;
     }
 
-    
     #donationVariants {
-        width: 100%;
-        flex-direction: column;
-        margin-top: 5%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
-    #donationVariants button {
-        width: 60%;
-        height: 80px;
-        color: #3f4359;
-        background-color: #FFFFFF;
-        border: 0px solid #FFFFFF;
-        border-radius: 15px;
-        transition: 0.4s;
+    .donationVariant {
+        flex-basis: calc(50% - 2rem);
+        margin: 1rem;
+    }
+
+    .donationVariant h2 {
+        font-size: 20px;
+    }
+
+    .donationVariant p {
+        font-size: 16px;
+    }
+
+    .donationVariant button {
+        font-size: 22px;
+        min-height: 3em;
+        width: 50%;
+    }
+
+    .donation-modal-content {
+        width: 70%;
+        height: 25rem;
+    }
+
+    .bankTransferVariant {
+        width: 70%;
+    }
+
+    .qrModal {
+        width: 70%;
+    }
+
+    .qrCodeBackground {
+        height: 70%;
+    }
+}
+
+
+
+
+
+ 
+@media screen and (max-width:600px) {
+    main #backgroundBlock {
+        min-height: 15rem;
+        max-height: 15rem;
+    }
+
+    main #backgroundBlock h1 {
+        margin: 5%;
+        font-size: 32px;
+    }
+
+    main #aboutDontation {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: left;
+    }
+
+    main #aboutDontation h1  {
         font-size: 30px;
-        font-family: 'bainsley';
+    }
+
+    main #aboutDontation h2 {
+        margin: 0;
         margin-bottom: 10%;
+        font-size: 18px;
+    }
+
+
+    #donationVariants {
+        flex-direction: column;
+        width: 100%;
     }
 
     .donationVariant {
         width: 100%;
-        min-height: 20rem;
-        height: max-content;
-        flex-grow: 1;
     }
 
 
-
-    #bankTransferModal {
-        height: auto;
-        flex-grow: 1;
-        top:20%;
-    }
-
-    #bankTransferModal .donation-modal-content {
-        min-height: 10rem;
-        width: 80%;
-    }
-
-    #bankTransferModal .modal-buttons button {
-        width: 80%;
-        height: 50px;
-    }
-
-    #usdBankTransferModal,
-    #euroBankTransferModal,
-    #rubleBankTransferModal {
-        width: 100%;
-        min-height: 100vh;
-        justify-content: center;
-        align-items: center;
-        margin-left: 0%;
-        margin-right: 0%;
-        top:0%;
-    }
-
-
-    #usdBankTransferModal .donation-modal-content, 
-    #euroBankTransferModal .donation-modal-content,
-    #rubleBankTransferModal .donation-modal-content {
-        width: 100%;
-    }
-
-
-    #qrCodeModal {
+    .donation-modal-content {
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
     }
 
-    #qrCodeModal #modalHeader {
-        margin-bottom: 2%;
-        margin-top: 5%;
+    .donationVariant button {
+        font-size: 20px;
+        min-height: 5rem;
+    }
+
+
+    .bankTransferVariant {
+        width: 90%;
         margin-left: 5%;
         margin-right: 5%;
     }
 
-    #qrCodeModal #qr-codes {
-        flex-direction: column;
+    .bankTransferVariant p {
+        font-size: 14px;
     }
 
-    #qrCodeModal #qr-codes .qr-code {
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-        min-height: 5vh;
-    }
-
-    #qrCodeModal #qr-codes .qr-code button {
-        width: 100%;
-        margin-left: 0%;
-        margin-right: 0%;
-        margin-bottom: 10%; 
-    }
 
     .qrModal {
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
-        min-height: 10rem;
-        max-height: 20rem;
-    }
-
-    .qrModal .donation-modal-content {
-        min-height: 10rem;
-        height: 20rem;
-    }
-}
+    } 
+} 

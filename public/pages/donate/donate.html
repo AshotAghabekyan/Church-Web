@@ -15,6 +15,8 @@
                 ՆՎԻՐԱԲԵՐՈՒԹՅՈՒՆ
             </h1>
         </div>
+
+
         <div id="aboutDontation">
             <h1>
                 Ի՞նչպես է հնարավոր նվիրաբերել և
@@ -54,155 +56,118 @@
                     Կարող եք փոխանցում անել Idram, EasyWallet կամ
                     Telcell Wallet էլեկտրոնային դրամապանակներին
                 </p>
-
                 <button id="electronicWalletButton">Նվիրաբերել</button>
             </div>
 
+
+
+            <dialog id="bankTransferModal" class="donation-modal-content">
+                <span id="closeBankModal" class="closeModal"></span> 
+                <button id="dollarDonateButton">ԱՄՆ Դոլարով</button>
+                <button id="euroDonateButton">EURO-ով</button>
+                <button id="rubleDonateButton">Ռուբլիով</button>
+            </dialog>
+
+
+            <dialog id="electronicWalletModal" class="donation-modal-content">
+                <span id="closeElectronicWalletModal" class="closeModal"></span>
+                <button id="idramQr">Idram</button>
+                <button id="easyWalletQr">EasyWallet</button>
+                <button id="telcellWalletQr">TelcellWallet</button>
+            </dialog>
         </div>
 
 
 
 
+        <dialog id="usdBankTransferModal" class="bankTransferVariant">
+            <span id="closeUsdBankModal" class="closeModal">&times;</span>
+            <h2>ԱՄՆ Դոլարով</h2>
+            <p><strong>NAME:</strong> RAIFFEISEN BANK INTERNATIONAL AG</p>
+            <p><strong>ADDRESS:</strong> Am Stadtpark 9 A -1030, Vienna Austria</p>
+            <p><strong>SWIFT:</strong> RZBAATWW</p>
+            <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
 
-        <div id="bankTransferModal">
-            <div class="donation-modal-content">
-                <span id="closeBankModal" class="closeModal">&times;</span>
-                <div class="modal-buttons">
-                    <button id="dollarDonateButton">ԱՄՆ Դոլարով</button>
-                    <button id="euroDonateButton">EURO-ով</button>
-                    <button id="rubleDonateButton">Ռուբլիով</button>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <div id="usdBankTransferModal">
-            <div class="donation-modal-content">
-                <span id="closeUSDBankModal" class="closeModal">&times;</span>
-                <h2>ԱՄՆ Դոլարով</h2>
-                <p><strong>NAME:</strong> RAIFFEISEN BANK INTERNATIONAL AG</p>
-                <p><strong>ADDRESS:</strong> Am Stadtpark 9 A -1030, Vienna Austria</p>
-                <p><strong>SWIFT:</strong> RZBAATWW</p>
-                <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
-
-                <h3>Beneficiary's Bank</h3>
-                <p><strong>NAME:</strong> "TIGRAN METS" BRANCH of "ARMECONOMBANK" OJSC</p>
-                <p><strong>ADDRESS:</strong> Republic of Armenia, 49 and 49 Bld.1, Tigran Mets Str, Yerevan, 0018, RA
-                </p>
-                <p><strong>SWIFT:</strong> ARECAM 22</p>
-                <p><strong>NAME:</strong> New generation church</p>
-                <p><strong>BENEFICIARY’S ACCOUNT N:</strong> 163288293216 (USD)</p>
-            </div>
-        </div>
-
-
-        <div id="euroBankTransferModal">
-            <div class="donation-modal-content">
-                <span id="closeEUROBankModal" class="closeModal">&times;</span>
-                <h2>EURO-ով</h2>
-                <p><strong>NAME:</strong> RAIFFEISEN BANK INTERNATIONAL AG</p>
-                <p><strong>ADDRESS:</strong> Am Stadtpark 9 A -1030, Vienna Austria</p>
-                <p><strong>SWIFT:</strong> RZBAATWW</p>
-                <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
-
-                <h3>Beneficiary's Bank</h3>
-                <p><strong>NAME:</strong> "TIGRAN METS" BRANCH of "ARMECONOMBANK" OJSC</p>
-                <p><strong>ADDRESS:</strong> Republic of Armenia, 49 and 49 Bld.1, Tigran Mets Str, Yerevan, 0018, RA
-                </p>
-                <p><strong>SWIFT:</strong> ARECAM 22</p>
-                <p><strong>NAME:</strong> New generation church</p>
-                <p><strong>BENEFICIARY’S ACCOUNT N:</strong> 163288293216 (EURO)</p>
-            </div>
-        </div>
-
-
-        <div id="rubleBankTransferModal">
-            <div class="donation-modal-content">
-                <span id="closeRUBLEBankModal" class="closeModal">&times;</span>
-                <h2>Ռուբլիով</h2>
-                <p><strong>NAME:</strong> Межгосударственный банк</p>
-                <p><strong>ADDRESS:</strong> 115162, г. Москва, ул. Шухова, 15</p>
-                <p><strong>SWIFT:</strong> INEARUMM</p>
-                <p>К/С 30101810800000000362, БИК 044525362</p>
-                <p>ИНН 7700076777</p>
-                <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
-
-                <h3>БАНК ПОЛУЧАТЕЛЯ</h3>
-                <p><strong>NAME:</strong> "АРМЭКОНОМБАНК (ОАО), ФИЛИАЛ "ТИГРАН МЕЦ"</p>
-                <p><strong>ADDRESS:</strong>Армения, 0018, г Ереван, пр. Тигран Мецца, дом 49, строения 1</p>
-                <p><strong>SWIFT:</strong> ARECAM 22</p>
-                <strong>ПОЛУЧАТЕЛ</strong>
-                <p><strong>NAME:</strong> New generation church</p>
-                <p><strong>BENEFICIARY’S ACCOUNT N:</strong>BENEFICIARY’S ACCOUNT N: 163288293232 (RUR)</p>
-            </div>
-        </div>
+            <h3>Beneficiary's Bank</h3>
+            <p><strong>NAME:</strong> "TIGRAN METS" BRANCH of "ARMECONOMBANK" OJSC</p>
+            <p><strong>ADDRESS:</strong> Republic of Armenia, 49 and 49 Bld.1, Tigran Mets Str, Yerevan, 0018, RA
+            </p>
+            <p><strong>SWIFT:</strong> ARECAM 22</p>
+            <p><strong>NAME:</strong> New generation church</p>
+            <p><strong>BENEFICIARY’S ACCOUNT N:</strong> 163288293216 (USD)</p>
+        </dialog>
 
 
 
 
 
-        <div id="qrCodeModal">
-            <div id="modalHeader">
-                <span id="closeQRCodeModal">&times;</span>
-                <h2>ՆՎԻՐԱՏՎՈՒԹՅՈՒՆ ԷԼԵԿՏՐՈՆԱՅԻՆ ԴՐԱՄԱՊԱՆԱԿՈՎ</h2>
-            </div>
+        <dialog id="euroBankTransferModal" class="bankTransferVariant"> 
+            <span id="closeEuroBankModal" class="closeModal">&times;</span>
+            <h2>EURO-ով</h2>
+            <p><strong>NAME:</strong> RAIFFEISEN BANK INTERNATIONAL AG</p>
+            <p><strong>ADDRESS:</strong> Am Stadtpark 9 A -1030, Vienna Austria</p>
+            <p><strong>SWIFT:</strong> RZBAATWW</p>
+            <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
 
-            <div id="qr-codes">
-                <div class="qr-code">
-                    <div id="idramQr">
-                        <button>Idram</button>
-                    </div>
-                </div>
-                <div class="qr-code">
-                    <div id="easyWalletQr">
-                        <button>EasyWallet</button>
-                    </div>
-                </div>
-                <div class="qr-code">
-                    <div id="telcellWalletQr">
-                        <button>TelcellWallet</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <h3>Beneficiary's Bank</h3>
+            <p><strong>NAME:</strong> "TIGRAN METS" BRANCH of "ARMECONOMBANK" OJSC</p>
+            <p><strong>ADDRESS:</strong> Republic of Armenia, 49 and 49 Bld.1, Tigran Mets Str, Yerevan, 0018, RA
+            </p>
+            <p><strong>SWIFT:</strong> ARECAM 22</p>
+            <p><strong>NAME:</strong> New generation church</p>
+            <p><strong>BENEFICIARY’S ACCOUNT N:</strong> 163288293216 (EURO)</p>
+        </dialog>
 
 
 
 
-        <div class="qrModal" id="easyWalletModal">
-            <div class="donation-modal-content">
-                <div class="modal-header">
-                    <h2>Easy Wallet ID: 12345678</h2>
-                    <button id="closeEasyWalletModalBtn">&times;</button>
-                </div>
-                <div class="qrCodeBackground"></div>
-            </div>
-        </div>
 
-        <div class="qrModal" id="idramModal">
-            <div class="donation-modal-content">
-                <div class="modal-header">
-                    <h2>Idram ID: 12345678</h2>
-                    <button id="closeIdramModalBtn">&times;</button>
-                </div>
-                <div class="qrCodeBackground"></div>
-            </div>
-        </div>
+        <dialog id="rubleBankTransferModal" class="bankTransferVariant">
+            <span id="closeRubleBankModal" class="closeModal"></span>
+            <h2>Ռուբլիով</h2>
+            <p><strong>NAME: </strong> Межгосударственный банк</p>
+            <p><strong>ADDRESS: </strong> 115162, г. Москва, ул. Шухова, 15</p>
+            <p><strong>SWIFT: </strong> INEARUMM</p>
+            <p>К/С 30101810800000000362, БИК 044525362</p>
+            <p>ИНН 7700076777</p>
+            <p><strong>ARMECONOMBANK OJSC ACCOUNT:</strong> No. 070-55.076.004</p>
 
-        <div class="qrModal" id="telcellWalletModal">
-            <div class="donation-modal-content">
-                <div class="modal-header">
-                    <h2>Wallet ID: 12345678</h2>
-                    <button id="closeTellCellWalletModal">&times;</button>
-                </div>
-                <div class="qrCodeBackground"></div>
-            </div>
-        </div>
+            <h3>БАНК ПОЛУЧАТЕЛЯ</h3>
+            <p><strong>NAME: </strong> "АРМЭКОНОМБАНК (ОАО), ФИЛИАЛ "ТИГРАН МЕЦ"</p>
+            <p><strong>ADDRESS: </strong>Армения, 0018, г Ереван, пр. Тигран Мецца, дом 49, строения 1</p>
+            <p><strong>SWIFT: </strong> ARECAM 22</p>
+            <strong>ПОЛУЧАТЕЛ</strong>
+            <p><strong>NAME: </strong> New generation church</p>
+            <p><strong>BENEFICIARY’S ACCOUNT N: </strong>BENEFICIARY’S ACCOUNT N: 163288293232 (RUR)</p>
+        </dialog>
+
+
+
+
+
+
+
+        <dialog class="qrModal" id="easyWalletModal">
+            <h2>Easy Wallet ID: 12345678</h2>
+            <span id="closeEasyWalletModalBtn" class="closeModal"></span>
+            <div class="qrCodeBackground"></div>
+        </dialog>
+
+
+        <dialog class="qrModal" id="IdramWalletModal">
+            <h2>Idram Wallet ID: 12345678</h2>
+            <span id="closeIdramModalBtn" class="closeModal"></span>
+            <div class="qrCodeBackground"></div>
+        </dialog>
+
+
+        <dialog class="qrModal" id="telcellWalletModal">
+            <h2>Telcell Wallet ID: 12345678</h2>
+            <span id="closeTelcellModalBtn" class="closeModal"></span>
+            <div class="qrCodeBackground"></div>
+        </dialog>
     </main>
 
-    <footer></footer>
     
 
     <script src="/public/common/header/header.js"></script>
