@@ -258,7 +258,6 @@ main #aboutDontation h1 {
     transform: translate(0%, -50%);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
-
 }
 
 .bankTransferVariant p {
