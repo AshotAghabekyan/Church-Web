@@ -47,7 +47,7 @@ export class VideoRestApiController {
 export class VideoViewController {
 
 
-    public allVideosPage(req: Request, res: Response) {
+    public allVideosPage(req: Request, res: Response): void {
         try {
             res.sendFile(path.resolve("public/pages/videos/videos.html"));
         } catch(error) {
@@ -57,7 +57,7 @@ export class VideoViewController {
     }
 
 
-    public videoByIdPage(req: Request, res: Response) {
+    public videoByIdPage(req: Request, res: Response): void {
         try {
             res.sendFile(path.resolve("public/pages/video/video.html"));
         }

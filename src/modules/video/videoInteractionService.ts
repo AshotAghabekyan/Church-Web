@@ -3,7 +3,7 @@
 
 export class VideoInteractionService {
 
-    public likeVideo() {
+    public likeVideo(): void {
 
     }
 }

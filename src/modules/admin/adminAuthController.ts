@@ -5,7 +5,7 @@ import {Request, Response} from "express";
 
 export class AdminAuthController {
 
-    public adminAuthPage(req: Request, res: Response) {
+    public adminAuthPage(req: Request, res: Response): void {
         try {
             res.sendFile(path.resolve("public/pages/admin-auth/admin-auth.html"));
         } catch(error) {
@@ -15,7 +15,7 @@ export class AdminAuthController {
     }
 
 
-    public authorization(req: Request, res: Response) {
+    public authorization(req: Request, res: Response): void {
         res.status(200).json({token: 'ferffwfwfewfew'})
     } 
 }

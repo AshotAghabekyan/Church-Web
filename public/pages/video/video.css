@@ -562,7 +562,7 @@ main .recomendation #otherVideos .videoItem .videoWrapper {
 
     #videoShareModal.active {
         opacity: 1;
-        transform: translate(0%, 30%);
+        transform: translate(0%, 0%);
 
     }
 

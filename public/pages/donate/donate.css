@@ -160,6 +160,7 @@ main #aboutDontation h1 {
 
 .donation-modal-content {
     position: fixed;
+    overflow: scroll;
     top: -20%;
     border: none;
     border-radius: 20px;
@@ -247,6 +248,7 @@ main #aboutDontation h1 {
     width: 60%;
     min-height: 20rem;
     position: fixed;
+    overflow: scroll;
     z-index: 0;
     background-color: white;
     flex-direction: column;
@@ -275,6 +277,7 @@ main #aboutDontation h1 {
 
 .qrModal {
     position: fixed;
+    overflow: scroll;
     z-index: 0;
     display: flex;
     flex-direction: column;

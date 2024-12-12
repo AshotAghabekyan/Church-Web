@@ -14,6 +14,17 @@ app.use(express.json());
 app.use(cors());
 
 
+app.use(function(req: Request, res: Response) {
+    const header: string = null
+})
+
+app.use(function(req: Request, res: Response) {
+    res.setHeader('Cache-Control', "no-cache public max-age=60")
+})
+
+
+
+
 app.use("/public", express.static(path.resolve("public")));
 app.use('/videos', videoApiRouter)
 app.use("/admin-auth", adminApiRouter);
