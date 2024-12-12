@@ -1,9 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 header {
     box-sizing: border-box;
     height: 5rem;
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-shrink: 0;
     justify-content: flex-start;
     align-items: center;
     font-size: 17px;
@@ -15,19 +20,18 @@ header #navOptions {
     margin-left: 5%;
     width: 90%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    gap: 5%;
 }
 
 
 #navOptions .navBar {
     box-sizing: border-box;
     color: white;
-    width: 20%;
-    margin: 2%;
-    padding: 0%;
+    padding-inline: 2%;
     display: flex;
-    flex-basis: 20%;
+    max-width: 20%;
     flex-direction: column;
     justify-content: center;
     align-items: center;

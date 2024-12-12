@@ -1,5 +1,5 @@
 {
-  "include": ["src"],
+  "include": ["./app.ts", "src"],
   "exclude": ["**/node_modules", "**/.*/"],
   "ts-node": {
     "swc": true,
