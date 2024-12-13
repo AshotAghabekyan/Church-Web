@@ -1,6 +1,7 @@
-import { AuthService } from "./authService";
+// deno-lint-ignore-file
+import { AuthService } from "./authService.ts";
 import {Request, Response} from "express";
-import { Credentials } from "google-auth-library/build/src/auth/credentials";
+import { Credentials } from "npm:google-auth-library";
 
 
 export class AuthController {

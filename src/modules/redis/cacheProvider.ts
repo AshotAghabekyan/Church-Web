@@ -1,3 +1,4 @@
+// deno-lint-ignore-file
 
 import { createClient } from '@redis/client';
 import { RedisClientType } from 'redis';
@@ -16,7 +17,7 @@ export class RedisService<StoredValueType> {
         try {
             this.redisClient = createClient({
                 url: process.env.redisUrl,
-                database: +process.env.redisDbIndex || 0,
+                database: +Deno.env.get("redisDbIndex") || 0,
             })
             await this.redisClient.connect();
             this.redisClient.on('error', (err: any) => {
@@ -40,7 +41,7 @@ export class RedisService<StoredValueType> {
 
     public async getValue(key: string): Promise<StoredValueType> {
         try {
-            const targetValue = await this.redisClient.get(key);
+            const targetValue: string = await this.redisClient.get(key)!;
             return JSON.parse(targetValue);
         } catch (error) {
             console.error('get value error', error);

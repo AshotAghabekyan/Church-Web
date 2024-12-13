@@ -1,11 +1,12 @@
+// deno-lint-ignore-file
 
 import { google, youtube_v3 } from "googleapis";
-import { RedisService } from "../redis/cacheProvider";
-import path from "path";
+import { RedisService } from "../redis/cacheProvider.ts";
+import path from "node:path";
 
 
 
-process.loadEnvFile(path.resolve(".env"))
+// process.loadEnvFile(path.resolve(".env"))
 
 
 export class VideoContentProvider {
@@ -13,7 +14,7 @@ export class VideoContentProvider {
     private redisService: RedisService<youtube_v3.Schema$PlaylistItem[]>;
 
     constructor() {
-        const apiKey: string = process.env.API_KEY;
+        const apiKey: string = Deno.env.get('API_KEY')!;
         this.youtubeApi = google.youtube({
             version: 'v3',
             auth: apiKey,

@@ -1,7 +1,8 @@
+// deno-lint-ignore-file
 
 import { google } from "googleapis";
-import {OAuth2Client} from "google-auth-library/build/src/auth/oauth2client"
-import { Credentials } from "google-auth-library/build/src/auth/credentials";
+import {OAuth2Client} from "google-auth-library"
+import { Credentials } from "google-auth-library";
 
 
 
@@ -10,9 +11,9 @@ export class AuthService {
 
     constructor() {
         this.oauth2Client = new google.auth.OAuth2({
-            clientId: process.env.GOOGLE_CLIENT_ID,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            redirectUri: process.env.GOOGLE_REDIRECT_URL,
+            clientId: Deno.env.get('GOOGLE_CLIENT_ID'),
+            clientSecret: Deno.env.get('GOOGLE_CLIENT_SECRET'),
+            redirectUri: Deno.env.get('GOOGLE_REDIRECT_URL'),
         })
     }
 
@@ -20,7 +21,7 @@ export class AuthService {
     public getAuthUrl(): string {
         const authUrl = this.oauth2Client.generateAuthUrl({
             access_type: 'offline',
-            scope: process.env.GOOGLE_SCOPES,
+            scope: Deno.env.get('GOOGLE_SCOPES'),
         });
 
         return authUrl;

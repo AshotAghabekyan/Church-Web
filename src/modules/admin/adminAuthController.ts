@@ -1,4 +1,5 @@
-import path from "path";
+// deno-lint-ignore-file
+import path from "node:path";
 import {Request, Response} from "express";
 
 
