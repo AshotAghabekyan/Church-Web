@@ -1,7 +1,8 @@
+// deno-lint-ignore-file
 import { Request, Response } from "express";
-import { VideoContentProvider } from "./videoContentProvider";
-import { VideoInteractionService } from "./videoInteractionService";
-import path from "path";
+import { VideoContentProvider } from "./videoContentProvider.ts";
+import { VideoInteractionService } from "./videoInteractionService.ts";
+import path from "node:path";
 
 
 

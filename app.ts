@@ -1,26 +1,24 @@
+// deno-lint-ignore-file
 import express from "express";
-import cors from "cors"
-import path from "path";
-import videoApiRouter from "./src/modules/video/videoApiRoutes";
-import adminApiRouter from "./src/modules/admin/adminAuthRoute"
-import authApiRouter from "./src/modules/auth/authRoute"
+import cors from "cors";
+import path from "node:path";
+import videoApiRouter from "./src/modules/video/videoApiRoutes.ts";
+import adminApiRouter from "./src/modules/admin/adminAuthRoute.ts";
+import authApiRouter from "./src/modules/auth/authRoute.ts";
 import { Request, Response, Express } from "express";
 
-process.loadEnvFile(path.resolve('.env'));
 
+
+// process.loadEnvFile(path.resolve('.env'));
 
 const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
 
-app.use(function(req: Request, res: Response) {
-    const header: string = null
-})
-
-app.use(function(req: Request, res: Response) {
-    res.setHeader('Cache-Control', "no-cache public max-age=60")
-})
+// app.use(function(req: Request, res: Response) {
+//     res.setHeader('Cache-Control', "no-cache public max-age=60")
+// })
 
 
 
@@ -50,8 +48,8 @@ app.get("/visitUs", function(request: Request, response: Response) {
     response.sendFile(path.resolve('public/pages/visitUs/visitUs.html'));
 })
 
-
-app.listen(process.env.PORT, function() {
+console.log("port", Deno.env.get('PORT'))
+app.listen(Deno.env.get('PORT'), function() {
     console.log("server running");
 })
 

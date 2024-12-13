@@ -1,6 +1,6 @@
 
 import { Router } from "express";
-import { VideoInteractionController, VideoRestApiController, VideoViewController } from "./videoController";
+import { VideoInteractionController, VideoRestApiController, VideoViewController } from "./videoController.ts";
 
 const router: Router = Router();
 const restApiController: VideoRestApiController = new VideoRestApiController();
