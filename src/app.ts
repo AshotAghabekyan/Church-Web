@@ -2,9 +2,9 @@
 import express from "express";
 import cors from "cors";
 import path from "node:path";
-import videoApiRouter from "./src/modules/video/videoApiRoutes.ts";
-import adminApiRouter from "./src/modules/admin/adminAuthRoute.ts";
-import authApiRouter from "./src/modules/auth/authRoute.ts";
+import videoApiRouter from "./modules/video/videoApiRoutes.ts";
+import adminApiRouter from "./modules/admin/adminAuthRoute.ts";
+import authApiRouter from "./modules/auth/authRoute.ts";
 import { Request, Response, Express } from "express";
 
 
