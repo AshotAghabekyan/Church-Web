@@ -1,8 +1,7 @@
 // deno-lint-ignore-file
 
 import { google } from "googleapis";
-import {OAuth2Client} from "google-auth-library"
-import { Credentials } from "google-auth-library";
+import {OAuth2Client, Credentials} from "google-auth-library"
 
 
 
