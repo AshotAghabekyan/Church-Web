@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon -r dotenv/config app.ts",
+    "start:dev": "deno run --check --watch --env-file --allow-all ./src/app.ts",
     "start": "ts-node",
     "build": "tsc",
     "watch": "node esbuild.js"

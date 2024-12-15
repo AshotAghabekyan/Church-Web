@@ -48,7 +48,6 @@ app.get("/visitUs", function(request: Request, response: Response) {
     response.sendFile(path.resolve('public/pages/visitUs/visitUs.html'));
 })
 
-console.log("port", Deno.env.get('PORT'))
 app.listen(Deno.env.get('PORT'), function() {
     console.log("server running");
 })
