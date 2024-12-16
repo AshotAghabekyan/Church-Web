@@ -1,0 +1,19 @@
+
+
+
+<main>
+    <link rel="stylesheet" href="/public/pages/videos/videos.css" type="text/css">
+    <!-- <script defer src="/public/pages/videos/videos.js"></script> -->
+    <div id="backgroundBlock">
+        <h1>ՆՈՐ ՍԵՐՈՒՆԴԸ YOUTUBE-ՈՒՄ</h1>
+    </div>
+    <div id="videos">
+        {{#each videos}}
+            <div class="videoDiv" data-video-id="{{snippet.resourceId.videoId}}">
+                <div class="videoWrapper" style="background: url('{{snippet.thumbnails.maxres.url}}') no-repeat; background-size: cover;">
+                    <a href="/videos/id/{{snippet.resourceId.videoId}}"></a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</main>
