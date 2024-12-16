@@ -18,7 +18,8 @@ export class VideoRestApiController {
                 res.status(404).render("notFound", {message: 'vidoes not found'});
                 return;
             }
-            res.status(200).render(path.resolve("public/pages/videos/videos.hbs"), {videos})
+            return res.status(200).render(path.resolve('public/pages/videos/videos.hbs'), {videos});
+
         } catch(error) {
             console.log("cannot send vidoes, error -->", error);
             res.status(500).render("internalError", {message: "server internal error"});
@@ -32,7 +33,7 @@ export class VideoRestApiController {
             const videos = await this.videoContentProvider.getVideos(4);
             const targetVideo = videos.find((video: any) => video.snippet.resourceId.videoId == id);
             const recommended = videos.filter((video: any) => video.snippet.resourceId.videoId != id);
-            res.status(200).render(path.resolve("public/pages/video/video.hbs"), {
+            return res.status(200).render(path.resolve('public/pages/video/video.hbs'), {
                 targetVideo, 
                 recommended,
                 videoId: targetVideo.snippet.resourceId.videoId,

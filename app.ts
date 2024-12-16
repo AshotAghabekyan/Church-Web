@@ -5,7 +5,7 @@ import path from "path";
 import videoApiRouter from "./src/modules/video/videoApiRoutes";
 import adminApiRouter from "./src/modules/admin/adminAuthRoute"
 import authApiRouter from "./src/modules/auth/authRoute"
-import { Request, Response, Express } from "express";
+import { Request, Response, NextFunction, Express } from "express";
 
 process.loadEnvFile(path.resolve('.env'));
 
@@ -15,7 +15,14 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/public", express.static(path.resolve("public")));
+app.use("/public", express.static(path.resolve("public"), {
+    "cacheControl": true,
+    "etag": true,
+    "lastModified": true,
+    setHeaders(res: Response) {
+        res.setHeader('cache-control', 'no-cache public')
+    }
+}));
 app.set('views', path.resolve('public/pages')); 
 app.set('view engine', 'hbs');
 
@@ -32,7 +39,10 @@ app.engine(
   );
   
 
-
+// app.use(function(req: Request, res: Response, next: NextFunction) {
+//     res.setHeader('Cache-Control', 'no-cache private max-age=31536000');
+//     next();
+// })
 
 app.use('/videos', videoApiRouter)
 app.use("/admin-auth", adminApiRouter);
@@ -40,12 +50,10 @@ app.use('/auth', authApiRouter);
 
 app.get("/", function(request: Request, response: Response) {
     response.render(path.resolve('public/pages/home/home.hbs'));
-
 })
 
 app.get("/church", function(request: Request, response: Response) {
-    response.render(path.resolve('public/pages/church/church.hbs'));
-
+    response.render(path.resolve('public/pages/church/church.hbs'))
 })
 
 app.get("/our_services", function(request: Request, response: Response) {
@@ -62,6 +70,7 @@ app.get("/visitUs", function(request: Request, response: Response) {
     response.render(path.resolve('public/pages/visitUs/visitUs.hbs'));
 
 })
+
 
 
 app.listen(process.env.PORT, function() {
