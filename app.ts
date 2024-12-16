@@ -23,6 +23,7 @@ app.use("/public", express.static(path.resolve("public"), {
         res.setHeader('cache-control', 'no-cache public')
     }
 }));
+
 app.set('views', path.resolve('public/pages')); 
 app.set('view engine', 'hbs');
 
