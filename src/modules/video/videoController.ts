@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { VideoContentProvider } from "./videoContentProvider";
-import { VideoInteractionService } from "./videoInteractionService";
 import path from "path";
 
 
@@ -16,27 +15,32 @@ export class VideoRestApiController {
             const videoCount: number = +req.params.videoCount;
             const videos: any = await this.videoContentProvider.getVideos(videoCount);
             if (!videos) {
-                res.status(404).json({message: "vidoes not found"});
+                res.status(404).render("notFound", {message: 'vidoes not found'});
                 return;
             }
-            res.status(200).json(videos)
+            res.status(200).render(path.resolve("public/pages/videos/videos.hbs"), {videos})
         } catch(error) {
             console.log("cannot send vidoes, error -->", error);
-            res.status(500).json({message: "server internal error"});
+            res.status(500).render("internalError", {message: "server internal error"});
         }
     }
 
 
     public async getVideoById(req: Request, res: Response) {
         try {
-            const id: number = +req.params.id;
+            const id: string = req.params.id;
             const videos = await this.videoContentProvider.getVideos(4);
             const targetVideo = videos.find((video: any) => video.snippet.resourceId.videoId == id);
-            res.status(200).json({video: targetVideo});
+            const recommended = videos.filter((video: any) => video.snippet.resourceId.videoId != id);
+            res.status(200).render(path.resolve("public/pages/video/video.hbs"), {
+                targetVideo, 
+                recommended,
+                videoId: targetVideo.snippet.resourceId.videoId,
+            })
         }
         catch(error) {
             console.error(error);
-            res.status(500).json({message: 'server internal error'})
+            res.status(500).render('internalError', {error})
         }
     }
 }
@@ -44,39 +48,5 @@ export class VideoRestApiController {
 
 
 
-export class VideoViewController {
 
 
-    public allVideosPage(req: Request, res: Response): void {
-        try {
-            res.sendFile(path.resolve("public/pages/videos/videos.html"));
-        } catch(error) {
-            console.error("cannot send html file -->", error);
-            res.status(500).json({message: "server internal error"});
-        }
-    }
-
-
-    public videoByIdPage(req: Request, res: Response): void {
-        try {
-            res.sendFile(path.resolve("public/pages/video/video.html"));
-        }
-        catch(error) {
-            console.error("cannot send html file -->", error);
-            res.status(500).json({message: "server internal error"});
-        }
-    }
-
-}
-
-
-
-
-
-export class VideoInteractionController {
-    private interactionProvider: VideoInteractionService;
-
-    public likeVideo() {
-
-    }
-}

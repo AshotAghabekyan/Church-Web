@@ -9,9 +9,7 @@ body, html {
     font-family: 'bainsley';
 }
 
-body {
-    display: none;
-}
+
 
 :root {
     --animation-curve: cubic-bezier(1,0,0,1)

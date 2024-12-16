@@ -1,4 +1,5 @@
 import express from "express";
+import * as exphbs from "express-handlebars";
 import cors from "cors"
 import path from "path";
 import videoApiRouter from "./src/modules/video/videoApiRoutes";
@@ -10,44 +11,56 @@ process.loadEnvFile(path.resolve('.env'));
 
 
 const app: Express = express();
+
 app.use(express.json());
 app.use(cors());
 
-
-// app.use(function(req: Request, res: Response) {
-//     const header: string = null
-// })
-
-// app.use(function(req: Request, res: Response) {
-//     res.setHeader('Cache-Control', "no-cache public max-age=60")
-// })
-
-
-
-
 app.use("/public", express.static(path.resolve("public")));
+app.set('views', path.resolve('public/pages')); 
+app.set('view engine', 'hbs');
+
+app.engine(
+    'hbs',
+    exphbs.engine({
+      defaultLayout: path.resolve("public/layout.hbs"), 
+      extname: '.hbs',
+      partialsDir: [
+        path.resolve('public/common/header'),
+        path.resolve('public/common/footer')
+    ],
+    })
+  );
+  
+
+
+
 app.use('/videos', videoApiRouter)
 app.use("/admin-auth", adminApiRouter);
 app.use('/auth', authApiRouter);
 
 app.get("/", function(request: Request, response: Response) {
-    response.sendFile(path.resolve("public/pages/home/home.html"));
+    response.render(path.resolve('public/pages/home/home.hbs'));
+
 })
 
 app.get("/church", function(request: Request, response: Response) {
-    response.sendFile(path.resolve("public/pages/church/church.html"));
+    response.render(path.resolve('public/pages/church/church.hbs'));
+
 })
 
 app.get("/our_services", function(request: Request, response: Response) {
-    response.sendFile(path.resolve("public/pages/services/services.html"));
+    response.render(path.resolve('public/pages/services/services.hbs'));
+
 })
 
 app.get("/donation", function(request: Request, response: Response) {
-    response.sendFile(path.resolve('public/pages/donate/donate.html'));
+    response.render(path.resolve('public/pages/donate/donate.hbs'));
+
 })
 
 app.get("/visitUs", function(request: Request, response: Response) {
-    response.sendFile(path.resolve('public/pages/visitUs/visitUs.html'));
+    response.render(path.resolve('public/pages/visitUs/visitUs.hbs'));
+
 })
 
 

@@ -10,9 +10,6 @@ body, html {
 }
 
 
-body {
-    display: none;
-}
 
 main {
     display: flex;
