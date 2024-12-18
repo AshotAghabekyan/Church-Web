@@ -61,7 +61,7 @@ main {
     right: 0;
     bottom: 0;
     cursor: pointer;
-    background: url('/public/images/playVideo.png') no-repeat center;
+    background: url('/public/images/playVideo.webp') no-repeat center;
     background-blend-mode: color;
     background-size: 15%;
     transition: 0.4s;
@@ -162,7 +162,7 @@ main {
 #videoContainer #actions #donate {
     width: 100%;
     flex-grow: 1;
-    background: url("/public/images/donation.png");
+    background: url("/public/images/donation.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -171,7 +171,7 @@ main {
 #videoContainer #actions #youtube {
     width: 100%;
     flex-grow: 1;
-    background: url("/public/images/youtube.png");
+    background: url("/public/images/youtube.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -181,7 +181,7 @@ main {
 #videoContainer #actions #share {
     width: 100%;
     flex-grow: 1;
-    background: url("/public/images/share.png");
+    background: url("/public/images/share.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -243,7 +243,7 @@ main {
     background: none;
     width: 16px;
     height: 16px;
-    background: url('/public/images/closeModal.png');
+    background: url('/public/images/closeModal.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -303,7 +303,7 @@ main {
 
 
 #socialNetworkList #facebook {
-    background: url('/public/images/facebookIcon.png');
+    background: url('/public/images/facebookIcon.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -313,14 +313,14 @@ main {
 
 
 #socialNetworkList #twitter {
-    background: url('/public/images/twitter.png');
+    background: url('/public/images/twitter.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #socialNetworkList #threads {
-    background: url("/public/images/threadsIcon.png");
+    background: url("/public/images/threadsIcon.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -378,7 +378,7 @@ main {
 #videoContainer #actions #like{
     width: 100%;
     flex-grow: 1;
-    background: url('/public/images/likeVideo.png');
+    background: url('/public/images/likeVideo.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

@@ -1,11 +1,17 @@
-
-    
-    
-    <main>
-        <link rel="stylesheet" href="/public/pages/fonts.css" type="text/css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+        <link rel="preload" href="/public/images/worshipBackground.webp" as="image">
+        <link rel="stylesheet" href="/public/common/header/header.css" type="text/css">
         <link rel="stylesheet" href="/public/pages/donate/donate.css" type="text/css">
-        <script defer src="/public/pages/donate/donate.js"></script>
+</head>
+<body>
+    {{>header}}
 
+    <main>
         <div id="backgroundBlock">
             <h1>
                 ՆՎԻՐԱԲԵՐՈՒԹՅՈՒՆ
@@ -139,10 +145,6 @@
 
 
 
-
-
-
-
         <dialog class="qrModal" id="easyWalletModal">
             <h2>Easy Wallet ID: 12345678</h2>
             <span id="closeEasyWalletModalBtn" class="closeModal"></span>
@@ -164,6 +166,20 @@
         </dialog>
     </main>
 
-</body>
+    {{>footer}}
 
+
+    <script defer src="/public/pages/donate/donate.js"></script>
+    <script defer src="/public/common/header/header.js"></script>
+
+    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
+
+    <link rel='preload' href="/public/images/facebook.webp" as="image">
+    <link rel="preload" href="/public/images/instagram.webp" as="image">
+    <link rel="preload" href="/public/images/telegram.webp" as="image">
+    <link rel="stylesheet" href="/public/common/footer/footer.css" type="text/css" media="print" onload="this.media='all';">
+</body>
 </html>
+    
+    

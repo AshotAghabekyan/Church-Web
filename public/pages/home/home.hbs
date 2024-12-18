@@ -1,55 +1,85 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    
+    <link rel="preload" href="/public/images/home_header.webp" as="image">
+    <link rel="preload" href="/public/images/backgroundForVideos.webp" as="image">
+    <link rel="preload" href="/public/images/handWithHearth.gif" as="image">
 
 
-<main>
-    <script defer src="/public/pages/home/home.js"></script>
-    <link rel="stylesheet" href="/public/pages/fonts.css" type="text/css">
+    <link rel="stylesheet" href="/public/common/header/header.css" type="text/css">
     <link rel="stylesheet" href="/public/pages/home/home.css" type="text/css">
-    
-    <div id="welcome">
-        <h3>ԲԱՐԻ ԳԱԼՈՒՍՏ</h3>
-        <h1>ԵՐԵՎԱՆԻ
-            ՆՈՐ ՍԵՐՈՒՆԴ
-            ԵԿԵՂԵՑԻ
-        </h1>
-    </div>
 
-    <div id="bigFamily">
-        <div id="blockTitle">
-            <h2>
-                ՄԵԾ
-                ԸՆՏԱՆԻՔ
-            </h2>
+</head>
+<body>
+    {{> header}}
+    <main>
+        <div id="welcome">
+            <h3>ԲԱՐԻ ԳԱԼՈՒՍՏ</h3>
+            <h1>ԵՐԵՎԱՆԻ
+                ՆՈՐ ՍԵՐՈՒՆԴ
+                ԵԿԵՂԵՑԻ
+            </h1>
         </div>
-        <div id="blockDescription">
-            <p>Մեր նպատակն է առաջնորդել մարդկանց Հիսուս Քրիստոսի հետ անձնական փոխհարաբերության։</p>
-            <p><b><i>Եվ այն ազատությունով, որ Քրիստոսը մեզ ազատեց, հաստատ մնացեք եւ դարձյալ ծառայության լծի տակ մի մտեք։ (Գաղատացիս 5։1)</i></b></p>
-            <div id="toChurchPage">
-                <a href="/church" ><b>Ավելին</b></a>
-            </div>
-        </div>
-    </div>
-    
-    <div id="ourVideos">
-        <div id="controlWrapper">
-            <div id="wrapperInfo">
-                <h1>Մեր տեսանյութերը</h1>
-                <h2>Դիտեք մեր ծառայություններն օնլայն</h2>
-            </div>
-            <div id="toVideosPage">
-                <button id="videosBtn"><b>Դիտել</b></button>
-            </div>
-        </div>
-    </div>
 
-    <div id="donation">
-        <div id="gifDiv"></div>
-        <div id="bibleTextForDonation">
-            <h1> “Ամեն մեկը թող ըստ իր սրտի հոժարության տա և ոչ թե տրտմությամբ կամ հարկադրաբար, որովհետև Աստված սիրում է հոժարությամբ տվողին։” </h1>
-            <h2>Բ Կորնթացիներին 9.7</h2>
+        <div id="bigFamily">
+            <div id="blockTitle">
+                <h2>
+                    ՄԵԾ
+                    ԸՆՏԱՆԻՔ
+                </h2>
+            </div>
+            <div id="blockDescription">
+                <p>Մեր նպատակն է առաջնորդել մարդկանց Հիսուս Քրիստոսի հետ անձնական փոխհարաբերության։</p>
+                <p><b><i>Եվ այն ազատությունով, որ Քրիստոսը մեզ ազատեց, հաստատ մնացեք եւ դարձյալ ծառայության լծի տակ մի մտեք։ (Գաղատացիս 5։1)</i></b></p>
+                <div id="toChurchPage">
+                    <a href="/church" ><b>Ավելին</b></a>
+                </div>
+            </div>
         </div>
-        <div id="toDontationPage">
-            <button id="donationsBtn"><b>Նվիրաբերել</b></button>
+        
+        <div id="ourVideos">
+            <div id="controlWrapper">
+                <div id="wrapperInfo">
+                    <h1>Մեր տեսանյութերը</h1>
+                    <h2>Դիտեք մեր ծառայություններն օնլայն</h2>
+                </div>
+                <div id="toVideosPage">
+                    <button id="videosBtn"><b>Դիտել</b></button>
+                </div>
+            </div>
         </div>
-    </div>
-</main>
+
+        <div id="donation">
+            <div id="gifDiv"></div>
+            <div id="bibleTextForDonation">
+                <h1> “Ամեն մեկը թող ըստ իր սրտի հոժարության տա և ոչ թե տրտմությամբ կամ հարկադրաբար, որովհետև Աստված սիրում է հոժարությամբ տվողին։” </h1>
+                <h2>Բ Կորնթացիներին 9.7</h2>
+            </div>
+            <div id="toDontationPage">
+                <button id="donationsBtn"><b>Նվիրաբերել</b></button>
+            </div>
+        </div>
+    </main>   
+
+    {{> footer}}
+</body>
+
+    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
+
+    <link rel='preload' href="/public/images/facebook.webp" as="image">
+    <link rel="preload" href="/public/images/instagram.webp" as="image">
+    <link rel="preload" href="/public/images/telegram.webp" as="image">
+    <link rel="stylesheet" href="/public/common/footer/footer.css" type="text/css" media="print" onload="this.media='all';">
+
+    <script defer src="/public/pages/home/home.js"></script>
+    <script defer src="/public/common/header/header.js"></script>    
+</html>
+
+
+

@@ -1,78 +1,101 @@
 
 
 
-<main>
-    <link rel="stylesheet" href="/public/pages/fonts.css" type="text/css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{targetVideo.snippet.title}}</title>
+
+    <link rel="preload" href="/public/images/playVideo.webp" as="image">
+    <link rel="stylesheet" href="/public/common/header/header.css" type="text/css">
     <link rel="stylesheet" href="/public/pages/video/video.css" type="text/css">
+</head>
+<body>
+    {{>header}}
+
+    <main>
+        <div id="videoContainer">
+            <div id="video" style="background: url('{{targetVideo.snippet.thumbnails.maxres.url}}') no-repeat center; background-size: cover;">
+                <div id="videoPlayIcon"></div>
+            </div>
+            <div id="description">
+                <h1 id="title">{{targetVideo.snippet.title}}</h1>
+            </div>
+            <div id="actions">
+                <div class="actionPoint" id="donateAction">
+                    <div id="donate"></div>
+                    <div><p>donate</p></div>
+                </div>
+                <div class="actionPoint" id="toYoutubeAction">
+                    <div id="youtube"></div>
+                    <div><p>youtube</p></div>
+                </div>
+
+                <dialog id="videoShareModal">
+                    <div id="modalHeader">
+                        <h1>Share Video</h1>
+                        <button id="closeShareModal"></button>
+                    </div>
+                    <div class="voidLine"></div>
+
+
+                    <div id="socialNetworks">
+                        <h3>Share via</h3>
+                        <div id="socialNetworkList">
+                            <div id="threads" class="socialNetwork"></div>
+                            <div id="facebook" class="socialNetwork"></div>
+                            <div id="twitter" class="socialNetwork"></div>
+
+                        </div>
+                    </div>
+
+                    <div id="manualShare">
+                        <h3>Or copy link</h3>
+                        <button id="copyLink">Copy</button>                            
+                    </div>
+                </dialog>
+
+                <div class="actionPoint" id="shareAction">
+                    <div id="share"></div>
+                    <div><p>share</p></div>
+                </div>
+
+                <div class="actionPoint" id="likeAction">
+                    <div id="like"></div>
+                    <div><p>like</p></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="recomendation">
+            <div id="recomendationHeader"><h2>Դիտեք նաև այլ տեսանյութեր</h2></div>
+            <div id="otherVideos">
+                {{#each recommended}}
+                    <div class="videoItem" data-video-id="{{snippet.resourceId.videoId}}">
+                        <div class="videoWrapper" style="background: url('{{snippet.thumbnails.maxres.url}}') no-repeat; background-size: cover;"
+                            onclick="window.location.href='/videos/id/{{snippet.resourceId.videoId}}';">
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </main>
+
+    {{>footer}}
+</body>
     <script defer src="/public/pages/video/video.js"></script>
     <script defer src="/public/pages/video/videoActions.js"></script>
+    <script defer src="/public/common/header/header.js"></script>    
+    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
 
-    <div id="videoContainer">
-        <div id="video" style="background: url('{{targetVideo.snippet.thumbnails.maxres.url}}') no-repeat center; background-size: cover;">
-            <div id="videoPlayIcon"></div>
-        </div>
-        <div id="description">
-            <h1 id="title">{{targetVideo.snippet.title}}</h1>
-        </div>
-        <div id="actions">
-            <div class="actionPoint" id="donateAction">
-                <div id="donate"></div>
-                <div><p>donate</p></div>
-            </div>
-            <div class="actionPoint" id="toYoutubeAction">
-                <div id="youtube"></div>
-                <div><p>youtube</p></div>
-            </div>
+    <link rel='preload' href="/public/images/facebook.webp" as="image">
+    <link rel="preload" href="/public/images/instagram.webp" as="image">
+    <link rel="preload" href="/public/images/telegram.webp" as="image">
+    <link rel="stylesheet" href="/public/common/footer/footer.css" type="text/css" media="print" onload="this.media='all';">
+</html>
 
-            <dialog id="videoShareModal">
-                <div id="modalHeader">
-                    <h1>Share Video</h1>
-                    <button id="closeShareModal"></button>
-                </div>
-                <div class="voidLine"></div>
-
-
-                <div id="socialNetworks">
-                    <h3>Share via</h3>
-                    <div id="socialNetworkList">
-                        <div id="threads" class="socialNetwork"></div>
-                        <div id="facebook" class="socialNetwork"></div>
-                        <div id="twitter" class="socialNetwork"></div>
-
-                    </div>
-                </div>
-
-                <div id="manualShare">
-                    <h3>Or copy link</h3>
-                    <button id="copyLink">Copy</button>                            
-                </div>
-            </dialog>
-
-            <div class="actionPoint" id="shareAction">
-                <div id="share"></div>
-                <div><p>share</p></div>
-            </div>
-
-            <div class="actionPoint" id="likeAction">
-                <div id="like"></div>
-                <div><p>like</p></div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="recomendation">
-        <div id="recomendationHeader"><h2>Դիտեք նաև այլ տեսանյութեր</h2></div>
-        <div id="otherVideos">
-            {{#each recommended}}
-                <div class="videoItem" data-video-id="{{snippet.resourceId.videoId}}">
-                    <div class="videoWrapper" style="background: url('{{snippet.thumbnails.maxres.url}}') no-repeat; background-size: cover;"
-                        onclick="window.location.href='/videos/id/{{snippet.resourceId.videoId}}';">
-                    </div>
-                </div>
-            {{/each}}
-        </div>
-    </div>
-
-</main>

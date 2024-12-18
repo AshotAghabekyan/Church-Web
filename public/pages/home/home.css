@@ -22,7 +22,7 @@ main {
 
 
 main #welcome {
-    background: url("/public/images/home_header.jpg");
+    background: url("/public/images/home_header.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%, 50%;

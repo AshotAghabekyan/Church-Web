@@ -172,7 +172,7 @@ main #allServices #homeGroups {
 main #allServices #homeGroups .serviceBackground {
     width: 50%;
     height: 70vh;
-    background: url("/public/images/home_group.jpg");
+    background: url("/public/images/home_group.webp");
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -194,7 +194,7 @@ main #allServices #teenService{
 main #allServices #teenService .serviceBackground {
     width: 50%;
     height: 70vh;
-    background: url("/public/images/teen_ministry.JPG");
+    background: url("/public/images/teen_ministry.webp");
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
