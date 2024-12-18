@@ -1,27 +1,28 @@
 import express from "express";
 import * as exphbs from "express-handlebars";
-import cors from "cors"
-import path from "path";
+import cors from "cors";
+import path from "node:path";
 import videoApiRouter from "./src/modules/video/videoApiRoutes";
 import adminApiRouter from "./src/modules/admin/adminAuthRoute"
 import authApiRouter from "./src/modules/auth/authRoute"
-import { Request, Response, NextFunction, Express } from "express";
+import { Request, Response, Express } from "express";
+import compression from "compression"
 
 process.loadEnvFile(path.resolve('.env'));
-
 
 const app: Express = express();
 
 app.use(express.json());
 app.use(cors());
+app.use(compression());
 
 app.use("/public", express.static(path.resolve("public"), {
     "cacheControl": true,
     "etag": true,
     "lastModified": true,
-    setHeaders(res: Response) {
-        res.setHeader('cache-control', 'no-cache public')
-    }
+    setHeaders(res: Response, path: string) {
+        res.setHeader('cache-control', 'public, max-age=3600');
+    },
 }));
 
 app.set('views', path.resolve('public/pages')); 
@@ -30,27 +31,27 @@ app.set('view engine', 'hbs');
 app.engine(
     'hbs',
     exphbs.engine({
-      defaultLayout: path.resolve("public/layout.hbs"), 
+      defaultLayout: false, 
       extname: '.hbs',
       partialsDir: [
         path.resolve('public/common/header'),
         path.resolve('public/common/footer')
     ],
+    helpers: {
+
+    }
     })
   );
   
 
-// app.use(function(req: Request, res: Response, next: NextFunction) {
-//     res.setHeader('Cache-Control', 'no-cache private max-age=31536000');
-//     next();
-// })
+
 
 app.use('/videos', videoApiRouter)
 app.use("/admin-auth", adminApiRouter);
 app.use('/auth', authApiRouter);
 
 app.get("/", function(request: Request, response: Response) {
-    response.render(path.resolve('public/pages/home/home.hbs'));
+    response.render(path.resolve('public/pages/home/home.hbs'))
 })
 
 app.get("/church", function(request: Request, response: Response) {

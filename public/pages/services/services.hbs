@@ -1,64 +1,90 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preload" href="/public/images/servicesBackground.webp" as="image">
+    <link rel="preload" href="/public/images/childServiceBackground.webp" as="image">
+    <link rel="preload" href="/public/images/home_group.webp" as="image">
+    <link rel="preload" href="/public/images/teen_ministry.webp" as="image">
 
-<main>
-    <link rel="stylesheet" href="/public/pages/fonts.css" type="text/css">
+    <link rel="stylesheet" href="/public/common/header/header.css" type="text/css">
     <link rel="stylesheet" href="/public/pages/services/services.css" type="text/css">
+</head>
 
-    <div id="welcome">
-        <div><h1>ՄԵՐ ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐԸ</h1></div>
-    </div>
+<body>
+    {{>header}}
 
-    <div id="allServices">
-
-        <div id="childrenService">
-            <div class="serviceBackground"></div>
-            <div class="serviceInfo">
-                <div>
-                    <h3>Մանկական ծառայություն</h3>
-                    <p>
-                        I'm a paragraph. Click here to add your own text and edit me. It’s easy.
-                        Just click “Edit Text” or double click me to add your own content and maake changes to the font.
-                        Feel free to drag and drop me anywhere you like on your page.
-                        I’m a great place for you to tell a story and let your users know a little more about you.
-                    </p>
-                </div>
-                <button onclick="(() => {window.location.href = '/visitUs'})()">Միանալ</button>
-            </div>
-        </div>
-        
-        <div id="homeGroups">
-            <div class="serviceBackground"></div>
-            <div class="serviceInfo">
-                <div>
-                    <h3>Տնային խմբակներ</h3>
-                    <p>
-                        I'm a paragraph. Click here to add your own text and edit me. It’s easy.
-                        Just click “Edit Text” or double click me to add your own content and maake changes to the font.
-                        Feel free to drag and drop me anywhere you like on your page.
-                        I’m a great place for you to tell a story and let your users know a little more about you.
-                    </p>
-                </div>
-                <button onclick="(() => {window.location.href = '/visitUs'})()">Միանալ</button>
-            </div>
+    <main>
+        <div id="welcome">
+            <div><h1>ՄԵՐ ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐԸ</h1></div>
         </div>
 
-        <div id="teenService">
-            <div class="serviceBackground"></div>
-            <div class="serviceInfo">
-                <div>
-                    <h3>Պատանիների ծառայություն</h3>
-                    <p>
-                        I'm a paragraph. Click here to add your own text and edit me. It’s easy.
-                        Just click “Edit Text” or double click me to add your own content and maake changes to the font.
-                        Feel free to drag and drop me anywhere you like on your page.
-                        I’m a great place for you to tell a story and let your users know a little more about you.
-                    </p>
+        <div id="allServices">
+
+            <div id="childrenService">
+                <div class="serviceBackground"></div>
+                <div class="serviceInfo">
+                    <div>
+                        <h3>Մանկական ծառայություն</h3>
+                        <p>
+                            I'm a paragraph. Click here to add your own text and edit me. It’s easy.
+                            Just click “Edit Text” or double click me to add your own content and maake changes to the font.
+                            Feel free to drag and drop me anywhere you like on your page.
+                            I’m a great place for you to tell a story and let your users know a little more about you.
+                        </p>
+                    </div>
+                    <button onclick="(() => {window.location.href = '/visitUs'})()">Միանալ</button>
                 </div>
-                <button onclick="(() => {window.location.href = '/visitUs'})()">Միանալ</button>
+            </div>
+            
+            <div id="homeGroups">
+                <div class="serviceBackground"></div>
+                <div class="serviceInfo">
+                    <div>
+                        <h3>Տնային խմբակներ</h3>
+                        <p>
+                            I'm a paragraph. Click here to add your own text and edit me. It’s easy.
+                            Just click “Edit Text” or double click me to add your own content and maake changes to the font.
+                            Feel free to drag and drop me anywhere you like on your page.
+                            I’m a great place for you to tell a story and let your users know a little more about you.
+                        </p>
+                    </div>
+                    <button onclick="(() => {window.location.href = '/visitUs'})()">Միանալ</button>
+                </div>
+            </div>
+
+            <div id="teenService">
+                <div class="serviceBackground"></div>
+                <div class="serviceInfo">
+                    <div>
+                        <h3>Պատանիների ծառայություն</h3>
+                        <p>
+                            I'm a paragraph. Click here to add your own text and edit me. It’s easy.
+                            Just click “Edit Text” or double click me to add your own content and maake changes to the font.
+                            Feel free to drag and drop me anywhere you like on your page.
+                            I’m a great place for you to tell a story and let your users know a little more about you.
+                        </p>
+                    </div>
+                    <button onclick="(() => {window.location.href = '/visitUs'})()">Միանալ</button>
+                </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 
+    {{>footer}}
+</body>
+
+    <script defer src="/public/common/header/header.js"></script>    
+    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
+
+    <link rel='preload' href="/public/images/facebook.webp" as="image">
+    <link rel="preload" href="/public/images/instagram.webp" as="image">
+    <link rel="preload" href="/public/images/telegram.webp" as="image">
+    <link rel="stylesheet" href="/public/common/footer/footer.css" type="text/css" media="print" onload="this.media='all';">
+</html>

@@ -1,20 +1,45 @@
 
 
-
-<main>
-    <link rel="stylesheet" href="/public/pages/fonts.css" type="text/css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>videos</title>
+    <link rel="preload" href="/public/images/videoBackground2.webp" as="image">
+    <link rel="stylesheet" href="/public/common/header/header.css" type="text/css">
     <link rel="stylesheet" href="/public/pages/videos/videos.css" type="text/css">
+</head>
+<body>
+    {{>header}}
 
-    <div id="backgroundBlock">
-        <h1>ՆՈՐ ՍԵՐՈՒՆԴԸ YOUTUBE-ՈՒՄ</h1>
-    </div>
-    <div id="videos">
-        {{#each videos}}
-            <div class="videoDiv" data-video-id="{{snippet.resourceId.videoId}}">
-                <div class="videoWrapper" style="background: url('{{snippet.thumbnails.maxres.url}}') no-repeat; background-size: cover;">
-                    <a href="/videos/id/{{snippet.resourceId.videoId}}"></a>
+    <main>
+        <div id="backgroundBlock">
+            <h1>ՆՈՐ ՍԵՐՈՒՆԴԸ YOUTUBE-ՈՒՄ</h1>
+        </div>
+        <div id="videos">
+            {{#each videos}}
+                <div class="videoDiv" data-video-id="{{snippet.resourceId.videoId}}">
+                    <div class="videoWrapper" style="background: url('{{snippet.thumbnails.maxres.url}}') no-repeat; background-size: cover;">
+                        <a href="/videos/id/{{snippet.resourceId.videoId}}"></a>
+                    </div>
                 </div>
-            </div>
-        {{/each}}
-    </div>
-</main>
+            {{/each}}
+        </div>
+    </main>
+
+    {{>footer}}
+
+    <script defer src="/public/common/header/header.js"></script>    
+    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
+
+    <link rel='preload' href="/public/images/facebook.webp" as="image">
+    <link rel="preload" href="/public/images/instagram.webp" as="image">
+    <link rel="preload" href="/public/images/telegram.webp" as="image">
+    <link rel="stylesheet" href="/public/common/footer/footer.css" type="text/css" media="print" onload="this.media='all';">
+</body>
+</html>
+
+
+

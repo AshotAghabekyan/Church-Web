@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+
+
 header {
     box-sizing: border-box;
     height: 5rem;
@@ -115,7 +117,7 @@ header #navOptions {
 #logo {
     position: absolute;
     left: 20px;
-    background: url("/public/images/white_NG_logo.png");
+    background: url("/public/images/white_NG_logo.webp");
     background-repeat: no-repeat;
     background-size: contain;
     background-repeat: no-repeat;

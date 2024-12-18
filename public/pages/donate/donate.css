@@ -199,7 +199,7 @@ main #aboutDontation h1 {
     position: absolute;
     top:5%;
     right: 5%;  
-    background: url("/public/images/closeModal.png");
+    background: url("/public/images/closeModal.webp");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
