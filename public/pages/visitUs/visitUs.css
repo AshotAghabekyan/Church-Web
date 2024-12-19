@@ -1,26 +1,17 @@
 
 
-body, html {
-    margin:0%;
-    width: 100%;
-    height: 100%;
-    font-family: 'bainsley';
-}
-
-
-:root {
-    --animation-curve: cubic-bezier(1,0,0,1)
-}
-
 
 main {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #eaeaee;
+    max-width: 100vw;
     line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    background-color: #eaeaea;
 }
+
+
 
 main #visitUsBackgroud {
     display: flex;
