@@ -3,23 +3,27 @@
 }
 
 
+:root {
+    --animation-curve: cubic-bezier(1,0,0,1);
+    --font-size-h1: 36px;
+    --font-size-h2: 32px;
+    --font-size-body: 18px;
+    --font-size-small: 16px;
+    --font-size-button: 18px;   
+}
+
+
+
 body, html {
     margin:0%;
     width: 100%;
     height: 100%;
     font-family: 'bainsley';
-    font-size: calc(15px + 0.390625vw);
+    font-size: var(--font-size-body)
 }
 
 
-:root {
-    --animation-curve: cubic-bezier(1,0,0,1)
-    --font-size-h1: 36px;
-    --font-size-h2: 32px;
-    --font-size-body: 18px;
-    --font-size-small: 16px;
-    --font-size-button: 18px;
-}
+
   
 @media (min-width: 769px) and (max-width: 1024px) {
     :root {

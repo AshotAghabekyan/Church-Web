@@ -1,150 +1,110 @@
 
 
-
 footer {
     width: 100%;
-    min-height: max-content;
-    height:max-content;
     display: flex;
-    flex-direction: row; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #3f4359;
+    padding: calc(1.2 * var(--font-size-body)) 0;
+    color: white;
+    font-family: Arial, sans-serif;
     line-height: 1.5;
-    font-size: 16px;
- }
+}
 
- footer p {
-    margin: 2%
- }
- 
- footer #footerChurchName, #helpInfo {
-    width: 40%;
+#contacts {
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    color: white;
-    opacity: 0.9;
- }
-
- footer #footerChurchName, #helpInfo div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;;
- }
-
- footer #footerChurchName, #helpInfo #networkLinks {
-    display: flex;
-    margin: 2%;
-    justify-content: space-evenly;
     align-items: center;
-    flex-direction: row;
-    font-size: 16px;
-    color: white;
-    opacity: 0.9;
+    gap: calc(1.6 * var(--font-size-body));
+    padding: calc(0.7 * var(--font-size-body)) 0;
 }
 
-footer #footerChurchName, #helpInfo #aditionalInfo {
+.contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: white;
-    opacity: 0.9;
-}
-
-
-
-footer #networkLinks {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    align-items: center; 
-    margin: 20px 0; 
-}
-
-footer #networkLinks .linkPoint {
-    margin: 10px; 
-    text-align: center; 
-}
-
-
-footer #footerChurchName, #helpInfo #networkLinks a {
+    align-items: center;
     text-decoration: none;
     color: white;
-    opacity: 0.7;
-    font-size: 20px;
-    transition: 0.4s;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
 }
 
-footer #networkLinks a img {
-    margin-right: 5%;
-    margin-top: 7px;
-    margin-bottom: 7px;
-    scale: 0.7;
-}
-
-footer #footerChurchName, #helpInfo #networkLinks a:hover {
+.contact:hover {
     opacity: 1;
 }
- 
-footer #footerChurchName, #releaseDate {
+
+.contact div {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact img {
+    width: calc(1.2 * var(--font-size-body));
+    height: calc(1.2 * var(--font-size-body));
+    margin-bottom: calc(0.6 * var(--font-size-body));
+    transition: transform 0.3s ease;
+}
+
+.contact img:hover {
+    transform: scale(1.1);
+}
+
+#additionalInfo {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
+    margin: calc(0.5 * var(--font-size-body)) 0;
+    gap: calc(0.5 * var(--font-size-body));
     text-align: center;
-     width: 20%;
-     height: auto;
-     color: white;
-     opacity: 0.9;
- }
+}
+
+#churchTitle {
+    font-weight: bold;
+    margin: calc(0.5 * var(--font-size-body)) 0;
+}
+
+#releaseDate {
+    opacity: 0.8;
+}
 
 
- @media screen and (min-width: 768px) and (max-width: 992px) {
-    footer {
-        font-size: 18px;
-        flex-grow: 1;
-        height: max-content;
-    }
- }
-
-
-
- @media screen and (max-width: 768px){
+@media screen and (min-width: 768px)  and (max-width: 992px){
     footer {
         flex-direction: column;
-        justify-content: left;
-        align-items: center;
-        height: max-content;
-        flex-grow: 1;
-        font-size: 14px; 
-        padding-bottom: 10%;
-
     }
 
-    footer #footerChurchName, #helpInfo, #releaseDate {
-        width: 80%;
+    #contacts {
+        flex-direction: row;
     }
 
-    footer #networkLinks {
+    #additionalInfo {
         flex-direction: column;
-        align-items: center; 
+        justify-content: center;
     }
 
-    footer #networkLinks .linkPoint {
-        margin-left: 10px;
-        margin-right: 10px; 
+    #additionalInfo p {
+        margin: 0%;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    #contacts, #additionalInfo {
+        gap: calc(0.9 * var(--font-size-body));
+    }
+    #additionalInfo {
+        flex-direction: column;
+        justify-content: center;
     }
 
-    footer #networkLinks a img {
-        margin-right: 5%;
-        margin-top: 7px;
-        margin-bottom: 7px;
-        scale: 0.7;
-    }
- }
-
-
-@media screen and (min-width: 601px) {
-    footer #networkLinks {
-        flex-direction: row; 
+    #additionalInfo p {
+        margin: 0%;
     }
 }
