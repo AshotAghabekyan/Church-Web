@@ -1,22 +1,13 @@
 
-
-
-* {
-    box-sizing: border-box;
-}
-
-
-
 header {
     box-sizing: border-box;
-    height: 5rem;
+    height: 4rem;
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
     justify-content: flex-start;
     align-items: center;
-    font-size: 17px;
     background-color:  #66697a;
 }
 
@@ -218,7 +209,7 @@ header #navOptions {
 
 
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
     header {
         min-height: 6rem;
         width: 100%;
@@ -264,7 +255,7 @@ header #navOptions {
 
 
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 768px){
     header {
         min-height: 5rem;
         width: 100%;

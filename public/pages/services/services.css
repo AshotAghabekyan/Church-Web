@@ -1,19 +1,5 @@
 
 
-body, html {
-    margin:0%;
-    width: 100%;
-    height: 100%;
-    font-family: 'bainsley';
-}
-
-
-:root {
-    --animation-curve: cubic-bezier(1,0,0,1)
-}
-
-
-
 main {
     max-width: 100vw;
     line-height: 1.5;
@@ -43,6 +29,7 @@ main {
 main #welcome h1 {
     font-size: 44px;
 }
+
 
 main #aboutServices {
     display: flex;

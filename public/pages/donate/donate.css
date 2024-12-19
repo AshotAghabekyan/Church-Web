@@ -1,30 +1,13 @@
 
 
-* {
-    box-sizing: border-box;
-}
-
-body, html {
-    margin:0%;
-    width: 100%;
-    height: 100%;
-    font-family: 'bainsley';
-    box-sizing: border-box;
-}
-
-
-:root {
-    --animation-curve: cubic-bezier(1,0,0,1)
-}
-
-
 main {
-    width: 100%;
+    max-width: 100vw;
+    line-height: 1.5;
     min-height: 100vh;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     background-color: #eaeaea;
-    line-height: 1.5;
 }
 
 
