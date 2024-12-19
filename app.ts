@@ -37,9 +37,6 @@ app.engine(
         path.resolve('public/common/header'),
         path.resolve('public/common/footer')
     ],
-    helpers: {
-
-    }
     })
   );
   
