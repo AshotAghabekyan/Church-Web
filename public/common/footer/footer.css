@@ -61,8 +61,12 @@ footer {
     align-items: center;
     justify-content: center;
     margin: calc(0.5 * var(--font-size-body)) 0;
-    gap: calc(0.5 * var(--font-size-body));
+    column-gap: calc(5 * var(--font-size-body));
     text-align: center;
+}
+
+#additionalInfo p {
+    flex-basis: 20%;
 }
 
 #churchTitle {
@@ -85,7 +89,7 @@ footer {
     }
 
     #additionalInfo {
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
     }
 
