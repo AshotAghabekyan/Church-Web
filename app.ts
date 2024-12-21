@@ -11,12 +11,11 @@ import { BrotliCompressor } from "src/modules/compressor/compressor";
 
 
 process.loadEnvFile(path.resolve('.env'));
-
 const app: Express = express();
+
 
 app.use(express.json());
 app.use(cors());
-
 
 app.use('/public', async (req: Request, res: Response) => {
     const staticFileProcessor: StaticFileProcessor = new StaticFileProcessor(req.url, {
@@ -39,12 +38,10 @@ app.engine(
       partialsDir: [
         path.resolve('public/common/header'),
         path.resolve('public/common/footer')
-    ],
+      ],
     })
-  );
+);
   
-
-
 
 app.use('/videos', videoApiRouter)
 app.use("/admin-auth", adminApiRouter);
@@ -74,8 +71,7 @@ app.get("/visitUs", function(request: Request, response: Response) {
 })
 
 
-
 app.listen(process.env.PORT, function() {
-    console.log("server running");
+    console.log("server running on", process.env.PORT);
 })
 

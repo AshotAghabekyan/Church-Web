@@ -3,6 +3,7 @@ import path from "node:path";
 import fs from "node:fs";
 import { Compressor } from "../compressor/compressor";
 import { MimeType } from "../mimetypes/mimetypes";
+import { FileStreamProcessor } from "../streamProcessor/streamProcessor";
 
 
 
@@ -67,16 +68,15 @@ export class StaticFileProcessor {
 
     private processByCompressing(req: Request, res: Response, staticFilePath: string) {
         try {
-    
             const gzip = this.compressor.compress(staticFilePath);
-    
-            gzip.on('data', (chunk) => {
-                res.write(chunk);
-            });
-    
-            gzip.on("finish", () => {
+            const streamTransfer = new FileStreamProcessor();
+            streamTransfer.transferData(gzip, res);
+                streamTransfer.once("finish", () => {
                 res.status(200).end();
             });
+            streamTransfer.once('error', () => {
+                throw new Error('response streaming error');
+            })
         }
         catch (error) {
             console.error(error);
@@ -88,14 +88,13 @@ export class StaticFileProcessor {
 
     public processDirectly(req: Request, res: Response, staticFilePath: string) {
         try {  
-            const readStream = fs.createReadStream(staticFilePath);
-            readStream.on("data", (chunk: Buffer) => {
-                res.write(chunk);
-            })
-
-            readStream.on("end", () => {
-                readStream.close();
+            const streamTransfer = new FileStreamProcessor();
+            streamTransfer.transferData(staticFilePath, res);
+            streamTransfer.once("finish", () => {
                 res.status(200).end();
+            })
+            streamTransfer.once('error', () => {
+                throw new Error('response streaming error');
             })
 
         } catch (error) {
