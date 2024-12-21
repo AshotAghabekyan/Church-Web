@@ -10,7 +10,7 @@ import { FileStreamProcessor } from "../streamProcessor/streamProcessor";
 interface StaticFileProcessorOption {
     compress?: {
         compressor: Compressor;
-        encoding: string;
+        encoding: "br" | "gzip"; //br -> brotli
     },
     setHeader?: (req: Request, res: Response) => void,
     staticFilesDir: string;
@@ -53,15 +53,7 @@ export class StaticFileProcessor {
                 return;
             }
 
-            const validAcceptEncodings: string[] = req.headers['accept-encoding'].toString().split(", ");
-            const currentCompressEncoding: string = this.options.compress.encoding
-
-            if (validAcceptEncodings.includes(currentCompressEncoding)) {
-                res.setHeader('content-encoding', currentCompressEncoding);
-                this.processByCompressing(req, res, staticFilePath);
-                return;
-            }
-            this.processDirectly(req, res, staticFilePath);
+            this.processByCompressing(req, res, staticFilePath);
         }
         catch(error) {
             console.error(error);
@@ -73,6 +65,15 @@ export class StaticFileProcessor {
 
     private processByCompressing(req: Request, res: Response, staticFilePath: string) {
         try {
+            const validAcceptEncodings: string[] = req.headers['accept-encoding'].toString().split(", ");
+            const currentCompressEncoding: string = this.options.compress.encoding
+
+            if (!validAcceptEncodings.includes(currentCompressEncoding)) {
+                this.processDirectly(req, res, staticFilePath);
+                return;
+            }
+            res.setHeader('content-encoding', currentCompressEncoding);
+            
             const gzip = this.compressor.compress(staticFilePath);
             const streamTransfer = new FileStreamProcessor();
             streamTransfer.transferData(gzip, res);
