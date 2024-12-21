@@ -6,7 +6,9 @@ import videoApiRouter from "./src/modules/video/videoApiRoutes";
 import adminApiRouter from "./src/modules/admin/adminAuthRoute"
 import authApiRouter from "./src/modules/auth/authRoute"
 import { Request, Response, Express } from "express";
-import compression from "compression"
+import { StaticFileProcessor } from "./src/modules/staticFileProcessor/staticFIleProcessor";
+import { BrotliCompressor } from "src/modules/compressor/compressor";
+
 
 process.loadEnvFile(path.resolve('.env'));
 
@@ -14,16 +16,17 @@ const app: Express = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(compression());
 
-app.use("/public", express.static(path.resolve("public"), {
-    "cacheControl": true,
-    "etag": true,
-    "lastModified": true,
-    setHeaders(res: Response, path: string) {
-        res.setHeader('cache-control', 'public, max-age=3600');
-    },
-}));
+
+app.use('/public', async (req: Request, res: Response) => {
+    const staticFileProcessor: StaticFileProcessor = new StaticFileProcessor(req.url, {
+        "staticFilesDir": path.resolve('/public'),
+        compress: {compressor: new BrotliCompressor()},
+    });
+    await staticFileProcessor.process(req, res);
+})
+
+
 
 app.set('views', path.resolve('public/pages')); 
 app.set('view engine', 'hbs');
