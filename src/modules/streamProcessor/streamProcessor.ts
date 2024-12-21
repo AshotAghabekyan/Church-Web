@@ -49,7 +49,7 @@ export class FileStreamProcessor {
         });
     }
 
-    public once(event: "error" | "finish", callback: () => void): void {
-        this.eventEmitter.once(event, callback);
+    public on(event: "error" | "finish", callback: () => void): void {
+        this.eventEmitter.on(event, callback);
     }
 }

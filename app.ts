@@ -7,7 +7,7 @@ import adminApiRouter from "./src/modules/admin/adminAuthRoute"
 import authApiRouter from "./src/modules/auth/authRoute"
 import { Request, Response, Express } from "express";
 import { StaticFileProcessor } from "./src/modules/staticFileProcessor/staticFIleProcessor";
-import { BrotliCompressor } from "src/modules/compressor/compressor";
+import { BrotliCompressor } from "./src/modules/compressor/compressor";
 
 
 process.loadEnvFile(path.resolve('.env'));
