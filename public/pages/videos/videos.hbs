@@ -7,13 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>videos</title>
     <link rel="stylesheet" href="/public/common/common.css" type="text/css">
-    <link rel="preload" href="/public/images/videoBackground2.webp" as="image">
-    <link rel="stylesheet" href="/public/common/header/header.css" type="text/css">
-    <link rel="stylesheet" href="/public/pages/videos/videos.css" type="text/css">
+    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font/ttf" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/common/preloader/preloader.css">
+    <link rel="preload" href="/public/common/preloader/preloader.js" as="text/javascript">
+    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
 </head>
 <body>
+    {{> preloader}}
     {{>header}}
 
+    <link rel="stylesheet" href="/public/pages/videos/videos.css" type="text/css">
     <main>
         <div id="backgroundBlock">
             <h1>ՆՈՐ ՍԵՐՈՒՆԴԸ YOUTUBE-ՈՒՄ</h1>
@@ -30,15 +33,6 @@
     </main>
 
     {{>footer}}
-
-    <script defer src="/public/common/header/header.js"></script>    
-    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font" crossorigin="anonymous">
-    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
-
-    <link rel='preload' href="/public/images/facebook.webp" as="image">
-    <link rel="preload" href="/public/images/instagram.webp" as="image">
-    <link rel="preload" href="/public/images/telegram.webp" as="image">
-    <link rel="stylesheet" href="/public/common/footer/footer.css" type="text/css" media="print" onload="this.media='all';">
 </body>
 </html>
 
