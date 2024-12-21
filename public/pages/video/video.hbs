@@ -9,12 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{targetVideo.snippet.title}}</title>
 
+    <link rel="stylesheet" href="/public/common/common.css" type="text/css">
+    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
     <link rel="preload" href="/public/images/playVideo.webp" as="image">
     <link rel="stylesheet" href="/public/common/header/header.css" type="text/css">
     <link rel="stylesheet" href="/public/pages/video/video.css" type="text/css">
 </head>
 <body>
-    {{>header}}
+    {{> header}}
 
     <main>
         <div id="videoContainer">
@@ -90,8 +93,6 @@
     <script defer src="/public/pages/video/video.js"></script>
     <script defer src="/public/pages/video/videoActions.js"></script>
     <script defer src="/public/common/header/header.js"></script>    
-    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font" crossorigin="anonymous">
-    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
 
     <link rel='preload' href="/public/images/facebook.webp" as="image">
     <link rel="preload" href="/public/images/instagram.webp" as="image">
