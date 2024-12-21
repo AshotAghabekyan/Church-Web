@@ -8,6 +8,7 @@ import authApiRouter from "./src/modules/auth/authRoute"
 import { Request, Response, Express } from "express";
 import { StaticFileProcessor } from "./src/modules/staticFileProcessor/staticFIleProcessor";
 import { BrotliCompressor } from "./src/modules/compressor/compressor";
+import { globSync } from "node:fs";
 
 
 process.loadEnvFile(path.resolve('.env'));
@@ -22,8 +23,7 @@ app.use('/public', async (req: Request, res: Response) => {
         "staticFilesDir": path.resolve('/public'),
         compress: {
             compressor: new BrotliCompressor(),
-            encoding: "br",
-            
+            encoding: "br",     
         },
     });
     await staticFileProcessor.process(req, res);
@@ -34,15 +34,17 @@ app.use('/public', async (req: Request, res: Response) => {
 app.set('views', path.resolve('public/pages')); 
 app.set('view engine', 'hbs');
 
+const hbsPartialPaths: string[] = globSync([
+    path.resolve("./public/pages/**/"),
+    path.resolve('./public/common/**/')
+])
+
 app.engine(
     'hbs',
     exphbs.engine({
       defaultLayout: false, 
       extname: '.hbs',
-      partialsDir: [
-        path.resolve('public/common/header'),
-        path.resolve('public/common/footer')
-      ],
+      partialsDir: hbsPartialPaths,
     })
 );
   
