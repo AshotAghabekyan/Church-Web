@@ -1,4 +1,4 @@
-import fs, { ReadStream, WriteStream } from "fs";
+import fs from "fs";
 import EventEmitter from "events";
 import { Readable, Writable } from "stream";
 
