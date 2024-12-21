@@ -20,7 +20,11 @@ app.use(cors());
 app.use('/public', async (req: Request, res: Response) => {
     const staticFileProcessor: StaticFileProcessor = new StaticFileProcessor(req.url, {
         "staticFilesDir": path.resolve('/public'),
-        compress: {compressor: new BrotliCompressor()},
+        compress: {
+            compressor: new BrotliCompressor(),
+            encoding: "br",
+            
+        },
     });
     await staticFileProcessor.process(req, res);
 })

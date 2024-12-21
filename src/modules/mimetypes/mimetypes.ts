@@ -15,6 +15,7 @@ const MimeTypes: Record<string, string> = {
     '.webp': "image/webp",
     '.gif': 'image/gif',
     '.pdf': 'application/pdf',
+    ".ttf": "font/ttf",
 };
 
 
