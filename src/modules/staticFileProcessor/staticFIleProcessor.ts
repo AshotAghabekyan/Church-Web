@@ -10,6 +10,7 @@ import { FileStreamProcessor } from "../streamProcessor/streamProcessor";
 interface StaticFileProcessorOption {
     compress?: {
         compressor: Compressor;
+        encoding: string;
     },
     setHeader?: (req: Request, res: Response) => void,
     staticFilesDir: string;
@@ -40,22 +41,27 @@ export class StaticFileProcessor {
                 res.status(304).end();
                 return;
             }
-            
             res.setHeader('eTag', eTag);
-            res.setHeader('cache-control', 'public max-age=3600');
+            res.setHeader('cache-control', 'public, max-age=3600');
             res.setHeader('content-type', mimeType);
             if (this.options.setHeader) { //custom headers by option's "setHeader" method;
                 this.options.setHeader(req, res);
             }
 
-            if (mimeType.startsWith('image/') || !this.options.compress) {
+            if (mimeType.startsWith('image/') || mimeType.startsWith('font/') || !this.options.compress) {
                 this.processDirectly(req, res, staticFilePath);
                 return;
             }
 
-            res.setHeader('content-encoding', 'br');
-            this.processByCompressing(req, res, staticFilePath);
+            const validAcceptEncodings: string[] = req.headers['accept-encoding'].toString().split(", ");
+            const currentCompressEncoding: string = this.options.compress.encoding
 
+            if (validAcceptEncodings.includes(currentCompressEncoding)) {
+                res.setHeader('content-encoding', currentCompressEncoding);
+                this.processByCompressing(req, res, staticFilePath);
+                return;
+            }
+            this.processDirectly(req, res, staticFilePath);
         }
         catch(error) {
             console.error(error);
@@ -70,8 +76,8 @@ export class StaticFileProcessor {
             const gzip = this.compressor.compress(staticFilePath);
             const streamTransfer = new FileStreamProcessor();
             streamTransfer.transferData(gzip, res);
-                streamTransfer.on("finish", () => {
-                    res.status(200).end();
+            streamTransfer.on("finish", () => {
+                res.status(200).end();
             });
             streamTransfer.on('error', () => {
                 throw new Error('response streaming error');
