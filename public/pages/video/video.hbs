@@ -9,15 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{targetVideo.snippet.title}}</title>
 
-    <link rel="stylesheet" href="/public/common/common.css" type="text/css">
-    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font/ttf" crossorigin="anonymous">
     <link rel="stylesheet" href="/public/common/preloader/preloader.css">
     <link rel="preload" href="/public/common/preloader/preloader.js" as="text/javascript">
-    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
 </head>
 <body>
     {{> preloader}}
+
+    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
+    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font/ttf" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/common/common.css" type="text/css">
     {{> header}}
+    
     <link rel="stylesheet" href="/public/pages/video/video.css" type="text/css">
     <main>
         <div id="videoContainer">

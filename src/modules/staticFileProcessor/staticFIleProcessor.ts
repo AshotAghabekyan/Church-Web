@@ -42,7 +42,7 @@ export class StaticFileProcessor {
                 return;
             }
             res.setHeader('eTag', eTag);
-            res.setHeader('cache-control', 'public, max-age=3600');
+            res.setHeader('cache-control', 'public, no-cache');
             res.setHeader('content-type', mimeType);
             if (this.options.setHeader) { //custom headers by option's "setHeader" method;
                 this.options.setHeader(req, res);

@@ -86,11 +86,14 @@ header #navOptions {
 
 
 #mobileNavToggle input:checked ~ label::before{
-    transform: rotatez(45deg)
+    transform: rotatez(36deg);
+    width: 100%;
 }
 
 #mobileNavToggle input:checked ~ label::after{
-    transform: rotatez(-45deg)
+    transform: rotatez(-36deg);
+    width: 100%;
+
 }
 
 #mobileNavToggle input:checked ~ label {
