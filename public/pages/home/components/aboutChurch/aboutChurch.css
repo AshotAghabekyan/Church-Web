@@ -1,0 +1,62 @@
+
+
+
+main #bigFamily {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 22rem;
+    line-height: 1.5;
+    background-color: #eaeaea;
+    color: #3f4359;
+}
+
+
+main #bigFamily #blockTitle {
+    width: 20%;
+    height: 100%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+
+main #bigFamily #blockDescription {
+    width: 45%;
+    height: 100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+
+
+main #bigFamily #blockDescription #toChurchPage {
+    text-align: left;
+    width: 100%;
+}
+
+main #bigFamily #blockDescription #toChurchPage a {
+    color: rgb(212, 103, 40);
+    text-decoration: none;
+    text-align: left;
+    transition: color 0.5s;
+}
+
+
+@media (hover:hover) {
+    main #bigFamily #blockDescription #toChurchPage a:hover {
+        color: rgb(253, 96, 5);
+    }  
+}
+
+
+@media(hover:none) {
+    main #bigFamily #blockDescription #toChurchPage a:active {
+        color: rgb(253, 96, 5);
+    }
+}

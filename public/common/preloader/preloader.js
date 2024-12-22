@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
 });
 
 
-const verses = [
+var bibleVerses = [
     { text: "“The Lord is my shepherd; I shall not want.”", reference: "Psalm 23:1" },
     { text: "“For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.”", reference: "Jeremiah 29:11" },
     { text: "“The Lord is near to the brokenhearted and saves the crushed in spirit.”", reference: "Psalm 34:18" },
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const referenceElement = document.querySelector('.verse-reference');
 
     if (verseElement && referenceElement) {
-        const randomVerse = verses[Math.floor(Math.random() * verses.length)];
+        const randomVerse = bibleVerses[Math.floor(Math.random() * bibleVerses.length)];
         verseElement.textContent = randomVerse.text;
         referenceElement.textContent = randomVerse.reference;
     }

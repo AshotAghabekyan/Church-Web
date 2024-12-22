@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="/public/common/preloader/preloader.css">
-    <link rel="preload" href="/public/common/preloader/preloader.js" as="text/javascript">
+    <link rel="stylesheet" href="/public/common/preloader/preloader.css" as="text/css">
     <link rel="stylesheet" href="/public/common/common.css" type="text/css">
-    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font" type="font/ttf" crossorigin="anonymous">
     <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
 
 </head>
 <body>
     {{> preloader}}
+    <script src="/public/common/preloader/preloader.js" type="text/javascript"></script>
     {{> header}}
     <link rel="preload" href="/public/images/home_header.webp" as="image">
     <link rel="stylesheet" href="/public/pages/home/home.css" type="text/css">
@@ -26,44 +26,9 @@
             </h1>
         </div>
 
-        <div id="bigFamily">
-            <div id="blockTitle">
-                <h2>
-                    ՄԵԾ
-                    ԸՆՏԱՆԻՔ
-                </h2>
-            </div>
-            <div id="blockDescription">
-                <p>Մեր նպատակն է առաջնորդել մարդկանց Հիսուս Քրիստոսի հետ անձնական փոխհարաբերության։</p>
-                <p><b><i>Եվ այն ազատությունով, որ Քրիստոսը մեզ ազատեց, հաստատ մնացեք եւ դարձյալ ծառայության լծի տակ մի մտեք։ (Գաղատացիս 5։1)</i></b></p>
-                <div id="toChurchPage">
-                    <a href="/church" ><b>Ավելին</b></a>
-                </div>
-            </div>
-        </div>
-        
-        <div id="ourVideos">
-            <div id="controlWrapper">
-                <div id="wrapperInfo">
-                    <h1>Մեր տեսանյութերը</h1>
-                    <h2>Դիտեք մեր ծառայություններն օնլայն</h2>
-                </div>
-                <div id="toVideosPage">
-                    <button id="videosBtn"><b>Դիտել</b></button>
-                </div>
-            </div>
-        </div>
-
-        <div id="donation">
-            <div id="gifDiv"></div>
-            <div id="bibleTextForDonation">
-                <h1> “Ամեն մեկը թող ըստ իր սրտի հոժարության տա և ոչ թե տրտմությամբ կամ հարկադրաբար, որովհետև Աստված սիրում է հոժարությամբ տվողին։” </h1>
-                <h2>Բ Կորնթացիներին 9.7</h2>
-            </div>
-            <div id="toDontationPage">
-                <button id="donationsBtn"><b>Նվիրաբերել</b></button>
-            </div>
-        </div>
+        {{> aboutChurch}}
+        {{> aboutVideos}}
+        {{> aboutDonation}}
     </main>   
 
     {{> footer}}
