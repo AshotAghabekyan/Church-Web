@@ -1,76 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="/public/common/preloader/preloader.css">
-    <link rel="preload" href="/public/common/preloader/preloader.js" as="text/javascript">
+    <link rel="stylesheet" href="/public/common/preloader/preloader.css" type="text/css">
+    <link rel="preload" href="/public/common/preloader/preloader.js" as="script">
     <link rel="stylesheet" href="/public/common/common.css" type="text/css">
     <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
-
 </head>
 <body>
     {{> preloader}}
     {{> header}}
     <link rel="preload" href="/public/images/home_header.webp" as="image">
     <link rel="stylesheet" href="/public/pages/home/home.css" type="text/css">
-    <main>
-        <div id="welcome">
-            <h3>ԲԱՐԻ ԳԱԼՈՒՍՏ</h3>
-            <h1>ԵՐԵՎԱՆԻ
-                ՆՈՐ ՍԵՐՈՒՆԴ
-                ԵԿԵՂԵՑԻ
-            </h1>
+    <main class="home">
+        <div class="home__welcome">
+            <h3 class="home__welcome-text">ԲԱՐԻ ԳԱԼՈՒՍՏ</h3>
+            <h1 class="home__welcome-title">ԵՐԵՎԱՆԻ ՆՈՐ ՍԵՐՈՒՆԴ ԵԿԵՂԵՑԻ</h1>
         </div>
 
-        <div id="bigFamily">
-            <div id="blockTitle">
-                <h2>
-                    ՄԵԾ
-                    ԸՆՏԱՆԻՔ
-                </h2>
+        <div class="home__big-family">
+            <div class="home__big-family-title">
+                <h2>ՄԵԾ ԸՆՏԱՆԻՔ</h2>
             </div>
-            <div id="blockDescription">
+            <div class="home__big-family-description">
                 <p>Մեր նպատակն է առաջնորդել մարդկանց Հիսուս Քրիստոսի հետ անձնական փոխհարաբերության։</p>
                 <p><b><i>Եվ այն ազատությունով, որ Քրիստոսը մեզ ազատեց, հաստատ մնացեք եւ դարձյալ ծառայության լծի տակ մի մտեք։ (Գաղատացիս 5։1)</i></b></p>
-                <div id="toChurchPage">
-                    <a href="/church" ><b>Ավելին</b></a>
+                <div class="home__to-church-page">
+                    <a href="/church" class="home__link"><b>Ավելին</b></a>
                 </div>
             </div>
         </div>
         
-        <div id="ourVideos">
-            <div id="controlWrapper">
-                <div id="wrapperInfo">
-                    <h1>Մեր տեսանյութերը</h1>
-                    <h2>Դիտեք մեր ծառայություններն օնլայն</h2>
+        <div class="home__our-videos">
+            <div class="home__control-wrapper">
+                <div class="home__wrapper-info">
+                    <h1 class="home__videos-title">Մեր տեսանյութերը</h1>
+                    <h2 class="home__videos-subtitle">Դիտեք մեր ծառայություններն օնլայն</h2>
                 </div>
-                <div id="toVideosPage">
-                    <button id="videosBtn"><b>Դիտել</b></button>
+                <div class="home__to-videos-page">
+                    <button class="home__videos-btn"><b>Դիտել</b></button>
                 </div>
             </div>
         </div>
 
-        <div id="donation">
-            <div id="gifDiv"></div>
-            <div id="bibleTextForDonation">
+        <div class="home__donation">
+            <div class="home__gif"></div>
+            <div class="home__bible-text-for-donation">
                 <h1> “Ամեն մեկը թող ըստ իր սրտի հոժարության տա և ոչ թե տրտմությամբ կամ հարկադրաբար, որովհետև Աստված սիրում է հոժարությամբ տվողին։” </h1>
                 <h2>Բ Կորնթացիներին 9.7</h2>
             </div>
-            <div id="toDontationPage">
-                <button id="donationsBtn"><b>Նվիրաբերել</b></button>
+            <div class="home__to-donation-page">
+                <button class="home__donations-btn"><b>Նվիրաբերել</b></button>
             </div>
         </div>
     </main>   
 
     {{> footer}}
 </body>
-
-    <script defer src="/public/pages/home/home.js"></script>
+<script defer src="/public/pages/home/home.js"></script>
 </html>
-
-
-
