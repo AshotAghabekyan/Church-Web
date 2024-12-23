@@ -68,3 +68,48 @@ main #donation #toDontationPage button:hover:active {
         background-color: #FF6A48;
     }
 }
+
+
+
+
+
+ @media screen and (max-width: 768px) {
+    main #donation {
+        width: 100%;
+        flex-direction: column; 
+        align-items: flex-start; 
+        text-align: left; 
+    }
+
+    main #donation #toDontationPage {
+        width: 90%; 
+        margin-left: 10%; 
+    }
+    
+
+    main #donation #toDontationPage,
+    main #donation #bibleTextForDonation {
+        margin-left: 10%;
+        display: inline-block; 
+        vertical-align: middle; 
+    }
+
+    main #donation #gifDiv {
+        width: 20%;
+        margin-left: 11%;
+        margin-bottom: 2%;
+    }
+
+    main #donation #bibleTextForDonation h1{
+        width: 100%;
+        font-size: 16px;
+    }
+
+    #bibleTextForDonation > p {
+        width: 100%;
+    }
+
+    main #toDontationPage {
+        width: 100%;
+    }
+}

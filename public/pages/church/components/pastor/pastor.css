@@ -1,0 +1,28 @@
+
+#Pastor{
+    width: max-content;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #3f4359;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+#Pastor .personImage {
+    background-image: url('/public/images/pastor.webp');
+    background-size: contain;
+    background-position-x: left;
+    background-position-y: center;
+    height: 20rem;
+    background-repeat: no-repeat;
+}
+
+
+#Pastor .info {
+    line-height: 0.5; 
+}
+
+

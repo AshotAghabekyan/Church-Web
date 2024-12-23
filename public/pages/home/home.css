@@ -45,10 +45,7 @@ main #welcome h1 {
 
 
 
-
-
-
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 992px){
     main #welcome {
         min-height: 20rem;
         max-height: 25rem;
@@ -58,33 +55,11 @@ main #welcome h1 {
         font-size: 50px;
         margin-top: 10px;
     }
-
-    main #churchInfo .textPoint {
-        font-size: 25px;
-    }
-
-    main #bigFamily {
-        height: 25rem;
-    }
-
-    main #bigFamily #blockDescription {
-        font-size: 20px;
-    }
-
-    
-    main #ourVideos #controlWrapper {
-        width: 60%;
-    }
-    
-
-    main button {
-        font-size: 18px;
-    }
  }
 
 
 
- @media screen and (max-width: 600px) {
+ @media screen and (max-width: 768px) {
     main #welcome {
         min-height: 15rem;
         max-height: 15rem;
@@ -106,109 +81,5 @@ main #welcome h1 {
     main #welcome h1 {
         font-size: 25px;
         margin-top: 10px;
-    }
-
-
-    main #bigFamily {
-        display: flex;
-        flex-direction: column;
-        min-height:20rem;
-        height: 100%;
-        justify-content: center;
-        padding-top: 5%;
-        padding-bottom: 5%;
-        box-sizing: border-box;
-    }
-
-    
-    main #bigFamily #blockTitle  {
-        width: 80%;
-        height: 25%;
-    }
-
-    main #bigFamily #blockTitle h2 {
-        margin: 0;
-    }
-
-    main #bigFamily #blockDescription {
-        margin-top: 0%;
-        width: 80%;
-        height: 20%;
-        justify-content: normal;
-    }
-
-
-    main #ourVideos {
-        min-height: 20rem;
-    }
-
-    main #ourVideos #controlWrapper {
-        min-height: 20rem;
-        max-height: 20rem;
-        width: 100%;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-
-    #wrapperInfo {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-
-    main #ourVideos #controlWrapper #wrapperInfo h1 {
-        font-size: 30px;
-    }
-
-    main #ourVideos #controlWrapper #wrapperInfo h2 {
-        font-size: 20px;
-    }
-
-    main #ourVideos #controlWrapper #toVideosPage {
-        width: 100%;
-    }   
-
-    main #ourVideos #controlWrapper #toVideosPage button {
-        width: 60%;
-        padding: 0
-    }
-
-
-    main #donation {
-        width: 100%;
-        flex-direction: column; 
-        align-items: flex-start; 
-        text-align: left; 
-    }
-
-    main #donation #toDontationPage {
-        width: 90%; 
-        margin-left: 10%; 
-    }
-    
-
-    main #donation #toDontationPage,
-    main #donation #bibleTextForDonation {
-        margin-left: 10%;
-        display: inline-block; 
-        vertical-align: middle; 
-    }
-
-    main #donation #gifDiv {
-        width: 20%;
-        margin-left: 11%;
-        margin-bottom: 2%;
-    }
-
-    main #donation #bibleTextForDonation h1{
-        width: 100%;
-        font-size: 16px;
-    }
-
-    #bibleTextForDonation > p {
-        width: 100%;
-    }
-
-    main #toDontationPage {
-        width: 100%;
     }
 }
