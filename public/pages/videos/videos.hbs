@@ -18,17 +18,17 @@
     {{>header}}
 
     <link rel="stylesheet" href="/public/pages/videos/videos.css" type="text/css">
-    <main>
-        <div id="backgroundBlock">
-            <h1>ՆՈՐ ՍԵՐՈՒՆԴԸ YOUTUBE-ՈՒՄ</h1>
+    <main class="videos-page">
+        <div class="videos-page__background">
+            <h1 class="videos-page__title">ՆՈՐ ՍԵՐՈՒՆԴԸ YOUTUBE-ՈՒՄ</h1>
         </div>
-        <div id="videos">
+        <div class="videos-page__list">
             {{#each videos}}
-                <div class="videoDiv" data-video-id="{{snippet.resourceId.videoId}}">
-                    <div class="videoWrapper" style="background: url('{{snippet.thumbnails.maxres.url}}') no-repeat; background-size: cover;">
-                        <a href="/videos/id/{{snippet.resourceId.videoId}}"></a>
-                    </div>
+            <div class="videos-page__video" data-video-id="{{snippet.resourceId.videoId}}">
+                <div class="videos-page__wrapper" style="background: url('{{snippet.thumbnails.maxres.url}}') no-repeat; background-size: cover;">
+                    <a href="/videos/id/{{snippet.resourceId.videoId}}" class="videos-page__link"></a>
                 </div>
+            </div>
             {{/each}}
         </div>
     </main>
