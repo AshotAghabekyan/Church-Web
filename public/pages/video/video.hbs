@@ -21,78 +21,77 @@
     {{> header}}
     
     <link rel="stylesheet" href="/public/pages/video/video.css" type="text/css">
-    <main>
-        <div id="videoContainer">
-            <div id="video" style="background: url('{{targetVideo.snippet.thumbnails.maxres.url}}') no-repeat center; background-size: cover;">
-                <div id="videoPlayIcon"></div>
+    <main class="page-video">
+        <section class="video">
+            <div class="video__player" style="background: url('{{targetVideo.snippet.thumbnails.maxres.url}}') no-repeat center; background-size: cover;">
+                <div class="video__play-icon"></div>
             </div>
-            <div id="description">
-                <h1 id="title">{{targetVideo.snippet.title}}</h1>
-            </div>
-            <div id="actions">
-                <div class="actionPoint" id="donateAction">
-                    <div id="donate"></div>
-                    <div><p>donate</p></div>
-                </div>
-                <div class="actionPoint" id="toYoutubeAction">
-                    <div id="youtube"></div>
-                    <div><p>youtube</p></div>
+
+            <h1 class="video__title">{{targetVideo.snippet.title}}</h1>
+
+            <div class="video__actions">
+                <div class="action action--donate">
+                    <div class="action__icon action__icon--donate"></div>
+                    <p class="action__text">donate</p>
                 </div>
 
-                <dialog id="videoShareModal">
-                    <div id="modalHeader">
-                        <h1>Share Video</h1>
-                        <button id="closeShareModal"></button>
-                    </div>
-                    <div class="voidLine"></div>
+                <div class="action action--youtube">
+                    <div class="action__icon action__icon--youtube"></div>
+                    <p class="action__text">youtube</p>
+                </div>
 
+                <dialog class="modal modal--share">
+                    <header class="modal__header">
+                        <h1 class="modal__title">Share Video</h1>
+                        <button class="modal__close-btn"></button>
+                    </header>
+                    <div class="modal__separator"></div>
 
-                    <div id="socialNetworks">
-                        <h3>Share via</h3>
-                        <div id="socialNetworkList">
-                            <div id="threads" class="socialNetwork"></div>
-                            <div id="facebook" class="socialNetwork"></div>
-                            <div id="twitter" class="socialNetwork"></div>
-
+                    <section class="modal__content">
+                        <h3 class="modal__sub-title">Share via</h3>
+                        <div class="modal__social-networks">
+                            <div class="social-network social-network--threads"></div>
+                            <div class="social-network social-network--facebook"></div>
+                            <div class="social-network social-network--twitter"></div>
                         </div>
-                    </div>
+                    </section>
 
-                    <div id="manualShare">
-                        <h3>Or copy link</h3>
-                        <button id="copyLink">Copy</button>                            
-                    </div>
+                    <section class="modal__manual-share">
+                        <h3 class="modal__sub-title">Or copy link</h3>
+                        <button class="modal__copy-btn">Copy</button>                            
+                    </section>
                 </dialog>
 
-                <div class="actionPoint" id="shareAction">
-                    <div id="share"></div>
-                    <div><p>share</p></div>
+                <div class="action action--share">
+                    <div class="action__icon action__icon--share"></div>
+                    <p class="action__text">share</p>
                 </div>
 
-                <div class="actionPoint" id="likeAction">
-                    <div id="like"></div>
-                    <div><p>like</p></div>
+                <div class="action action--like">
+                    <div class="action__icon action__icon--like"></div>
+                    <p class="action__text">like</p>
                 </div>
             </div>
-        </div>
+        </section>
 
 
-        <div class="recomendation">
-            <div id="recomendationHeader"><h2>Դիտեք նաև այլ տեսանյութեր</h2></div>
-            <div id="otherVideos">
+        <section class="recommendations">
+            <h2 class="recommendations__header">Դիտեք նաև այլ տեսանյութեր</h2>
+
+            <div class="recommendations__list">
                 {{#each recommended}}
-                    <div class="videoItem" data-video-id="{{snippet.resourceId.videoId}}">
-                        <div class="videoWrapper" style="background: url('{{snippet.thumbnails.maxres.url}}') no-repeat; background-size: cover;"
+                    <article class="recommendations__item" data-video-id="{{snippet.resourceId.videoId}}">
+                        <div class="recommendations__thumbnail" style="background: url('{{snippet.thumbnails.maxres.url}}') no-repeat; background-size: cover;"
                             onclick="window.location.href='/videos/id/{{snippet.resourceId.videoId}}';">
                         </div>
-                    </div>
+                    </article>
                 {{/each}}
             </div>
-        </div>
+        </section>
     </main>
 
     {{>footer}}
 </body>
-    <script defer src="/public/pages/video/video.js"></script>
-    <script defer src="/public/pages/video/videoActions.js"></script>
+<script defer src="/public/pages/video/video.js"></script>
+<script defer src="/public/pages/video/videoActions.js"></script>
 </html>
-
