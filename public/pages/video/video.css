@@ -1,195 +1,146 @@
 
-
+/* General Styles */
 body, html {
-    margin:0%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
-    font-family: 'bainsley';
+    font-family: 'bainsley', sans-serif;
+    background-color: #000;
+    color: #fff;
 }
-
-
 
 :root {
-    --animation-curve: cubic-bezier(1,0,0,1)
+    --animation-curve: cubic-bezier(0.25, 0.8, 0.25, 1);
+    --border-radius: 10px;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --shadow-dark: 0 6px 20px rgba(0, 0, 0, 0.3);
+    --transition-speed: 0.3s;
 }
 
+/* Page Layout */
+.page-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
 
-
-main {
-    width: 100%;
-    min-height: 100vh;
-    flex-grow: 1;
-    line-height: 1.5;
+/* Video Section */
+.video {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #000000;
 }
 
-
-#videoContainer {
-    max-width: 80%;
-    flex-grow: 1;
-    background-color: #000000;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 5%;
-    border-style:none;
-
-}
-
-
-#video {
-    margin-top: 5%; 
+.video__player {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
+    background-color: #111;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
     overflow: hidden;
     cursor: pointer;
-    border-radius: 10px;
-    transition: 0.4s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-#video > #videoPlayIcon {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    right: 0;
-    bottom: 0;
-    cursor: pointer;
-    background: url('/public/images/playVideo.webp') no-repeat center;
-    background-blend-mode: color;
-    background-size: 15%;
-    transition: 0.4s;
-}
-
-
-@media (hover:hover) {
-    #video > #videoPlayIcon:hover {
-        background-size: 20%;
-        opacity: 0.8;
-    }
-}
-
-
-@media(hover:none) {
-    #video > #videoPlayIcon:active {
-        background-size: 20%;
-        opacity: 0.8;
-    }
-}
-
-
-
-#title {
-    color:white
-}
-
-.videoLoaded {
-    background: none;
-}
-
-.videoLoaded > #videoPlayIcon {
-    display: none;
-}
-
-
-
-#video > iframe {
+.video__player iframe {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 0; 
-    margin: 0; 
     width: 100%;
     height: 100%;
-    border: none; 
-
-}
-
-
-#videoContainer #actions {
-    width: 100%;
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
-    padding-top: 2.5%;
-    padding-bottom: 2.5%;
-    background-color: #1C1C1E;
     border: none;
-    border-radius: 10px;
-    gap: 5%;
-    flex-basis: 10%;
+}
+
+.video__play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4.4rem;
+    height: 4.4rem;
+    background: url('/public/images/playVideo.webp') no-repeat center;
+    background-size: contain;
+    transition: transform var(--transition-speed);
+}
+
+.video__player:hover .video__play-icon {
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
 
-#videoContainer #actions .actionPoint {
+.video__title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+
+
+/* Actions Section */
+.video__actions {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    width: 100%;
     justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 10px;
+    padding: 1rem;
+    gap: 10%;
+    background-color: #1c1c1e;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+}
+
+
+.action {
+    display: flex;
     flex-basis: 10%;
-    min-height: 60px; 
-    color: white;
+    flex-direction: column;
+    align-items: center;
+    transition: transform var(--transition-speed);
     cursor: pointer;
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
 
-
-#videoContainer .actionPoint:hover {
-    transform: scale(1.1) 
+.action:hover {
+    transform: scale(1.1);
 }
 
-
-#videoContainer #actions .actionPoint p {
-    width: 100%;
-    height: 40%;
-    margin: 0%;
-    text-align: center;
-}
-
-#videoContainer #actions #donate {
-    width: 100%;
-    flex-grow: 1;
-    background: url("/public/images/donation.webp");
-    background-size: contain;
+.action__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
 }
 
-#videoContainer #actions #youtube {
-    width: 100%;
-    flex-grow: 1;
-    background: url("/public/images/youtube.webp");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.action__icon--donate {
+    background-image: url('/public/images/donation.webp');
+}
+
+.action__icon--youtube {
+    background-image: url('/public/images/youtube.webp');
+}
+
+.action__icon--share {
+    background-image: url('/public/images/share.webp');
+}
+
+.action__icon--like {
+    background-image: url('/public/images/likeVideo.webp');
+}
+
+.action__text {
+    font-size: var(--font-size-small);
+    color: #fff;
+    margin: 0;
 }
 
 
-#videoContainer #actions #share {
-    width: 100%;
-    flex-grow: 1;
-    background: url("/public/images/share.webp");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    box-sizing: border-box;
-
-}
-
-
-#videoShareModal {
+/* Modal Section */
+.modal--share {
     flex-direction: column;
     align-items: center;
     width: 40%;
@@ -204,143 +155,130 @@ main {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-
-#videoShareModal::backdrop {
+.modal--share:backdrop {
     backdrop-filter: blur(10px);
 }
 
 
-#videoShareModal.active {
+.modal--share.active {
     opacity: 1;
     transform: translate(0%, 0%);
 }
 
 
-#videoShareModal #modalHeader {
+.modal__header {
     width: 100%;
     display: flex;
     position: relative;
     justify-content:space-between;
-    align-items: center;
+    align-items: flex-start;
+    background-color: white;
 }
 
-
-.voidLine {
-    width: 100%;
-    height: 1px;
-    border: none;
-    border-radius: 5px;
-    background-color: gray;
+.modal__title {
+    margin: 0;
+    color: #0e0d0d;
 }
 
-
-
-#modalHeader #closeShareModal  {
+.modal__close-btn {
     position: absolute; 
     top: 0%; 
     right: 0%; 
     background: none;
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
     background: url('/public/images/closeModal.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
 }
-
-
-#videoShareModal #socialNetworks {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-#socialNetworks h3 {
-    text-align: left;
-}
-
-
-#socialNetworks #socialNetworkList {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    align-items: center;
-    gap: 5%;
-}
-
-#socialNetworkList .socialNetwork {
-    flex-basis: 20%;
-    height: 60px;
-    cursor: pointer;
-    border:none;
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
-}
-
-
 
 @media (hover:hover) {
-    #socialNetworkList .socialNetwork:hover {
-        transform: scale(1.1) 
-    }
+    .modal__close-btn:hover {
+        transform: scale(1.1);
+  }   
 }
 
 
 @media(hover:none) {
-    #socialNetworkList .socialNetwork:active {
-        transform: scale(1.1) 
-    }
+    .modal__close-btn:active {
+        transform: scale(1.1);
+  }
 }
 
+.modal__separator {
+    width: 100%;
+    border-top: 0.1rem solid #ddd;
+}
 
+.modal__content {
+    width: 100%;
+    text-align: left;
+}
 
+.modal__sub-title {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    color: #555;
+}
 
+.modal__social-networks {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.6rem;
+    gap: 3rem;
 
+}
 
-#socialNetworkList #facebook {
-    background: url('/public/images/facebookIcon.webp');
-    background-size: contain;
+.social-network {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media (hover:hover) {
+    .social-network:hover {
+        transform: scale(1.1);
+  }   
 }
 
 
-
-
-#socialNetworkList #twitter {
-    background: url('/public/images/twitter.webp');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+@media(hover:none) {
+    .social-network:active {
+        transform: scale(1.1);
+  }
 }
 
-#socialNetworkList #threads {
-    background: url("/public/images/threadsIcon.webp");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.social-network--threads {
+    background-image: url('/public/images/threadsIcon.webp');
 }
 
+.social-network--facebook {
+    background-image: url('/public/images/facebookIcon.webp');
+}
 
+.social-network--twitter {
+    background-image: url('/public/images/twitter.webp');
+}
 
-
-
-#videoShareModal #manualShare {
+.modal__manual-share {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:flex-start;
     padding-top: 5%;
+
 }
 
-
-
- #copyLink {
+.modal__copy-btn {
     width: 100%;
     height: 50px;
     padding: 1%;
@@ -350,267 +288,142 @@ main {
     border-radius: 5px;
     transition: background-color 0.5s ease;
     cursor: pointer;
+
 }
 
-
-
-
-
-
 @media (hover:hover) {
-      #copyLink:hover {
-        background-color: #1C1C1E;
-        color:white
-    }   
+    .modal__copy-btn:hover {
+      background-color: #1C1C1E;
+      color:white
+  }   
 }
 
 
 @media(hover:none) {
-     #copyLink:active {
-        background-color: #1C1C1E;
-        color:white
-    }
+   .modal__copy-btn:active {
+      background-color: #1C1C1E;
+      color:white
+  }
 }
 
 
 
-#videoContainer #actions #like{
-    width: 100%;
-    flex-grow: 1;
-    background: url('/public/images/likeVideo.webp');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    box-sizing: border-box;
-}
 
-
-
-.recomendation {
-    background-color: #1C1C1E;
-    color:white;
+/* Recommendations Section */
+.recommendations {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    flex-grow: 1;
-    padding-bottom: 5%;
-    height: max-content;
+    padding: 1rem;
+    padding-bottom: 2rem;
 }
 
-
-.recomendation #otherVideos {
+.recommendations__header {
     width: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-
-main .recomendation #otherVideos .videoItem {
-    width: 30%;
-    margin: 2%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    overflow: hidden;
-    cursor: pointer;
+    margin-bottom: 1.2rem;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: #1c1c1e;
     border-radius: 10px;
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: var(--font-size-h2);
 }
 
 
-@media (hover:hover) {
-    .videoItem:hover {
-        transform: translateY(-10px); 
-    }
-}
 
-
-@media(hover:none) {
-    .videoItem:active {
-        transform: translateY(-10px); 
-    }
-}
-
-
-main .recomendation #otherVideos .videoItem .videoWrapper {
-    padding-bottom: 56%;
+.recommendations__list {
     width: 100%;
-    transition: 0.4s;
-  }
-  
+    display: flex;
+    gap: 1.5rem;
+}
 
+.recommendations__item {
+    flex: 1;
+    width: 35%;
+    cursor: pointer;
+}
 
+.recommendations__thumbnail {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: 0.5s;
+}
 
-
-
-
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-    main #backgroundBlock {
-        min-height: 20rem;
-        max-height: 25rem;
-    }
-
-    main #backgroundBlock > h1 {
-        margin: 10%;
-    }
-
-    #videoContainer {
-        max-width: 100%;
-    }
-
-    main #video {
-        flex-direction: column;
-    }
-
-
-    #videoShareModal {
-        width: 100%;
-    }
-
-    #socialNetworks #socialNetworkList {
-        gap:0
-    }
-
-
-    #socialNetworkList .socialNetwork {
-        height: 50px;
-    }
-    
-
-    main .recomendation #otherVideos {
-        width: 100%;
-        min-height: 30vh;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-
-    main .recomendation #otherVideos .videoItem {
-        margin-top: 2%;
-        margin-bottom: 2%;
-        margin-left: 5%;
-        margin-right: 5%;
-        min-width: 90%;  
-        min-height: 20rem;
-    }
-
+.recommendations__thumbnail:hover {
+    transform: scale(1.05);
+    transition: transform var(--transition-speed);
 }
 
 
 
-
-@media screen and (max-width: 600px) {
-
-    main {
-        flex-direction: column;
-    }
-
-    #videoContainer {
-        max-width: 100%;
+/* Responsive Styles */
+@media  (min-width: 769px) and (max-width: 1024px) {
+    .video {
+        margin: 0;
         width: 100%;
-        height: max-content;
-        min-height: auto;
-        border-top-right-radius: 0px;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        padding-left: 0%;
-        padding-right: 0%;
     }
 
-    main #video {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
+    .video__player {
+        width: 100%;
     }
 
-    main #videoContainer #description #title {
-        margin-left: 5%;
-        margin-right: 5%;
-        font-size: 20px;
-        text-align: center;
+    .modal--share {
+        width: 60%;
     }
 
+    .social-network {
+        width: 3rem;
+        height: 3rem;
+    }
 
-    #videoContainer #actions {
-        border-radius: 0%;
-        flex-direction: row;
+    .recommendations__list {
         flex-wrap: wrap;
-        justify-content: center; 
-        gap: 5%;
     }
 
-    #videoContainer #actions .actionPoint {
-        flex-basis: 20%;
-        min-height: 40px; 
-        font-size: 14px;
-        align-content: center;
+    .recommendations__item {
+        min-width: 40%;
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .video__player {
+        width: 100%;
+    }
+
+    .video__actions {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-around;
     }
 
 
-    #videoShareModal {
-        width: 80%;
-        transform: translate(-50%, -50%);
-    }
-
-    #videoShareModal.active {
-        opacity: 1;
-        transform: translate(0%, 0%);
-
-    }
-
-    #socialNetworkList .socialNetwork {
-        height: 40px;
+    .recommendations__header {
+        width: 100%;
+        margin-bottom: 1.2rem;
     }
     
 
-    main .recomendation {
-        flex-direction: column;
-        width: 100%;
-        height: max-content;
-        min-height: max-content;
+    .recommendations__item {
+        min-width: 100%;
     }
 
-    main .recomendation #recomendationHeader {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        text-align: center;
+    .modal--share {
+        width: 80%;
+        max-width: 90%;
     }
 
-    main .recomendation #otherVideos {
-        width: 100%;
-        min-height: 30vh;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
+    .social-network {
+        width: 3rem;
+        height: 3rem;
     }
-
-
-    main .recomendation #otherVideos .videoItem {
-        margin-top: 5%;
-        margin-bottom: 5%;
-        margin-left: 5%;
-        margin-right: 5%;
-        min-width: 80%;  
-    }
-} 
-
-
-
-
-
-
+}
 
 
 
