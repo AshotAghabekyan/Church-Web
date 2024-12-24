@@ -27,30 +27,33 @@
 }
 
 .home__welcome-text {
-    font-size: ;
+    font-size: 1.6rem;
 }
 
 .home__welcome-title {
-    font-size: 60px;
-    margin-top: 20px;
+    font-size: var(--font-size-h1);
+    margin-top: 1rem
 }
 
 .home__big-family {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
     height: 22rem;
+    padding: 2rem;
     line-height: 1.5;
     background-color: #eaeaea;
     color: #3f4359;
 }
 
 .home__big-family-title {
+    padding-left: 2rem;
     width: 20%;
     height: 100%;
-    font-size: 30px;
+    font-size: 2.7rem ;
     display: flex;
     align-items: center;
 }
@@ -58,37 +61,48 @@
 .home__big-family-description {
     width: 45%;
     height: 100%;
-    font-size: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     text-align: left;
 }
 
-.home__big-family-description .home__to-church-page {
-    text-align: left;
+.home__big-family-description p {
+    margin-bottom: 1rem; /* Space between paragraphs */
+}
+
+.home__to-church-page {
     width: 100%;
+    display: flex;
+    justify-content: left; /* Center the button */
+    margin-top: 1rem; /* Add space above the button */
 }
 
-.home__big-family-description .home__to-church-page .home__link {
+.home__to-church-page .home__link {
+    text-align: left;
     color: rgb(212, 103, 40);
     text-decoration: none;
-    text-align: left;
     transition: color 0.5s;
 }
 
 @media (hover:hover) {
-    .home__big-family-description .home__to-church-page .home__link:hover {
+    .home__to-church-page .home__link:hover {
         color: rgb(253, 96, 5);
     }
 }
 
 @media(hover:none) {
-    .home__big-family-description .home__to-church-page .home__link:active {
+    .home__to-church-page .home__link:active {
         color: rgb(253, 96, 5);
     }
 }
+
+
 
 .home__our-videos {
     width: 100%;
@@ -105,8 +119,8 @@
 }
 
 .home__control-wrapper {
-    width: 50%;
-    height: 30rem;
+    width: max(45%, 30rem);
+    min-height: 25rem;
     background-color: #FF6A48;
     display: flex;
     flex-direction: column;
@@ -114,7 +128,7 @@
 }
 
 .home__control-wrapper .home__wrapper-info h1 {
-    font-size: 50px;
+    font-size: 2.7rem;
 }
 
 .home__control-wrapper .home__wrapper-info,
@@ -124,7 +138,7 @@
 }
 
 .home__control-wrapper .home__to-videos-page {
-    height: 80px;
+    height: 4.4rem;
     width: 100%;
 }
 
@@ -134,9 +148,9 @@
     color: #3f4359;
     background-color: #FFFFFF;
     border: 0px solid #FFFFFF;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: 0.4s;
-    font-size: 30px;
+    font-size: 1.6rem;
     font-family: 'bainsley';
 }
 
@@ -176,119 +190,85 @@
 }
 
 .home__donation .home__bible-text-for-donation {
-    margin-bottom: 5%;
+    text-align: justify;
     margin-left: 5%;
     margin-right: 5%;
 }
 
 .home__donation .home__to-donation-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    width: 60%;
+    padding-left: 5%;
+    padding-right: 5%;
     margin-bottom: 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 4.4rem;
+    width: 100%;
 }
 
 .home__donation .home__to-donation-page .home__donations-btn {
-    width: 60%;
+    width: 40%;
     height: 100%;
     color: #FFFFFF;
-    font-size: 18px;
-    background-color: #FFA848;
-    border-radius: 15px;
+    font-size: 1.6rem;
+    background-color: #3f4359;
+    border-radius: 10px;
     transition: 0.5s;
     border: none;
 }
 
 @media (hover:hover) {
     .home__donation .home__to-donation-page .home__donations-btn:hover {
-        background-color: #3f4359;
+        background-color: #FF6A48;
     }
 }
 
 @media(hover:none) {
     .home__donation .home__to-donation-page .home__donations-btn:active {
-        background-color: #3f4359;
-    }
-}
-
-/* Media Queries for Mobile and Tablet */
-@media screen and (max-width: 1200px) {
-    .home__big-family {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .home__big-family-title {
-        width: 100%;
-        font-size: 24px;
-    }
-
-    .home__big-family-description {
-        width: 100%;
-        font-size: 18px;
-        text-align: center;
-    }
-
-    .home__control-wrapper {
-        width: 80%;
-        height: 25rem;
-    }
-
-    .home__control-wrapper .home__wrapper-info h1 {
-        font-size: 40px;
-    }
-
-    .home__control-wrapper .home__to-videos-page .home__videos-btn {
-        width: 50%;
-    }
-
-    .home__donation .home__to-donation-page {
-        width: 80%;
-    }
-
-    .home__donation .home__to-donation-page .home__donations-btn {
-        width: 70%;
-        font-size: 16px;
+        background-color: #FF6A48;
     }
 }
 
 
 
 @media screen and (max-width: 768px) {
-    .home__welcome {
-        padding: 5%;
-        height: 40%;
-    }
-
     .home__welcome-title {
         font-size: 40px;
     }
 
     .home__big-family {
+        padding: 2rem;
         flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
         height: auto;
     }
 
     .home__big-family-title {
         width: 100%;
-        font-size: 22px;
+        text-align: left;
     }
 
     .home__big-family-description {
         width: 100%;
-        font-size: 16px;
-        text-align: center;
+        font-size: 1rem;
+        text-align: left;
     }
 
-    .home__control-wrapper .home__wrapper-info h1 {
-        font-size: 30px;
+    .home__control-wrapper {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        width: 100%;
     }
 
     .home__control-wrapper .home__to-videos-page .home__videos-btn {
         width: 60%;
-        font-size: 25px;
+        font-size: 1.6rem;
+    }
+
+    .home__donation {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
 
     .home__donation .home__gif {
@@ -297,46 +277,14 @@
 
     .home__donation .home__to-donation-page .home__donations-btn {
         width: 80%;
-        font-size: 14px;
+        font-size: 1.6rem;
+    }
+
+    .home__donation .home__bible-text-for-donation {
+        text-align:left;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }
 
 
-
-@media screen and (max-width: 480px) {
-    .home__welcome-title {
-        font-size: 30px;
-    }
-
-    .home__big-family {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    .home__big-family-description {
-        font-size: 14px;
-    }
-
-    .home__control-wrapper {
-        width: 90%;
-        height: 20rem;
-    }
-
-    .home__control-wrapper .home__wrapper-info h1 {
-        font-size: 25px;
-    }
-
-    .home__control-wrapper .home__to-videos-page .home__videos-btn {
-        width: 70%;
-    }
-
-    .home__donation .home__gif {
-        height: 3rem;
-    }
-
-    .home__donation .home__to-donation-page .home__donations-btn {
-        width: 90%;
-        font-size: 12px;
-    }
-}

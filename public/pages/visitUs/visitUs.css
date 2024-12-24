@@ -87,7 +87,7 @@
     flex-grow: 1;
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 992) {
     .visit-us__background {
         background-position: center;
         min-height: 20rem;
@@ -121,7 +121,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .visit-us__background {
         min-height: 15rem;
     }
