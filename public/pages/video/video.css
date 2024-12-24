@@ -362,7 +362,7 @@ body, html {
 
 
 /* Responsive Styles */
-@media  (min-width: 769px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
     .video {
         margin: 0;
         width: 100%;
