@@ -22,13 +22,11 @@ main #backgroundBlock {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%, 50%;
-    font-size: 22px;
 }
 
 main #backgroundBlock h1 {
     color:white;
     text-align: center;
-    font-size: 44px;
 }
 
 main #aboutDontation {
@@ -300,9 +298,6 @@ main #aboutDontation h1 {
         max-height: 25rem;
     }
 
-    main #backgroundBlock h1 {
-        font-size: 36px;
-    }
 
     main #aboutDontation {
         width: 80%;
@@ -375,7 +370,6 @@ main #aboutDontation h1 {
 
     main #backgroundBlock h1 {
         margin: 5%;
-        font-size: 32px;
     }
 
     main #aboutDontation {
