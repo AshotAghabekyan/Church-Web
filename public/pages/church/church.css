@@ -1,84 +1,67 @@
-@import url("/public/pages/fonts.css");
 
 
 
-body, html {
-    margin:0%;
-    width: 100%;
-    height: 100%;
-    font-family: 'bainsley';
-}
-
-body {
-    display: none;
-}
-
-
-:root {
-    --animation-curve: cubic-bezier(1,0,0,1)
-}
-
-
-main {
+/* Block: main */
+.main {
+    max-width: 100vw;
     line-height: 1.5;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #eaeaea;
 }
 
-#welcome {
+/* Block: welcome */
+.welcome {
     position: relative;
     min-height: 25rem;
     max-height: 30rem;
     width: 100%;
     display: flex;
-    background-color: rgb(10, 9, 9);
-    font-size: 22px;
-    opacity: 0.9;
     justify-content: center;
     align-items: center;
+    background-color: #0a0909;
+    font-size: 22px;
+    opacity: 0.9;
     color: white;
     overflow: hidden;
 }
 
-#welcome::before {
-    width: 100%;
-    height: 25rem;
-    content: "";
+.welcome__background {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("/public/images/churchBackground.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50%, 50%;
+    width: 100%;
+    height: 25rem;
+    background: url("/public/images/churchBackground.webp") no-repeat center center / cover;
     opacity: 0.4;
     z-index: -1;
-    overflow: hidden;
 }
 
 
-#churchInfo {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 3%;
+
+/* Block: church-activity */
+.church-activity {
+    margin: 3% 10%;
     font-size: 16px;
-    color: #3f4359;
     line-height: 1.5;
-    width: 80%;
 }
 
-#churchInfo .textPoint {
-    margin-top: 2%;
-    margin-left: 20%;
-    margin-right: 20%;
-    text-align: justify;
+.church-activity__text {
+    margin: 1rem 2rem;
+    text-align: left;
+    color: #3f4359;
 }
 
-#basicFaith {
+
+
+
+/* Block: faith */
+.faith {
     margin-top: 3%;
-    padding: 2%;
-    padding-bottom: 5%;
+    padding: 2% 0 5%;
     color: white;
     background-color: #5B4565;
     display: flex;
@@ -86,66 +69,56 @@ main {
     position: relative;
 }
 
-#basicFaith h3 {
+.faith__title {
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-#bibleTextContainer {
+.faith__container {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     gap: 2rem;
     justify-content: center;
-    align-items: flex-start;
 }
 
-.bibleTextSection {
-    flex: 1 1 45%;
-    text-align: left;
+.faith__section {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
-    box-sizing: border-box;
+    text-align: left;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     list-style-type: none;
-    margin: 0;
 }
 
 
-.bibleTextSection li {
-    margin-bottom: 1rem;
+.faith__section-visible {
+    display: flex;
+}
+
+.faith__section-item {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     font-size: 1rem;
     line-height: 1.5;
-    
 }
 
-.bibleTextSection li u {
+.faith__section-item--highlight {
     font-weight: bold;
     color: #FFD700;
 }
 
 
-@keyframes slideIn {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 
-.hiddenText {
-    display: block; 
-    animation: slideIn 0.4s ease;
-}
-
-#more-less-btn {
-
+.faith__container-button {
     display: none;
     margin: 1rem auto 0;
-    text-align: center;
     padding: 0.5rem 1rem;
     font-size: 20px;
     color: white;
@@ -154,232 +127,125 @@ main {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center;
+}
+
+.faith__container-button,
+.faith__container-button {
+    background-color: #83679B;
 }
 
 
 
 
-@media (hover:hover) {
-    #more-less-btn:hover {
-        background-color: #83679B;
-    }
-    
-}
 
-
-@media(hover:none) {
-    #more-less-btn:active {
-        background-color: #83679B;
-    }
-}
-
-
-
-
-#Pastor{
+/* Block: pastor */
+.pastor {
     width: 90%;
-    height: 20rem;
+    margin-top: 5%;
+    padding-left: 5%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     color: #3f4359;
-    margin-left: 5%;
-    margin-right: 5%;
 }
 
-
-#Pastor .personImage {
-    background-image: url('/public/images/pastor.webp');
-    background-size: contain;
-    background-position-x: left;
-    background-position-y: center;
+.pastor__image {
     height: 20rem;
-    background-repeat: no-repeat;
+    background: url('/public/images/pastor.webp') no-repeat left center / contain;
+}
+
+.pastor__info {
+    line-height: 0.5;
 }
 
 
-#Pastor .info {
-    line-height: 0.5; 
-}
 
 
-#servingGodText {
-    margin-top: 3%;
+/* Block: church-serving-text */
+.church-serving-text {
     background-color: #EAEAEA;
     width: 100%;
     min-height: 15rem;
-    color: #66697a;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
+    flex-wrap: wrap;
+    color: #3f4359;
 }
 
-#servingGodText #text {
-    margin: 2%;
+.church-serving-text__content {
     width: 80%;
-    font-size: 16px;
+    font-size: var(--font-size-h2);
     text-align: center;
 }
 
 
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-    #welcome  {
+
+
+/* Media Queries */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .welcome {
         min-height: 20rem;
         max-height: 25rem;
     }
-
-    #churchInfo {
+    .church-activity {
         font-size: 20px;
     }
-
-    #churchInfo .textPoint {
-        text-align: center;
-    }
-
-    #basicFaith {
+    .faith {
         font-size: 18px;
     }
 
-    .hiddenText {
-        display: none;
-    }
-
-    .visible {
-        display: block; 
-    }
-
-    #more-less-btn {
+    .faith__section-hidden {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        width: max-content;
-        margin-left: 0%;
-        margin-right: 5%;
-        padding-left: 5%;
-        padding-right: 5%;
-        text-align: center;
-        border-width: 2px;
-    } 
+    }
 
-    #bibleTextContainer {
+    .faith__container-button {
         display: flex;
-        flex-direction: column;
-        line-height: 1.5;
     }
 
-    #Pastor .personImage {
-        height: 40rem;
+    .church-serving-text__content {
+        font-size: var(--font-size-h2);
+        text-align: left;
     }
-
 }
 
 
 
-
-@media screen and (max-width:600px) {
-    #welcome {
+@media screen and (max-width: 768px) {
+    .welcome {
         min-height: 15rem;
         max-height: 15rem;
-        font-size: 22px;
     }
-
-    #welcome::before {
-        height: 15rem;
-    }
-
-    #basicFaith {
+    .faith {
         margin-top: 7%;
-        color: white;
-        background-color: #5B4565;
-        display: flex;
+    }
+    .faith__container {
+        flex-direction: column;
         justify-content: center;
-        align-self: center;
-        flex-direction: column;
-        padding-bottom: 5%;
+        align-items: center;
+    }
 
-    }
-    
-    #basicFaith h3 {
-        height: 5%;
-        width: 90%;
-        text-align: left;
-        margin-left: 5%;
-    }
-    
-    #bibleTextContainer {
+    .faith__container-button {
         display: flex;
-        flex-direction: column;
-        line-height: 1.5;
     }
 
-    .bibleTextSection {
+    .faith__section {
+        width: 90%;
         padding: 1rem;
     }
 
-    .hiddenText {
-        display:none;
+    .faith__section-hidden {
+        display: none;
     }
-
-    .hiddenText.visible {
-        display: block;
-        opacity: 1;
-    }
-
-     #more-less-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        width: 25%;
-        margin-left: 5%;
-        margin-right: 5%;
-        padding: 5%;
-        text-align: center;
-        border-width: 2px;
-    } 
-
     
-    #basicFaith #bibleTextContainer .bibleTextSection {
-        margin-top: 2%;
-        text-align: center;
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%; 
+    .pastor__image {
+        height: 20rem;
+    }
+
+    .church-serving-text__content {
+        font-size: var(--font-size-h2);
         text-align: left;
-        box-sizing: border-box;
     }
 
-    #Pastor{
-        width: 90%;
-        height: 20rem;
-    }
-    
-    
-    #Pastor .personImage {
-        background-image: url('/public/images/pastor.webp');
-        background-size: contain;
-        background-position-x: left;
-        background-position-y: center;
-        height: 20rem;
-        background-repeat: no-repeat;
-    }
-
-
-
-
-    #churchInfo .textPoint {
-        margin-left: 5%;
-        margin-right: 5%;
-        text-align: center;
-    }
-
-
-    #servingGodText #text{
-        margin-left: 2%;
-        margin-right: 2%;
-        font-size: 12px;
-    }
 }

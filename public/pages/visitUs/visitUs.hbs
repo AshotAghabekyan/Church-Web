@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Us</title>
+
+    <link rel="stylesheet" href="/public/common/preloader/preloader.css">
+    <link rel="preload" href="/public/common/preloader/preloader.js" as="text/javascript">
+</head>
+<body>
+    {{> preloader}}
+
+    <link rel="stylesheet" href="/public/common/common.css" type="text/css">
+    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font/ttf" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
+    {{>header}}
+
+    <link rel="stylesheet" href="/public/pages/visitUs/visitUs.css" type="text/css">
+    
+    <main class="visit-us">
+        <section class="visit-us__background">
+            <h1 class="visit-us__title">ԱՅՑԵԼԵՔ ՄԵԶ</h1>
+        </section>
+
+
+        <div class="visit-us__info">
+            <div class="visit-us__info-bar visit-us__info-bar--schedule">
+
+                <div class="visit-us__schedule-info">
+                    <h2 class="visit-us__schedule-title">ԿԻՐԱԿՆՕՐՅԱ ԾԱՌԱՅՈՒԹՅՈՒՆ</h2>
+                    <p><strong>
+                        Աստված օրհնեց յոթերորդ օրը և սրբագործեց այն,
+                        որովհետև այդ օրը հանգստացավ իր բոլոր գործերից, որ Աստված ստեղծեց ու արեց։
+                        Ծննդոց 2։ 3
+                    </strong></p>
+                    <p>
+                        Ամեն կիրակի<br>
+                        11:00-13:00
+                    </p>
+                    <h2 class="visit-us__schedule-title">Մանկական ծառայություն</h2>
+                    <p>Ամեն կիրակի<br>12:00-13:00</p>
+                    <h2 class="visit-us__schedule-title">Պատանիների ծառայություն</h2>
+                    <p>Ամեն կիրակի<br>13:00-15:00</p>
+                    <h2 class="visit-us__schedule-title">Երիտասարդների ծառայություն</h2>
+                    <p>Ամեն հինգշաբթի<br>18:00-20:00</p>
+                </div>
+            </div>            
+
+            <div class="visit-us__info-bar visit-us__info-bar--contact">
+                <div class="visit-us__contact-us">
+                    <h2 class="visit-us__contact-title">ՀԵՏԱԴԱՐՁ ԿԱՊ</h2>
+                    <p>
+                        +374 10 571 633<br>
+                        <a href="https://www.facebook.com/newgenerationchurch.am" class="visit-us__social-link">Facebook</a><br>
+                        <a href="https://www.instagram.com/newgeneration_arm/" class="visit-us__social-link">Instagram</a><br>
+                        <a href="https://t.me/newgenerationarmenia" class="visit-us__social-link">Telegram</a><br>
+                    </p>
+                </div>
+                <div class="visit-us__address">
+                    <h2 class="visit-us__address-title">ՀԱՍՑԵ</h2>
+                    <p>Ք. Երևան, Տիգրան Մեծի<br>պողոտա 80/1</p>
+                </div>
+            </div>
+        </div>
+        <iframe class="visit-us__google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3049.3869944561143!2d44.50694421069939!3d40.15593657136382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abc6d01f98ebb%3A0x7019e04881850fe8!2s1%2C%2080%20Tigran%20Mets%20Ave%2C%20Yerevan!5e0!3m2!1sru!2sam!4v1708188452725!5m2!1sru!2sam"
+            style="border:0;"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </main>    
+
+    {{>footer}}
+</body>
+</html>

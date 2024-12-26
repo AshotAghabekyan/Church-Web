@@ -1,0 +1,85 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/public/common/preloader/preloader.css" type="text/css">
+    <link rel="preload" href="/public/common/preloader/preloader.js" as="script">
+</head>
+
+<body>
+    {{> preloader}}
+
+    <link rel="stylesheet" href="/public/fonts/fonts.css" type="text/css">
+    <link rel="preload" href="/public/fonts/Bainsley.ttf" as="font/ttf" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/common/common.css" type="text/css">
+    {{> header}}
+
+    <link rel="stylesheet" href="/public/pages/services/services.css" type="text/css">
+    <main class="main">
+        <section class="welcome">
+            <h1 class="welcome__title">ՄԵՐ ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐԸ</h1>
+        </section>
+
+
+        <section class="services">
+            <section class="service service--children">
+                <section class="service__background"></section>
+                <section class="service__info">
+                    <section>
+                        <h3 class="service__title">Մանկական ծառայություն</h3>
+                        <p class="service__description">
+                            I'm a paragraph. Click here to add your own text and edit me. It’s easy.
+                            Just click “Edit Text” or double click me to add your own content and make changes to the font.
+                            Feel free to drag and drop me anywhere you like on your page.
+                            I’m a great place for you to tell a story and let your users know a little more about you.
+                        </p>
+                    </section>
+                    <button class="service__button" onclick="(() => {window.location.href = '/visitUs'})()">Միանալ</button>
+                </section>
+            </section>
+            
+
+            <section class="service service--home-groups">
+                <section class="service__background"></section>
+                <section class="service__info">
+                    <section>
+                        <h3 class="service__title">Տնային խմբակներ</h3>
+                        <p class="service__description">
+                            I'm a paragraph. Click here to add your own text and edit me. It’s easy.
+                            Just click “Edit Text” or double click me to add your own content and make changes to the font.
+                            Feel free to drag and drop me anywhere you like on your page.
+                            I’m a great place for you to tell a story and let your users know a little more about you.
+                        </p>
+                    </section>
+                    <button class="service__button" onclick="(() => {window.location.href = '/visitUs'})()">Միանալ</button>
+                </section>
+            </section>
+
+
+            <section class="service service--teen">
+                <section class="service__background"></section>
+                <section class="service__info">
+                    <section>
+                        <h3 class="service__title">Պատանիների ծառայություն</h3>
+                        <p class="service__description">
+                            I'm a paragraph. Click here to add your own text and edit me. It’s easy.
+                            Just click “Edit Text” or double click me to add your own content and make changes to the font.
+                            Feel free to drag and drop me anywhere you like on your page.
+                            I’m a great place for you to tell a story and let your users know a little more about you.
+                        </p>
+                    </section>
+                    <button class="service__button" onclick="(() => {window.location.href = '/visitUs'})()">Միանալ</button>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    {{> footer}}
+</body>
+</html>
