@@ -1,9 +1,9 @@
 
 
-const donateAction = document.getElementById('donateAction');
-const likeAction = document.getElementById("likeAction");
-const shareAction = document.getElementById("shareAction");
-const toYoutubeAction = document.getElementById("toYoutubeAction");
+const donateAction = document.querySelector('.action--donate');
+const likeAction = document.querySelector(".action--like");
+const shareAction = document.querySelector(".action--share");
+const toYoutubeAction = document.querySelector(".action--youtube");
 const currUrl = new URL(window.location);
 
 donateAction.addEventListener("click", () => window.location.href = "/donation")
@@ -11,9 +11,8 @@ toYoutubeAction.addEventListener("click", () => window.location.href = `https://
 
 
 function shareVideoModal() {
-    const shareModal = document.getElementById('videoShareModal');
+    const shareModal = document.querySelector('.modal--share');
     const videoId = currUrl.pathname.split('/').at(-1);
-
     shareModal.style.display = "flex";
     shareModal.showModal();
     shareModal.classList.add("active");
@@ -21,9 +20,20 @@ function shareVideoModal() {
     shareOnFacebookHandle(videoId);
     shareOnThreadHandle(videoId);
     shareOnTwitterHandle(videoId);
-    
-    const closeModalBtn = document.getElementById("closeShareModal");
+    manualShare(videoId);
+    closeModalHandle(shareModal);
+
+}
+
+
+
+function closeModalHandle(shareModal) {
+    const closeModalBtn = document.querySelector(".modal__close-btn");
     closeModalBtn.addEventListener("click", () => {
+        const manualShareButton = document.getElementById("manual-share-btn");
+        manualShareButton.innerText = 'Copy';
+        manualShareButton.style.backgroundColor = "white";
+        manualShareButton.style.color = "#1C1C1E";
         shareModal.classList.remove("active");
         setTimeout(() => {
             shareModal.style.display = "none";
@@ -33,9 +43,8 @@ function shareVideoModal() {
 }
 
 
-
 function shareOnFacebookHandle(videoId) {
-    const facebookShareButton = document.getElementById("facebook");
+    const facebookShareButton = document.querySelector(".social-network--facebook");
     facebookShareButton.addEventListener("click", () => {
         const url = encodeURIComponent(`https://www.youtube.com/watch?v=${videoId}`);
         const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
@@ -45,7 +54,7 @@ function shareOnFacebookHandle(videoId) {
 
 
 function shareOnThreadHandle(videoId) {
-    const shareOnThreadButton = document.getElementById("threads");
+    const shareOnThreadButton = document.querySelector(".social-network--threads");
     shareOnThreadButton.addEventListener("click", () => {
         const url = encodeURIComponent(`https://www.youtube.com/watch?v=${videoId}`);
         const threadUrl = `https://threads.net/intent/post?text=${url}`;
@@ -56,7 +65,7 @@ function shareOnThreadHandle(videoId) {
 
 
 function shareOnTwitterHandle(videoId) {
-    const shareOnTwitterButton = document.getElementById("twitter");
+    const shareOnTwitterButton = document.querySelector(".social-network--twitter");
     shareOnTwitterButton.addEventListener("click", () => {
         const url = encodeURIComponent(`https://www.youtube.com/watch?v=${videoId}`)
         const twitterUrl = `https://twitter.com/intent/tweet?text=${url}`
@@ -65,18 +74,33 @@ function shareOnTwitterHandle(videoId) {
 }
 
 
-async function likeVideo() {
-    const response = await fetch('/auth', {
-        mode: "cors",
-    });
-    console.log("res status", response.status);
-    if (!response) {
-        return alert("unauthorized");
-    }
-    
-    console.log('auth', response);
+function manualShare(videoId) {
+    const manualShareButton = document.getElementById("manual-share-btn");
+    manualShareButton.addEventListener("click", () => {
+        const url = `https://www.youtube.com/watch?v=${videoId}`;
+        navigator.clipboard.writeText(url);
+        manualShareButton.style.backgroundColor = "#1C1C1E"
+        manualShareButton.style.color = "white";
+        manualShareButton.innerText = "Copied"
+    }, {"once": true})
+
 }
 
 
-likeAction.addEventListener("click", likeVideo)
+async function likeVideo() {
+    const response = await fetch('/auth');
+
+    if (!response) {
+        return alert("unauthorized");
+    }
+
+    const parsedResponse = await response.json()
+    const url = parsedResponse.url;
+    const rawTokens = await fetch(url);
+    const tokens = await rawTokens.json();
+    console.log(tokens);
+}
+
+
+// likeAction.addEventListener("click", likeVideo)
 shareAction.addEventListener("click", shareVideoModal)

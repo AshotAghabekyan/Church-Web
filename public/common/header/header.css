@@ -1,17 +1,13 @@
-* {
-    box-sizing: border-box;
-}
 
 header {
     box-sizing: border-box;
-    height: 5rem;
+    height: calc(var(--font-size-body) * 5);
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
     justify-content: flex-start;
     align-items: center;
-    font-size: 17px;
     background-color:  #66697a;
 }
 
@@ -22,7 +18,7 @@ header #navOptions {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5%;
+    gap: var(--font-size-body);
 }
 
 
@@ -42,7 +38,7 @@ header #navOptions {
     color: white;
     text-decoration: none;
     transition: 0.2s;
-    font-size: larger;
+    font-size: var(--font-size-body);
     white-space: nowrap;
     width: 100%;
 }
@@ -55,8 +51,8 @@ header #navOptions {
 #toggleLabel {
     display: none;
     z-index: 7;
-    width: 35px;
-    height: 5px;
+    width: calc(2 * var(--font-size-body));
+    height: calc(0.2 * var(--font-size-body));
     position: absolute;
     background-color: white;
     cursor: pointer;
@@ -66,7 +62,7 @@ header #navOptions {
         z-index: 7;
         content: "";
         width: 100%;
-        height: 5px;
+        height: calc(0.2 * var(--font-size-body));
         background-color: white;
         position: absolute;
         transition: all 0.6s var(--animation-curve)
@@ -90,11 +86,14 @@ header #navOptions {
 
 
 #mobileNavToggle input:checked ~ label::before{
-    transform: rotatez(45deg)
+    transform: rotatez(36deg);
+    width: 100%;
 }
 
 #mobileNavToggle input:checked ~ label::after{
-    transform: rotatez(-45deg)
+    transform: rotatez(-36deg);
+    width: 100%;
+
 }
 
 #mobileNavToggle input:checked ~ label {
@@ -111,18 +110,23 @@ header #navOptions {
 
 #logo {
     position: absolute;
-    left: 20px;
-    background: url("/public/images/white_NG_logo.png");
+    left: var(--font-size-body);
+    background: url("/public/images/white_NG_logo.webp");
     background-repeat: no-repeat;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 100px;
-    height: 100px;
+    width: calc(5.5 * var(--font-size-body));
+    height: calc(5.5 * var(--font-size-body));
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.4s;
+}
+
+#logo a {
+    width: 100%;
+    height: calc(5 * var(--font-size-body));
 }
 
 
@@ -140,30 +144,20 @@ header #navOptions {
     }
 }
 
-#modalWrapper {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 6;
-    display: none;
-    background-color:none;
-}
 
 .modal-content {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 6;
     overflow: auto;
     width: 100%;
     padding-bottom: 10%;
-    display: none;
     border: none;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: calc(1.8 * var(--font-size-body));
+    border-bottom-right-radius: calc(1.8 * var(--font-size-body));
     background-color: #66697a;
-    animation: slideIn 0.5s ease-in-out; 
+    display: none;
     text-align: center;
     flex-direction: column;
     align-items: center;
@@ -195,10 +189,14 @@ header #navOptions {
 }
 
 
-
-.modal-content.slideOut {
+#modalWrapper.slideOut {
     animation: slideOut 0.5s ease-in-out;
 }
+
+#modalWrapper.slideIn {
+    animation: slideIn 0.5s ease-in-out; 
+}
+
 
 .modal-content div {
     margin-top: 5%
@@ -206,7 +204,7 @@ header #navOptions {
 
 .modal-content div a {
     color: white;
-    font-size: 20px;
+    font-size: calc(1.2 * var(--font-size-body));
     text-decoration: none;
 }
 
@@ -214,15 +212,14 @@ header #navOptions {
 
 
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 992px) {
     header {
-        min-height: 6rem;
+        min-height: calc(5 * var(--font-size-body));
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: right;
         align-items: center;
-        font-size: 25px;
         background-color:  #66697a;
         font-family: 'kotayk';
     }
@@ -232,17 +229,12 @@ header #navOptions {
     }
 
 
-    #logo {
-        width: 100px;
-        height: 100px;
-    }
-
     header #mobileNavToggle {
         display: flex;
         color: white;
         justify-content: center;
         padding: 2%;
-        margin-right: 5%;
+        margin-right:  calc(5 * var(--font-size-body));
         color:white
     }
 
@@ -251,24 +243,19 @@ header #navOptions {
         margin-right: 5%;
         display: flex;
     }
-    
-    .modal-content div a {
-        font-size: 35px;
-    }
 }
 
 
 
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 768px){
     header {
-        min-height: 5rem;
+        min-height: calc(5 * var(--font-size-body));
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: right;
         align-items: center;
-        font-size: 16px;
         background-color:  #66697a;
         font-family: 'kotayk';
     }
@@ -283,13 +270,8 @@ header #navOptions {
         color: white;
         justify-content: center;
         padding: 2%;
-        margin-right: 15%;
+        margin-right: calc(3 * var(--font-size-body));
         color:white
-    }
-
-    #logo {
-        width: 90px;
-        height: 90px;
     }
 
 

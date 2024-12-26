@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "bainsley";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;    
+    src: url("Bainsley.ttf") format("truetype");
+}
