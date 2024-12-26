@@ -20,9 +20,20 @@ function shareVideoModal() {
     shareOnFacebookHandle(videoId);
     shareOnThreadHandle(videoId);
     shareOnTwitterHandle(videoId);
-    
+    manualShare(videoId);
+    closeModalHandle(shareModal);
+
+}
+
+
+
+function closeModalHandle(shareModal) {
     const closeModalBtn = document.querySelector(".modal__close-btn");
     closeModalBtn.addEventListener("click", () => {
+        const manualShareButton = document.getElementById("manual-share-btn");
+        manualShareButton.innerText = 'Copy';
+        manualShareButton.style.backgroundColor = "white";
+        manualShareButton.style.color = "#1C1C1E";
         shareModal.classList.remove("active");
         setTimeout(() => {
             shareModal.style.display = "none";
@@ -30,7 +41,6 @@ function shareVideoModal() {
         shareModal.close()
     })
 }
-
 
 
 function shareOnFacebookHandle(videoId) {
@@ -64,15 +74,31 @@ function shareOnTwitterHandle(videoId) {
 }
 
 
+function manualShare(videoId) {
+    const manualShareButton = document.getElementById("manual-share-btn");
+    manualShareButton.addEventListener("click", () => {
+        const url = `https://www.youtube.com/watch?v=${videoId}`;
+        navigator.clipboard.writeText(url);
+        manualShareButton.style.backgroundColor = "#1C1C1E"
+        manualShareButton.style.color = "white";
+        manualShareButton.innerText = "Copied"
+    }, {"once": true})
+
+}
+
+
 async function likeVideo() {
-    const response = await fetch('/auth', {
-        mode: "cors",
-    });
-    console.log("res status", response.status);
+    const response = await fetch('/auth');
+
     if (!response) {
         return alert("unauthorized");
     }
-    
+
+    const parsedResponse = await response.json()
+    const url = parsedResponse.url;
+    const rawTokens = await fetch(url);
+    const tokens = await rawTokens.json();
+    console.log(tokens);
 }
 
 
