@@ -12,7 +12,7 @@ export class AuthController {
             if (!authUrl) {
                 throw new Error('INTERNAL SERVER ERROR');
             }
-            res.status(301).redirect(authUrl);
+            res.status(302).json({url: authUrl});
         }
         catch(error) {
             console.error(error);
@@ -29,6 +29,8 @@ export class AuthController {
                 res.status(401).json({message: "NOT AUTHORIZED"});
                 return;
             }
+            res.setHeader('Access-Control-Allow-Credentials', "true");
+            res.setHeader('Access-Control-Allow-Origin', '*')
             res.status(200).json(tokens);
         }
         catch(error) {

@@ -16,7 +16,10 @@ const app: Express = express();
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    "credentials": true,
+    "origin": "*",
+}));
 
 app.use('/public', async (req: Request, res: Response) => {
     const staticFileProcessor: StaticFileProcessor = new StaticFileProcessor(req.url, {
