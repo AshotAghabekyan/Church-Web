@@ -53,7 +53,7 @@ app.engine(
     })
 );
   
-
+console.log(path.resolve('./'));
 app.use('/videos', videoApiRouter)
 app.use("/admin-auth", adminApiRouter);
 app.use('/auth', authApiRouter);
