@@ -9,7 +9,7 @@ import authApiRouter from "./modules/auth/authRoute.ts"
 import { Request, Response, Express } from "express";
 import { StaticFileProcessor } from "./modules/staticFileProcessor/staticFIleProcessor.ts";
 import { BrotliCompressor } from "./modules/compressor/compressor.ts";
-import { globSync } from "node:fs";
+import { globSync } from "npm:glob";
 
 
 
@@ -39,17 +39,17 @@ app.use('/public', async (req: Request, res: Response) => {
 app.set('views', path.resolve('public/pages')); 
 app.set('view engine', 'hbs');
 
-// const hbsPartialPaths: string[] = globSync([
-//     path.resolve("./public/pages/**/"),
-//     path.resolve('./public/common/**/')
-// ])
+const hbsPartialPaths: string[] = globSync([
+    path.resolve("./public/pages/**/"),
+    path.resolve('./public/common/**/')
+])
 
 app.engine(
     'hbs',
     exphbs.engine({
       defaultLayout: false, 
       extname: '.hbs',
-      partialsDir: [],
+      partialsDir: hbsPartialPaths
     })
 );
   
