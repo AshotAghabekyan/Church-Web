@@ -59,6 +59,19 @@
 
 
 /* Block: faith */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
 .faith {
     margin-top: 3%;
     padding: 2% 0 5%;
@@ -85,7 +98,7 @@
 }
 
 .faith__section {
-    width: 40%;
+    width:45%;
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -93,12 +106,19 @@
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     list-style-type: none;
+    transition: 0.5s;
 }
 
 
-.faith__section-visible {
-    display: flex;
+
+.faith__section-hidden {
+    display: block;
+    animation: slideIn 0.4s ease;
 }
+
+
+
+
 
 .faith__section-item {
     flex-direction: row;
@@ -141,23 +161,44 @@
 
 /* Block: pastor */
 .pastor {
-    width: 90%;
+    width: 100%;
     margin-top: 5%;
-    padding-left: 5%;
-    display: flex;
-    flex-direction: column;
+    padding-left: 2.5rem;
     color: #3f4359;
 }
 
+.pastor-account {
+    float: left;
+    width: 35%;
+    height: auto; 
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
 .pastor__image {
+    width: 100%;
     height: 20rem;
     background: url('/public/images/pastor.webp') no-repeat left center / contain;
 }
 
 .pastor__info {
+    width: 100%;
     line-height: 0.5;
 }
 
+
+.pastor-biography {
+    padding-right: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.6rem;
+}
+
+.pastor-biography p {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
 
 
 
@@ -189,16 +230,43 @@
         min-height: 20rem;
         max-height: 25rem;
     }
+
+
+    .pastor-account {
+        width: 40%;
+    }
+
+    .pastor__image {
+        display: flex;
+        width: 100%;
+    }
+
+    .pastor__info {
+        width: 100%;
+        word-break:keep-all;
+    }
+
+    .pastor__info h2 {
+        width: 100%;
+    }
+
     .church-activity {
         font-size: 20px;
     }
+
+
     .faith {
-        font-size: 18px;
+        font-size: 18px;    
     }
 
     .faith__section-hidden {
-        display: flex;
+        display: none;
     }
+
+    .faith__section-visible {
+        display: block;
+    }
+
 
     .faith__container-button {
         display: flex;
@@ -217,9 +285,62 @@
         min-height: 15rem;
         max-height: 15rem;
     }
+
+
+    .pastor {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .pastor-account {
+        width: 100%;
+        left: none;
+    }
+
+    .pastor__image {
+        width: 100%;
+        height: 20rem;
+    }
+
+    .pastor__info {
+        width: 100%;
+        margin-bottom: 10%
+    }
+
+    .pastor__info h2 {
+        width: 100%;
+    }
+
+    .pastor-biography {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        width: 100%;
+    }
+
+    .pastor-biography p {
+        margin-bottom: 0%;
+    }
+
+
+
     .faith {
         margin-top: 7%;
     }
+
+    .faith__section-hidden {
+        display: none;
+    }
+
+    .faith__section-visible {
+        display: block;
+    }
+
     .faith__container {
         flex-direction: column;
         justify-content: center;
@@ -234,14 +355,7 @@
         width: 90%;
         padding: 1rem;
     }
-
-    .faith__section-hidden {
-        display: none;
-    }
     
-    .pastor__image {
-        height: 20rem;
-    }
 
     .church-serving-text__content {
         font-size: var(--font-size-h2);

@@ -27,33 +27,15 @@
 
 
 .cross {
-    width: 50px;
-    height: 100px;
+    width: 100px;
+    height: 200px;
+    background: url('/public/images/purpleChurchLogo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
     position: relative;
     animation: bounce 1s ease-in-out infinite;
 }
 
-.cross::before,
-.cross::after {
-    content: '';
-    position: absolute;
-    background-color: #6a5acd; 
-    border-radius: 3px;
-}
-
-.cross::before {
-    width: 50px;
-    height: 10px;
-    top: 20px;
-    left: 0;
-}
-
-.cross::after {
-    width: 10px;
-    height: 80px;
-    top: 0;
-    left: 20px;
-}
 
 @keyframes bounce {
     0%, 100% {
@@ -110,11 +92,6 @@
 
 
 @media screen and (max-width: 767px) {
-    #preloader {
-        justify-content: flex-start;
-        padding-top: 40%;
-    }
-
     .loader {
         width: 80%;
     }

@@ -49,9 +49,26 @@
     margin-bottom: 5%;
 }
 
+.visit-us__schedule-info p {
+    margin: 0;
+    padding-left: 0.5rem;
+}
+
 .visit-us__schedule-title {
     margin-top: 5%;
     margin-bottom: 0%;
+}
+
+.visit-us__bible-verb {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.visit-us__bible-verb p {
+    margin: 0;
 }
 
 .visit-us__info-bar--contact {
@@ -59,8 +76,9 @@
     color: #6a4e77;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     text-align: left;
+    padding-left: 10%;
 }
 
 

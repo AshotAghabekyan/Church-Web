@@ -9,7 +9,6 @@ footer {
     background-color: #3f4359;
     padding: calc(1.2 * var(--font-size-body)) 0;
     color: white;
-    font-family: Arial, sans-serif;
     line-height: 1.5;
 }
 
@@ -41,6 +40,12 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+
+.contact p {
+    margin: 0;
 }
 
 .contact img {

@@ -8,18 +8,16 @@ toggleBtn.addEventListener("click", function() {
         textWrapper.classList.remove("collapsed");
         
         hiddenElements.forEach(function(elem) {
-            elem.classList.remove('faith__section-hidden');
-            elem.classList.add('faith__section-visible');
+            elem.classList.toggle('faith__section-visible');
         });
         toggleBtn.innerText = "Փակել";
     }
     else {
         textWrapper.classList.add("collapsed");
         hiddenElements.forEach(function(elem) {
-            elem.classList.remove('faith__section-visible');
-            elem.classList.add('faith__section-hidden')
+            elem.classList.toggle('faith__section-visible');
         });
-        window.scroll({"top": "500", "behavior": "smooth"});
+        window.scroll({"top": "800", "behavior": "smooth"});
         toggleBtn.innerText = "Ավելին";
     }
 });
