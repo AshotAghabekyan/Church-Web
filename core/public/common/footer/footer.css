@@ -43,6 +43,16 @@ footer {
     justify-content: center;
 }
 
+.footer-phone {
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.footer-phone:hover {
+    text-decoration: underline;
+}
+
+
 
 .contact p {
     margin: 0;
