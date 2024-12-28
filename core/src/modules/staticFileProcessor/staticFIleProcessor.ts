@@ -1,9 +1,10 @@
-import {Request, Response} from "express";
+import {Request, Response, NextFuncton} from "express";
 import path from "node:path";
 import fs from "node:fs";
 import { Compressor } from "../compressor/compressor.ts";
 import { MimeType } from "../mimetypes/mimetypes.ts";
 import { FileStreamProcessor } from "../streamProcessor/streamProcessor.ts";
+import { InternalErrorException } from "../exceptionFilter/httpExceptions.ts";
 
 
 
@@ -30,7 +31,7 @@ export class StaticFileProcessor {
     }
 
 
-    public async process(req: Request, res: Response) {
+    public async process(req: Request, res: Response, next: NextFuncton) {
         try {
             const staticFilePath: string = path.resolve(`./${this.options.staticFilesDir}${this.reqUrl}`);
             const mimeType: string = MimeType.fileMimeType(staticFilePath);
@@ -57,7 +58,7 @@ export class StaticFileProcessor {
         }
         catch(error) {
             console.error(error);
-            res.status(500).end();
+            next(error);
         }
     }
 
@@ -81,12 +82,12 @@ export class StaticFileProcessor {
                 res.status(200).end();
             });
             streamTransfer.on('error', () => {
-                throw new Error('response streaming error');
+                throw new InternalErrorException('http response streaming exception');
             })
         }
         catch (error) {
             console.error(error);
-            res.status(500).end();
+            throw error;
         }
     }
     
@@ -100,12 +101,12 @@ export class StaticFileProcessor {
                 res.status(200).end();
             })
             streamTransfer.on('error', () => {
-                throw new Error('response streaming error');
+                throw new InternalErrorException('http response streaming exception');
             })
 
         } catch (error) {
             console.error(error);
-            res.status(500).end();
+            throw error;
         }
     }    
 }

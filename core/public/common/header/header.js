@@ -24,3 +24,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const currentPath = window.location.pathname;
+    navLinks.forEach(linkElem => {
+        if (linkElem.getAttribute("href") == currentPath) {
+            linkElem.classList.add("active");
+        }
+    });
+});
+
+

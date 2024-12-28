@@ -11,7 +11,7 @@
     background-color: #eaeaea;
 }
 
-/* Block: welcome */
+/* Block: welcome
 .welcome {
     position: relative;
     min-height: 25rem;
@@ -38,19 +38,20 @@
     background: url("/public/images/churchBackground.webp") no-repeat center center / cover;
     opacity: 0.4;
     z-index: -1;
-}
+} */
 
 
 
 /* Block: church-activity */
 .church-activity {
-    margin: 3% 10%;
-    font-size: 16px;
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 1rem;
     line-height: 1.5;
 }
 
 .church-activity__text {
-    margin: 1rem 2rem;
     text-align: left;
     color: #3f4359;
 }
@@ -118,15 +119,17 @@
 
 
 
-
-
 .faith__section-item {
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     font-size: 1rem;
     line-height: 1.5;
+}
+
+.faith__section-item p {
+    margin: 0;
 }
 
 .faith__section-item--highlight {
@@ -162,37 +165,65 @@
 /* Block: pastor */
 .pastor {
     width: 100%;
-    margin-top: 5%;
-    padding-left: 2.5rem;
+    margin-top: 2rem;
+    padding: 2rem;
     color: #3f4359;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    animation: fadeIn 1s ease-out;
 }
 
 .pastor-account {
-    float: left;
     width: 35%;
-    height: auto; 
-    margin-right: 5%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pastor-account h2 {
+    margin: 0;
 }
 
 .pastor__image {
     width: 100%;
     height: 20rem;
-    background: url('/public/images/pastor.webp') no-repeat left center / contain;
+    background: url('/public/images/pastor.webp') no-repeat center center / cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
+
 
 .pastor__info {
-    width: 100%;
-    line-height: 0.5;
+    margin-top: 1rem;
+    font-family: 'Bainsley', serif;
 }
 
+.pastor__info h2 {
+    font-size: 1.8rem;
+    color: #5B4565;
+}
+
+.pastor__info p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #3f4359;
+}
 
 .pastor-biography {
-    padding-right: 1.5rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.6rem;
+    line-height: 1.6;
+    color: #3f4359;
+    animation: slideUp 1s ease-out;
 }
 
 .pastor-biography p {
@@ -200,6 +231,45 @@
     margin-top: 0;
 }
 
+.pastor-biography p:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #5B4565;
+}
+
+/* Highlight block for quotes or key message */
+.pastor-biography__highlight {
+    background: linear-gradient(135deg, #ffd700, #f8e7a4);
+    border-left: 5px solid #d4af37;
+    padding: 1rem;
+    margin: 2rem 0;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: bold;
+    color: #3f4359;
+    border-radius: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 
 /* Block: church-serving-text */
@@ -226,32 +296,20 @@
 
 /* Media Queries */
 @media screen and (min-width: 769px) and (max-width: 992px) {
-    .welcome {
-        min-height: 20rem;
-        max-height: 25rem;
-    }
-
-
     .pastor-account {
         width: 40%;
     }
 
     .pastor__image {
-        display: flex;
         width: 100%;
     }
 
     .pastor__info {
         width: 100%;
-        word-break:keep-all;
     }
 
     .pastor__info h2 {
         width: 100%;
-    }
-
-    .church-activity {
-        font-size: 20px;
     }
 
 
@@ -281,19 +339,13 @@
 
 
 @media screen and (max-width: 768px) {
-    .welcome {
-        min-height: 15rem;
-        max-height: 15rem;
-    }
-
-
     .pastor {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: flex-start;
         width: 100%;
-        padding: 1.5rem;
+        gap: 1.5rem;
     }
 
     .pastor-account {
@@ -303,12 +355,11 @@
 
     .pastor__image {
         width: 100%;
-        height: 20rem;
+        height: 30rem;
     }
 
     .pastor__info {
         width: 100%;
-        margin-bottom: 10%
     }
 
     .pastor__info h2 {
@@ -322,11 +373,6 @@
         text-align: left;
         width: 100%;
     }
-
-    .pastor-biography p {
-        margin-bottom: 0%;
-    }
-
 
 
     .faith {

@@ -76,7 +76,7 @@ main #aboutDontation h1 {
 .donationVariant button {
     width: 45%;
     min-height: 20%;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: 0.4s;
     font-size: 25px;
     font-family: 'bainsley';
@@ -166,7 +166,7 @@ main #aboutDontation h1 {
     height: 20%;
     border-color: #66697a;
     border-width: 1.5px;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: 0.4s;
     background-color: white;
     color: #66697a;

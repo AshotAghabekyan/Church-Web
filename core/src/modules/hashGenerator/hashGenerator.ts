@@ -10,17 +10,27 @@ export class HashGenerator {
     }
 
     public textToHash(sourceText: string) {
-        const hash: crypto.Hash = crypto.createHash(this.alg)
-        hash.update(sourceText)
-        return hash.digest("hex");
+        try {
+            const hash: crypto.Hash = crypto.createHash(this.alg)
+            hash.update(sourceText)
+            return hash.digest("hex");
+        }
+        catch(error) {
+            throw error;
+        }
     }
 
 
     public compare(hashedText: string, targetText: string) {
-        const targetHash: crypto.Hash = crypto.createHash(this.alg)
-        targetHash.update(targetText);
-        const hash: string = targetHash.digest("hex");
-        return hash == hashedText;
+        try {
+            const targetHash: crypto.Hash = crypto.createHash(this.alg)
+            targetHash.update(targetText);
+            const hash: string = targetHash.digest("hex");
+            return hash == hashedText;
+        }
+        catch(error) {
+            throw error;
+        }
     }   
 }
 

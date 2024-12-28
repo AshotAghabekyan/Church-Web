@@ -33,7 +33,10 @@ header #navOptions {
     align-items: center;
 }
 
-#navOptions .navBar a {
+
+
+
+.nav-link {
     box-sizing: border-box;
     color: white;
     text-decoration: none;
@@ -43,8 +46,14 @@ header #navOptions {
     width: 100%;
 }
 
-#navOptions .navBar a:hover {
+.nav-link:hover {
     opacity: 0.7;
+}
+
+.nav-link.active {
+    color: #f4b400; /* Золотистый цвет для активной страницы */
+    font-weight: bold;
+    text-decoration: underline; /* Подчеркивание для выделения */
 }
 
 

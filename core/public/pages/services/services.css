@@ -60,14 +60,14 @@
 }
 
 .service__button {
-    width: 40%;
+    width: 50%;
     height: 100%;
     padding-top: 3%;
     padding-bottom: 3%;
     color: #FFFFFF;
     background-color: #3f4359;
     border: 0px solid #3f4359;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: 0.4s;
     font-size: 1.6rem;
     font-family: 'bainsley';
