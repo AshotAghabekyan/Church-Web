@@ -193,9 +193,10 @@
     text-align: justify;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 5%;
 }
 
-.home__donation .home__to-donation-page {
+/* .home__donation .home__to-donation-page {
     padding-left: 5%;
     padding-right: 5%;
     margin-bottom: 5%;
@@ -204,9 +205,9 @@
     align-items: center;
     height: 4.4rem;
     width: 100%;
-}
+} */
 
-.home__donation .home__to-donation-page .home__donations-btn {
+/* .home__donation .home__to-donation-page .home__donations-btn {
     width: 40%;
     height: 100%;
     color: #FFFFFF;
@@ -215,7 +216,7 @@
     border-radius: 10px;
     transition: 0.5s;
     border: none;
-}
+} */
 
 @media (hover:hover) {
     .home__donation .home__to-donation-page .home__donations-btn:hover {
