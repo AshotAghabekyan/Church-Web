@@ -364,6 +364,8 @@
     .pastor__image {
         width: 100%;
         height: 30rem;
+        max-height: 20rem;
+        background-position: center 0%;
     }
 
     .pastor__info {
