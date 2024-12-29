@@ -1,12 +1,12 @@
 
 
-const donateAction = document.querySelector('.action--donate');
-const likeAction = document.querySelector(".action--like");
+// const donateAction = document.querySelector('.action--donate');
+// const likeAction = document.querySelector(".action--like");
 const shareAction = document.querySelector(".action--share");
 const toYoutubeAction = document.querySelector(".action--youtube");
 const currUrl = new URL(window.location);
 
-donateAction.addEventListener("click", () => window.location.href = "/donation")
+// donateAction.addEventListener("click", () => window.location.href = "/donation")
 toYoutubeAction.addEventListener("click", () => window.location.href = `https://www.youtube.com/@NewGeneration333TV`);
 
 
@@ -87,19 +87,19 @@ function manualShare(videoId) {
 }
 
 
-async function likeVideo() {
-    const response = await fetch('/auth');
+// async function likeVideo() {
+//     const response = await fetch('/auth');
 
-    if (!response) {
-        return alert("unauthorized");
-    }
+//     if (!response) {
+//         return alert("unauthorized");
+//     }
 
-    const parsedResponse = await response.json()
-    const url = parsedResponse.url;
-    const rawTokens = await fetch(url);
-    const tokens = await rawTokens.json();
-    console.log(tokens);
-}
+//     const parsedResponse = await response.json()
+//     const url = parsedResponse.url;
+//     const rawTokens = await fetch(url);
+//     const tokens = await rawTokens.json();
+//     console.log(tokens);
+// }
 
 
 // likeAction.addEventListener("click", likeVideo)
